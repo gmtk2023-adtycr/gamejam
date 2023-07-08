@@ -5,26 +5,27 @@ using UnityEngine;
 public class DetectPlayer : MonoBehaviour
 {
 
-    private GameObject ennemy;
+    private GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        ennemy = gameObject.transform.parent.parent.gameObject;    
+        enemy = gameObject.transform.parent.gameObject;    
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = GetEnnemyDirection();
+        Vector3 dir = GetEnemyDirection();
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+        transform.position = enemy.transform.position;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
 
-    private Vector3 GetEnnemyDirection()
+    private Vector3 GetEnemyDirection()
     {
-        return ennemy.GetComponent<followPath>().direction;
+        return enemy.GetComponent<Rigidbody2D>().velocity;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

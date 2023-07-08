@@ -56,6 +56,7 @@ public class TaskGroupAddRemove : MonoBehaviour
     }
     void removeTaskGroupUI(string name)
     {
+        if (!taskIn.ContainsKey(name)) return;
         GameObject.Destroy( taskIn[name]);
         taskIn.Remove(name);
     }
