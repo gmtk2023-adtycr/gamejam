@@ -15,19 +15,23 @@ public class TaskGroupUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        titleGroup.text  = tasks.nameGroup;
-
-        for (int i = 0;i < tasks.list.Count;i++)
+        if (tasks != null)
         {
-            GameObject go = GameObject.Instantiate(prefabTaskUI);
-            TaskUI taskUI = go.GetComponent<TaskUI>();
-            taskUI.tasks = tasks;
-            taskUI.idTask = i;
+            titleGroup.text = tasks.nameGroup;
 
-            go.transform.parent = panel;
-            go.transform.localPosition = new Vector3(go.transform.localPosition.x, go.transform.localPosition.y,0);
-            go.transform.transform.localScale = Vector3.one;
+            for (int i = 0; i < tasks.list.Count; i++)
+            {
+                GameObject go = GameObject.Instantiate(prefabTaskUI);
+                TaskUI taskUI = go.GetComponent<TaskUI>();
+                taskUI.tasks = tasks;
+                taskUI.idTask = i;
 
+                go.transform.parent = panel;
+                go.transform.localPosition = new Vector3(go.transform.localPosition.x, go.transform.localPosition.y, 0);
+                go.transform.transform.localScale = Vector3.one;
+
+            }
+        ((RectTransform)transform).sizeDelta = new Vector2(((RectTransform)transform).sizeDelta.x, 35 + 30 * tasks.list.Count);
         }
     }
 

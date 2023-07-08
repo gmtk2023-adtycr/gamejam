@@ -46,8 +46,6 @@ public class TaskGroupAddRemove : MonoBehaviour
     void addTaskGroupUI(string name)
     {
         taskList task = findTask(name);
-        Debug.Log(task);
-
         GameObject taskGroup = GameObject.Instantiate(taskGroupUIPrefab);
         taskGroupUIPrefab.GetComponent<TaskGroupUI>().tasks = task;
         taskGroup.transform.parent = transform;
