@@ -3826,7 +3826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1985438309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 323642745}
+        m_TargetAssemblyTypeName: pauseUIOnOff, Assembly-CSharp
+        m_MethodName: returnMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1985438309
 MonoBehaviour:
   m_ObjectHideFlags: 0
