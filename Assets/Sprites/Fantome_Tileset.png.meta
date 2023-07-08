@@ -3293,6 +3293,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_151
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 456
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac335de414af41d48bd60d41be7dfd30
+      internalID: 56436984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_152
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 456
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c4e8ef4945f99418a20d6dd2559380
+      internalID: -1960980059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3363,6 +3405,8 @@ TextureImporter:
       Fantome_Tileset_149: 1370283556
       Fantome_Tileset_15: 187797501
       Fantome_Tileset_150: -1585216367
+      Fantome_Tileset_151: 56436984
+      Fantome_Tileset_152: -1960980059
       Fantome_Tileset_16: 2036663189
       Fantome_Tileset_17: 558712285
       Fantome_Tileset_18: 1730621896
