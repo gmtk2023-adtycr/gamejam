@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EnterRoom : MonoBehaviour
 {
-    public string roomName;
+    public taskList room;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Contains("Player"))
-            TaskGroupAddRemove.addTaskGroup(roomName);
+            TaskGroupAddRemove.addTaskGroup?.Invoke(room.name);
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag.Contains("Player"))
-            TaskGroupAddRemove.removeTaskGroup(roomName);
+            TaskGroupAddRemove.removeTaskGroup?.Invoke(room.name);
     }
 }
