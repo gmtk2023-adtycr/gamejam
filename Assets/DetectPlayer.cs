@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
@@ -20,6 +22,8 @@ public class DetectPlayer : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
         transform.position = enemy.transform.position;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.localPosition = Vector3.zero;
+
     }
 
 
@@ -32,6 +36,7 @@ public class DetectPlayer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
             Debug.Log("Player detected");
+
     }
 
 }

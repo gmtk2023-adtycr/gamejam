@@ -12,6 +12,8 @@ public class saltTrap : MonoBehaviour
 
     public LineRenderer line;
 
+    public bool isOn = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,9 @@ public class saltTrap : MonoBehaviour
             }
             upLine -= resLine;
         }
+
+        if(line.startColor.a <=0)
+            isOn = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -50,7 +55,8 @@ public class saltTrap : MonoBehaviour
             line.endColor = new Color(line.endColor.r, line.endColor.g, line.endColor.b, 1f);
             line.positionCount = 1;
 
-            followPlayer = timeLine; 
+            followPlayer = timeLine;
+            isOn = true;
         }
     }
 }
