@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TaskGroupAddRemove : MonoBehaviour
@@ -45,19 +46,25 @@ public class TaskGroupAddRemove : MonoBehaviour
     }
     void addTaskGroupUI(string name)
     {
-        taskList task = findTask(name);
-        GameObject taskGroup = GameObject.Instantiate(taskGroupUIPrefab);
-        taskGroupUIPrefab.GetComponent<TaskGroupUI>().tasks = task;
-        taskGroup.transform.parent = transform;
-        taskGroup.transform.localPosition = new Vector3(taskGroup.transform.localPosition.x, taskGroup.transform.localPosition.y, 0);
-        taskGroup.transform.transform.localScale = Vector3.one;
+        if (!taskIn.Keys.Contains(name))
+        {
+            taskList task = findTask(name);
+            GameObject taskGroup = GameObject.Instantiate(taskGroupUIPrefab);
+            taskGroupUIPrefab.GetComponent<TaskGroupUI>().tasks = task;
+            taskGroup.transform.parent = transform;
+            taskGroup.transform.localPosition = new Vector3(taskGroup.transform.localPosition.x, taskGroup.transform.localPosition.y, 0);
+            taskGroup.transform.transform.localScale = Vector3.one;
 
-        taskIn.Add(name, taskGroup);
+            taskIn.Add(name, taskGroup);
+        }
     }
     void removeTaskGroupUI(string name)
     {
-        GameObject.Destroy( taskIn[name]);
-        taskIn.Remove(name);
+        if (taskIn.Keys.Contains(name))
+        {
+            GameObject.Destroy(taskIn[name]);
+            taskIn.Remove(name);
+        }
     }
 
 
