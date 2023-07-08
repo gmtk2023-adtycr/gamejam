@@ -9,6 +9,7 @@ public class EMF_DetectPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(noise);
+        if(collision.gameObject.CompareTag("Player"))
+            Instantiate(noise);
     }
 }
