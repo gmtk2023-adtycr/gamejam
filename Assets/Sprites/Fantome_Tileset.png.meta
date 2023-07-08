@@ -3335,6 +3335,993 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_153
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e5e5b4adbb72c41a58f9216b1b68c7
+      internalID: 365647440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_154
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e2a25db0941a346ae68b54a636a600
+      internalID: -2054915102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_155
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212450d1a48d4ca47892409653dda2b3
+      internalID: -1520920626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_156
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2afbe32acf33440bdfd4f1858ab37f
+      internalID: -384681934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_157
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cc2225075fb6c4caba7e9d609d1f6b
+      internalID: -2062443515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_158
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b45bab6c19cb14a80b6e3d21f80543
+      internalID: 904592939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_159
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4064ffb26742d49900b9e1a4105fa8
+      internalID: -2099717747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_160
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a728c0aa4603334d88610fd1302d8f2
+      internalID: 1923507774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_161
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f6d11b53f7dbd469a1af634c737d8f
+      internalID: -698196013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_162
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fa1d0370133bc4cb981871c73eeaec
+      internalID: 590148173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_163
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 328
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70a996f837d73646974ef79571ae787
+      internalID: -698657078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_164
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 328
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cdcff3472de1e4a9afa6a9a8d4ee7d
+      internalID: -1813637597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_165
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 328
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f36578e16c6284f9a39656cfa5661f
+      internalID: -1594494150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_166
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 328
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89097860a03be17499d5aa82dff121ab
+      internalID: 353537802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_167
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 328
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24af2520547797e4a98185978f321f71
+      internalID: 2114519181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_168
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1245c6a344c5c064b82ae9f78fc2497f
+      internalID: -1201388482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_169
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ca5d17c8d24744481a6ea681e37096
+      internalID: 378352613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_170
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af31cfddec6c20641b0657d64fa9bf99
+      internalID: -991437139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_171
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ff24dbee3764041a5b5661d529a8ef
+      internalID: -275541342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_172
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d689af187725242a9376a3446e20ba
+      internalID: -1862451555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_173
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff060c75e2ea7f458cb530bccd92df2
+      internalID: -107357127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_174
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16bb4cb214a84746a742a66a83cfeab
+      internalID: 957723941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_175
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab56aeae4f7fdb47ac019fc8d818f9a
+      internalID: 1481829319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_176
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e799ee194bf98345ab7e1054965a562
+      internalID: 1634378898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_177
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c491c99c01dcf64e9fd6541e146d2f3
+      internalID: -875464098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_178
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27be992c9b01ac447a99b71f04af18e4
+      internalID: -1284699536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_179
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26550d45a6952a4cb2282a601632c68
+      internalID: -1182453963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_180
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd43a00059e872948818b2a4427e05ec
+      internalID: -190032339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_181
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba2d12eb076d7344adaff83868c3f13
+      internalID: 30079144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_182
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b13d94197de8884da4df22958602e4c
+      internalID: -2045568642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_183
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bdedb8924a5d049b15ffa838f0db0d
+      internalID: 1827352766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_184
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e448d5553585274681352b20f140d86
+      internalID: -1698099584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_185
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101a8040dae304d46a327ec27ece93b2
+      internalID: 307474345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_186
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dac5cf4a3cad54c960bd9aea6421fd
+      internalID: 2079241240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_187
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a244ae6e8207c04e85c12f9b20c3274
+      internalID: 29922718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_188
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f063a84b09bd912458850744366936b2
+      internalID: 351888233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_189
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 392
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58d88d381f22c34894c2b35fd3c62b5
+      internalID: -581267699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_190
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 392
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c1c2f5d764ff64995b7528a338023d
+      internalID: 1890375124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_191
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 392
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47dba1f8050e52044a4ac039406581af
+      internalID: -652310652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_192
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61687a24274d6c043b48ae15f767f438
+      internalID: 1895678588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_193
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288b48d5b62b1a04ebfb15bf3c60323e
+      internalID: -9224860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_194
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b919d065df093854db4bccad33f5ada3
+      internalID: 1439895144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_195
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d37c7c350969e847b491378bc3722fe
+      internalID: -139804913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_196
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7910ef3ea7ab62408e92f0e7e81b76c
+      internalID: 2139965295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_197
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f90f65f819d96347a59f10e4d6bba59
+      internalID: 1672851268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_198
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1775e310e53bdb6498dc31dc25621017
+      internalID: 906377956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantome_Tileset_199
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e1d4c88b5b51c478cff90f1b2293de
+      internalID: 163907584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3407,10 +4394,57 @@ TextureImporter:
       Fantome_Tileset_150: -1585216367
       Fantome_Tileset_151: 56436984
       Fantome_Tileset_152: -1960980059
+      Fantome_Tileset_153: 365647440
+      Fantome_Tileset_154: -2054915102
+      Fantome_Tileset_155: -1520920626
+      Fantome_Tileset_156: -384681934
+      Fantome_Tileset_157: -2062443515
+      Fantome_Tileset_158: 904592939
+      Fantome_Tileset_159: -2099717747
       Fantome_Tileset_16: 2036663189
+      Fantome_Tileset_160: 1923507774
+      Fantome_Tileset_161: -698196013
+      Fantome_Tileset_162: 590148173
+      Fantome_Tileset_163: -698657078
+      Fantome_Tileset_164: -1813637597
+      Fantome_Tileset_165: -1594494150
+      Fantome_Tileset_166: 353537802
+      Fantome_Tileset_167: 2114519181
+      Fantome_Tileset_168: -1201388482
+      Fantome_Tileset_169: 378352613
       Fantome_Tileset_17: 558712285
+      Fantome_Tileset_170: -991437139
+      Fantome_Tileset_171: -275541342
+      Fantome_Tileset_172: -1862451555
+      Fantome_Tileset_173: -107357127
+      Fantome_Tileset_174: 957723941
+      Fantome_Tileset_175: 1481829319
+      Fantome_Tileset_176: 1634378898
+      Fantome_Tileset_177: -875464098
+      Fantome_Tileset_178: -1284699536
+      Fantome_Tileset_179: -1182453963
       Fantome_Tileset_18: 1730621896
+      Fantome_Tileset_180: -190032339
+      Fantome_Tileset_181: 30079144
+      Fantome_Tileset_182: -2045568642
+      Fantome_Tileset_183: 1827352766
+      Fantome_Tileset_184: -1698099584
+      Fantome_Tileset_185: 307474345
+      Fantome_Tileset_186: 2079241240
+      Fantome_Tileset_187: 29922718
+      Fantome_Tileset_188: 351888233
+      Fantome_Tileset_189: -581267699
       Fantome_Tileset_19: 228224366
+      Fantome_Tileset_190: 1890375124
+      Fantome_Tileset_191: -652310652
+      Fantome_Tileset_192: 1895678588
+      Fantome_Tileset_193: -9224860
+      Fantome_Tileset_194: 1439895144
+      Fantome_Tileset_195: -139804913
+      Fantome_Tileset_196: 2139965295
+      Fantome_Tileset_197: 1672851268
+      Fantome_Tileset_198: 906377956
+      Fantome_Tileset_199: 163907584
       Fantome_Tileset_2: 2073097701
       Fantome_Tileset_20: 966757217
       Fantome_Tileset_21: 2133223988
