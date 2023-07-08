@@ -18,6 +18,12 @@ public class taskList : ScriptableObject
 
     public void setTask(int id, int val)
     {
+        GameObject go = GameObject.Find("Player");
+
+        PlayerPrefs.SetFloat("PlayerX", go.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerY", go.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerZ", go.transform.position.z);
+
         PlayerPrefs.SetInt(name+id,val);
         PlayerPrefs.Save();
     }

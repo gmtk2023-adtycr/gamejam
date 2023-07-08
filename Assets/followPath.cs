@@ -7,10 +7,11 @@ public class followPath : MonoBehaviour
     public pathPoint point;
     public float speed;
 
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -20,7 +21,9 @@ public class followPath : MonoBehaviour
         {
 
             Vector3 direction = Vector3.Normalize( point.transform.position - transform.position);
-            transform.position = transform.position + direction * Time.deltaTime* speed;
+
+            rb.velocity = direction * speed;
+            //transform.position = transform.position + direction * Time.deltaTime* speed;
 
             if(Vector3.Distance(transform.position , point.transform.position) < 0.1f)
             {

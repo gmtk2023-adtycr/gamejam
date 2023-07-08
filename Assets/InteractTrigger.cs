@@ -10,12 +10,12 @@ public class InteragtTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Contains("Player"))
-            InteractUI.enterZone();
+            InteractUI.enterZone?.Invoke();
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag.Contains("Player"))
-            InteractUI.exitZone();
+            InteractUI.exitZone?.Invoke();
     }
 
     // Start is called before the first frame update
