@@ -6,14 +6,12 @@ public class EnterRoom : MonoBehaviour
 {
     public taskList room;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnEnable()
     {
-        if (other.gameObject.tag.Contains("Player"))
             TaskGroupAddRemove.addTaskGroup?.Invoke(room.name);
     }
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnDisable()
     {
-        if (other.gameObject.tag.Contains("Player"))
             TaskGroupAddRemove.removeTaskGroup?.Invoke(room.name);
     }
 }
