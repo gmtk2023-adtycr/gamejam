@@ -9,8 +9,6 @@ public class DetectPlayer : MonoBehaviour
 
     private GameObject enemy;
 
-    public GameObject deathSound;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +36,15 @@ public class DetectPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameObject go = GameObject.Instantiate(deathSound);
-            go.transform.position= Camera.main.transform.position;
+            deathControl.isdetect = true;
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            deathControl.isdetect = false;
         }
 
     }

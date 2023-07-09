@@ -13,6 +13,17 @@ public class SceneEndSound : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
     }
 
+    private void OnEnable()
+    {
+        m_AudioSource.time = 0;
+    }
+
+    private void OnDisable()
+    {
+        fadeBlabk.setIntencity(0);
+    }
+
+
     // Update is called once per frame
     void Update()
     {
