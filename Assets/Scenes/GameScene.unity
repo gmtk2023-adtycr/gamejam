@@ -919,7 +919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987a832e2f1b29e4fa9ab003f8135dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathSound: {fileID: 0}
 --- !u!114 &1257132829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,6 +1261,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3765898674339777182, guid: 3e5cfe85053f18146bfad1d0329f01b6, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623497972935804353, guid: 3e5cfe85053f18146bfad1d0329f01b6, type: 3}
+      propertyPath: intencity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4809821081215212590, guid: 3e5cfe85053f18146bfad1d0329f01b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1432,7 +1439,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5451531843421222760, guid: 7f53a970eb12c9a42b5302e8c1726e9d, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1043a4f74ceb63c44a1bce2a14d64a1f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
