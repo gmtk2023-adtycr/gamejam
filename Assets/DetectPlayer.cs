@@ -23,9 +23,6 @@ public class DetectPlayer : MonoBehaviour
         transform.parent.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         Vector3 plp = gameObject.transform.parent.localPosition;
-        Debug.Log(plp.x + " " + enemy.GetComponent<SpriteRenderer>().flipX);
-        //parent_local_position.x = Mathf.Abs(parent_local_position.x) * (enemy.GetComponent<SpriteRenderer>().flipX ? - 1 : 1);
-
         gameObject.transform.parent.localPosition = new Vector3(Mathf.Abs(plp.x) * (enemy.GetComponent<SpriteRenderer>().flipX ? -1 : 1), plp.y, plp.z);
     }
 
