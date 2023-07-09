@@ -172,6 +172,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Soundprefab: {fileID: 0}
+  trigerOn: 0
 --- !u!61 &173884691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -811,8 +812,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1006266049124385079, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1081449218}
   m_SourcePrefab: {fileID: 100100000, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
+--- !u!1 &1081449217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1006266049124385079, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
+  m_PrefabInstance: {fileID: 1081449216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1081449218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081449217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f6f2230496a3845812de160aaf4012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testData: []
+  gameObject: {fileID: 0}
 --- !u!1 &1159866458
 GameObject:
   m_ObjectHideFlags: 0
