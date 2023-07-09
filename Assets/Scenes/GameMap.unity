@@ -15789,6 +15789,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasTask
       objectReference: {fileID: 0}
+    - target: {fileID: 8380855240916187162, guid: 94510b1bc4c05464599512dd25618d9e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1442.765
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380855240916187162, guid: 94510b1bc4c05464599512dd25618d9e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -655.119
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380855240916187162, guid: 94510b1bc4c05464599512dd25618d9e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -688.45593
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380855240916187162, guid: 94510b1bc4c05464599512dd25618d9e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 299.008
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
