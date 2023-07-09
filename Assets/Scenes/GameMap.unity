@@ -44633,7 +44633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10d8ce8020d61488df1023b051b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wall: {fileID: 620019456}
+  Walls: []
 --- !u!1 &1160434289
 GameObject:
   m_ObjectHideFlags: 0
@@ -98571,7 +98571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10d8ce8020d61488df1023b051b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wall: {fileID: 790436909}
+  Walls:
+  - {fileID: 790436909}
 --- !u!1001 &1886040021
 PrefabInstance:
   m_ObjectHideFlags: 0
