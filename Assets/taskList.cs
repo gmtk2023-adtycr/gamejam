@@ -10,7 +10,6 @@ public class taskList : ScriptableObject
 
     public void ppTask(int id)
     {
-
         int val = PlayerPrefs.GetInt(name + id,0);
         if(val < list[id].taskvalue)
         val++; 

@@ -34,7 +34,10 @@ public class TaskUI : MonoBehaviour
     }
     void taskUpdateUI()
     {
-        int val = PlayerPrefs.GetInt(tasks.name + idTask, 0);
+        string strId = tasks.name + idTask;
+        int val = 0;
+        if (PlayerPrefs.HasKey(strId))
+            val = PlayerPrefs.GetInt(strId, 0);
         title.text = tasks.list[idTask].taskName;
         taskValue.text = val + "/" + tasks.list[idTask].taskvalue;
         checkMark.SetActive(val == tasks.list[idTask].taskvalue);

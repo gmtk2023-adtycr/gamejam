@@ -16,6 +16,10 @@ public class stepSelector : MonoBehaviour
         
     }
 
+    public void SetStep(int id)
+    {
+        Step = id;
+    }
     // Update is called once per frame
     void Update()
     {

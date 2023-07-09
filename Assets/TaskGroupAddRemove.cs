@@ -46,12 +46,13 @@ public class TaskGroupAddRemove : MonoBehaviour
     }
     void addTaskGroupUI(string name)
     {
-
-        if (!taskIn.Keys.Contains(name))
+        Debug.Log(name);
+        if (!taskIn.Keys.Contains(name) || taskIn.Count == 0)
         {
             taskList task = findTask(name);
+            Debug.Log(task);
             GameObject taskGroup = GameObject.Instantiate(taskGroupUIPrefab);
-            taskGroupUIPrefab.GetComponent<TaskGroupUI>().tasks = task;
+            taskGroup.GetComponent<TaskGroupUI>().tasks = task;
             taskGroup.transform.parent = transform;
             taskGroup.transform.localPosition = new Vector3(taskGroup.transform.localPosition.x, taskGroup.transform.localPosition.y, 0);
             taskGroup.transform.transform.localScale = Vector3.one;
@@ -72,7 +73,6 @@ public class TaskGroupAddRemove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

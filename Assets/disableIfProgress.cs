@@ -30,6 +30,7 @@ public class disableIfProgress : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class testData
 {
     public taskList task;
