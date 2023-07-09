@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc69182521515447bb447e7fa7367aa, type: 3}
   m_Name: TROISIEME PHASE
   m_EditorClassIdentifier: 
-  nameGroup: 'Objectif :'
+  nameGroup: 'Task :'
   list:
   - taskName: Make the old pendulum clock chime
     taskvalue: 1
