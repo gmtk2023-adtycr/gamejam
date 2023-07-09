@@ -13,6 +13,9 @@ public class camClinote : MonoBehaviour
 
     bool isOn;
 
+    public AudioSource audioOn;
+    public AudioSource audioOff;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,17 @@ public class camClinote : MonoBehaviour
             time = 0;
             obj.SetActive(true);
             isOn = true;
+        }
+        if(isOn && !audioOn.isPlaying) 
+        {
+            audioOn.Play();
+            audioOff.Stop();
+        }
+        else
+            if(!isOn && !audioOff.isPlaying)
+        {
+            audioOn.Stop();
+            audioOff.Play();
         }
     }
 }
