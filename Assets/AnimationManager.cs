@@ -7,8 +7,7 @@ using UnityEditor.Animations;
 public class AnimationManager : MonoBehaviour
 {
 
-    public float SeuilMarche = 1f;
-    public float SeuilCourse = 3f;
+    public TypeChasseur TypeChasseur;
 
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
@@ -24,9 +23,17 @@ public class AnimationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetInteger("TypeChasseur", (int)TypeChasseur);
         spriteRenderer.flipX = body.velocity.x < 0;
         animator.SetFloat("Speed", body.velocity.magnitude);
-        animator.SetFloat("SeuilMarche", SeuilMarche);
-        animator.SetFloat("SeuilCourse", SeuilCourse);
+       
     }
+}
+
+public enum TypeChasseur
+{
+    Un = 1,
+    Deux = 2,
+    Trois = 3,
+    Quatre = 4
 }
