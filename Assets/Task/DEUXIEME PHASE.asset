@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc69182521515447bb447e7fa7367aa, type: 3}
   m_Name: DEUXIEME PHASE
   m_EditorClassIdentifier: 
-  nameGroup: objectif
-  list: []
+  nameGroup: 'Objectif :'
+  list:
+  - taskName: Interact with the bathroom mirror
+    taskvalue: 1
+  - taskName: Find the turntable
+    taskvalue: 1
+  - taskName: Find the vinyl
+    taskvalue: 1
+  - taskName: Put the vinyl on the turntable
+    taskvalue: 1
+  - taskName: Run!
+    taskvalue: 1

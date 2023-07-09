@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameGroup: 'Objectif :'
   list:
-  - taskName: "R\xE9cup\xE9rer des planches de bois"
+  - taskName: Find wooden planks
     taskvalue: 1
-  - taskName: "R\xE9cup\xE9rer des clous"
+  - taskName: Find nails
     taskvalue: 1
-  - taskName: "Barricader la porte d'entr\xE9e"
+  - taskName: Barricade the front door
+    taskvalue: 1
+  - taskName: Scare off the garage hunter!
     taskvalue: 1
