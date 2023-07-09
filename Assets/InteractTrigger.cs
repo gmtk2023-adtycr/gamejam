@@ -9,15 +9,24 @@ public class InteragtTrigger : MonoBehaviour
 
     public GameObject Soundprefab;
 
+    public bool trigerOn = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Contains("Player"))
+        {
             InteractUI.enterZone?.Invoke();
+            trigerOn = true;
+        }
+
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag.Contains("Player"))
+        {
             InteractUI.exitZone?.Invoke();
+            trigerOn = false;
+        }
     }
 
     // Start is called before the first frame update
@@ -29,9 +38,8 @@ public class InteragtTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && trigerOn)
         {
-            Debug.Log("interact");
             interact.Invoke();
             GameObject go  = GameObject.Instantiate(Soundprefab);
             go.transform.position = Camera.main.transform.position;
