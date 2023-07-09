@@ -7,12 +7,11 @@ using UnityEngine;
 public class DetectPlayer : MonoBehaviour
 {
 
-    private GameObject enemy;
+    public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = gameObject.transform.parent.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -29,20 +28,26 @@ public class DetectPlayer : MonoBehaviour
 
     private Vector3 GetEnemyDirection()
     {
+        if(enemy == null)
+            return Vector3.zero;
+
         return enemy.GetComponent<Rigidbody2D>().velocity;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag.Contains("Player"))
         {
+            Debug.Log("detected");
+            collision.gameObject.GetComponent<Movement>().enabled = false;
             deathControl.isdetect = true;
         }
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag.Contains("Player"))
         {
             deathControl.isdetect = false;
         }

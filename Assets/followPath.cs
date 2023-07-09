@@ -18,9 +18,12 @@ public class followPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position , point.transform.position) < 0.3f)
-            point = point.nextPoint;
-        GoToNextPoint();
+        if (point != null)
+        {
+            if (Vector3.Distance(transform.position, point.transform.position) < 0.3f)
+                point = point.nextPoint;
+            GoToNextPoint();
+        }
     }
 
     private void GoToNextPoint()

@@ -8,13 +8,11 @@ public class SceneEndSound : MonoBehaviour
     AudioSource m_AudioSource;
     public string scene;
     // Start is called before the first frame update
-    void Start()
-    {
-        m_AudioSource = GetComponent<AudioSource>();
-    }
 
     private void OnEnable()
     {
+        if(m_AudioSource != null)
+            m_AudioSource = GetComponent<AudioSource>();
         m_AudioSource.time = 0;
     }
 
@@ -27,6 +25,7 @@ public class SceneEndSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         fadeBlabk.setIntencity( m_AudioSource.time/ m_AudioSource.clip.length);
         if (!m_AudioSource.isPlaying )
         {

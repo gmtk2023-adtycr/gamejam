@@ -98,7 +98,7 @@ Transform:
   m_Children:
   - {fileID: 4077979902817990672}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8479337777370641918
 BoxCollider2D:
@@ -309,10 +309,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4365482603015032760}
-  - component: {fileID: 9097148510459053478}
-  - component: {fileID: 908327004107095741}
   - component: {fileID: 75835499042722190}
   - component: {fileID: 6428098335015709613}
+  - component: {fileID: 9097148510459053478}
+  - component: {fileID: 3391492461589997298}
   m_Layer: 6
   m_Name: DetectionCone
   m_TagString: Untagged
@@ -335,45 +335,6 @@ Transform:
   m_Father: {fileID: 4077979902817990672}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9097148510459053478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5133275380901419853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987a832e2f1b29e4fa9ab003f8135dcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!50 &908327004107095741
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5133275380901419853}
-  m_BodyType: 2
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!212 &75835499042722190
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -455,7 +416,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -521,4 +482,30 @@ PolygonCollider2D:
       - {x: 0.15, y: -2.875}
       - {x: 0.32500002, y: -2.575}
       - {x: 0.725, y: -1.9}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
+--- !u!114 &9097148510459053478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133275380901419853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987a832e2f1b29e4fa9ab003f8135dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2011676899277175019}
+--- !u!114 &3391492461589997298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133275380901419853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742bdecec08a7764598370fa1f7381de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: []
