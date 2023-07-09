@@ -16031,7 +16031,7 @@ GameObject:
   - component: {fileID: 142832353}
   - component: {fileID: 142832354}
   m_Layer: 0
-  m_Name: room6
+  m_Name: Debarras
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -16215,7 +16215,7 @@ GameObject:
   - component: {fileID: 216238597}
   - component: {fileID: 216238598}
   m_Layer: 0
-  m_Name: room7
+  m_Name: Couloir
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -36011,87 +36011,7 @@ Tilemap:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574104579}
   m_Enabled: 1
-  m_Tiles:
-  - first: {x: 9, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 61
-      m_TileSpriteIndex: 61
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 10, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 60
-      m_TileSpriteIndex: 60
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 11, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 60
-      m_TileSpriteIndex: 60
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 12, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 59
-      m_TileSpriteIndex: 59
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 9, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 61
-      m_TileSpriteIndex: 61
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 10, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 60
-      m_TileSpriteIndex: 60
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 11, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 60
-      m_TileSpriteIndex: 60
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 12, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 59
-      m_TileSpriteIndex: 59
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+  m_Tiles: {}
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -36212,12 +36132,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 26fc7a5633f3b7a45b824cb920bed430, type: 2}
-  - m_RefCount: 4
-    m_Data: {fileID: 11400000, guid: 6e4a318c1ae698e4ca8bdc5c82892854, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 93782653f5262dc4eb802876cdcb59ae, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -36337,34 +36257,34 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
-    m_Data: {fileID: -1906378167, guid: a1cd324b684bcff4bbe7891746ad52a9, type: 3}
-  - m_RefCount: 4
-    m_Data: {fileID: -1107903874, guid: a1cd324b684bcff4bbe7891746ad52a9, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 1012233477, guid: a1cd324b684bcff4bbe7891746ad52a9, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 8
+  - m_RefCount: 0
     m_Data:
-      e00: 1
+      e00: 6e-45
       e01: 0
-      e02: 0
-      e03: 0
+      e02: 1.3224737e-38
+      e03: 1.3224737e-38
       e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
+      e11: 0
+      e12: 5.17e-43
+      e13: 5.17e-43
+      e20: 9.230057e+9
+      e21: -12.089371
+      e22: -3.3303222e-19
+      e23: -1.1291057e-19
+      e30: 4.5904e-41
+      e31: 5.2e-43
+      e32: 5.17e-43
+      e33: 5.2e-43
   m_TileColorArray:
-  - m_RefCount: 8
-    m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 4.0279e-41, g: 4.0279e-41, b: 4.0279e-41, a: 4.0279e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -39953,7 +39873,7 @@ GameObject:
   - component: {fileID: 752104756}
   - component: {fileID: 752104757}
   m_Layer: 0
-  m_Name: room1
+  m_Name: Garage
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -40048,7 +39968,7 @@ GameObject:
   - component: {fileID: 752164021}
   - component: {fileID: 752164022}
   m_Layer: 0
-  m_Name: room9
+  m_Name: SalleDeBain
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -44616,7 +44536,7 @@ GameObject:
   - component: {fileID: 1130665920}
   - component: {fileID: 1130665922}
   m_Layer: 0
-  m_Name: room4
+  m_Name: Salon_SalleAManger
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -60814,7 +60734,7 @@ GameObject:
   - component: {fileID: 1165053350}
   - component: {fileID: 1165053351}
   m_Layer: 0
-  m_Name: room8
+  m_Name: Chambre2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -63095,7 +63015,7 @@ GameObject:
   - component: {fileID: 1204814811}
   - component: {fileID: 1204814812}
   m_Layer: 0
-  m_Name: room3
+  m_Name: Hall
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -64271,7 +64191,7 @@ GameObject:
   - component: {fileID: 1462322038}
   - component: {fileID: 1462322039}
   m_Layer: 0
-  m_Name: room10
+  m_Name: Chambre1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -80871,7 +80791,7 @@ GameObject:
   - component: {fileID: 1581995498}
   - component: {fileID: 1581995499}
   m_Layer: 0
-  m_Name: room5
+  m_Name: Cuisine
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -81058,7 +80978,7 @@ GameObject:
   - component: {fileID: 1659845062}
   - component: {fileID: 1659845061}
   m_Layer: 0
-  m_Name: room11
+  m_Name: PieceX
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -98556,7 +98476,7 @@ GameObject:
   - component: {fileID: 1809655107}
   - component: {fileID: 1809655109}
   m_Layer: 0
-  m_Name: room2
+  m_Name: Bureau
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
