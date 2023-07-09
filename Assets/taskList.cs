@@ -12,6 +12,7 @@ public class taskList : ScriptableObject
     {
 
         int val = PlayerPrefs.GetInt(name + id,0);
+        if(val < list[id].taskvalue)
         val++; 
         setTask(id, val);
     }
