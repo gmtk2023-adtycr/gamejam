@@ -6,15 +6,19 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    
+    public float Speed = 4f;
 
-    public Rigidbody2D body;
-
-    private float speed = 4f;
+    private Rigidbody2D body;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        //FindFirstObjectByType(typeof(Camera)).GameObject().transform.parent = gameObject.transform;
+        body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,9 @@ public class Movement : MonoBehaviour
         if (dx != 0 && dy != 0)
             diagonal = 0.707f; // 1 / sqrt(2)
 
-        body.velocity = new Vector3(dx, dy) * speed * diagonal;
+        body.velocity = new Vector3(dx, dy) * Speed * diagonal;
+        animator.SetFloat("Speed", body.velocity.magnitude);
+        if(body.velocity.x != 0)
+            spriteRenderer.flipX = body.velocity.x < 0;
     }
 }
