@@ -8,11 +8,11 @@ public class EnterRoom : MonoBehaviour
 
     private void OnEnable()
     {
-            TaskGroupAddRemove.addTaskGroup?.Invoke(room.name);
+        TaskGroupAddRemove.addTaskGroup?.Invoke(room.name);
     }
 
     private void OnDisable()
     {
-            TaskGroupAddRemove.removeTaskGroup?.Invoke(room.name);
+        TaskGroupAddRemove.removeTaskGroup?.Invoke(room.name);
     }
 }

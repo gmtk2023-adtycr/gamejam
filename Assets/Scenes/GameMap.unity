@@ -101831,7 +101831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -101855,7 +101855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -101927,7 +101927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: set_name
+      value: SetStep
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -101951,7 +101951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: stepSelector, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -101975,7 +101975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_IntArgument
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -101987,7 +101987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
-      value: 1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7773127423410239716, guid: 04090b7a7f19f4c4cb81bd7f17a69d07, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
