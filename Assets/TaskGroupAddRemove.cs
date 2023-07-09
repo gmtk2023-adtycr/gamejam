@@ -46,6 +46,7 @@ public class TaskGroupAddRemove : MonoBehaviour
     }
     void addTaskGroupUI(string name)
     {
+
         if (!taskIn.Keys.Contains(name))
         {
             taskList task = findTask(name);

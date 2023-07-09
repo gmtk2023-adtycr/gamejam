@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc69182521515447bb447e7fa7367aa, type: 3}
   m_Name: DERNIERE PHASE
   m_EditorClassIdentifier: 
-  nameGroup: 
-  list: []
+  nameGroup: 'Objectif :'
+  list:
+  - taskName: Find the pepper spray
+    taskvalue: 1
+  - taskName: Use it on the chief hunter
+    taskvalue: 1
+  - taskName: Find a musical instrument
+    taskvalue: 1
+  - taskName: Use it on the chief hunter
+    taskvalue: 1
+  - taskName: Find a pan
+    taskvalue: 1
+  - taskName: Use it on the chief hunter
+    taskvalue: 1

@@ -9,6 +9,9 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Start Game");
+
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
