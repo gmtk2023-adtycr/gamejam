@@ -31,6 +31,7 @@ public class InteragtTrigger : MonoBehaviour
         {
             Debug.Log("interact");
             interact.Invoke();
+            SoundManager.Instance.PlaySFX("interaction");
         }
     }
 }
