@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: PREMIERE PHASE
   m_EditorClassIdentifier: 
   nameGroup: 
-  list: []
+  list:
+  - taskName: "R\xE9cup\xE9rer des planches de bois"
+    taskvalue: 1
+  - taskName: "R\xE9cup\xE9rer des clous"
+    taskvalue: 1
+  - taskName: "Barricader la porte d'entr\xE9e"
+    taskvalue: 1
