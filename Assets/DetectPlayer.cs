@@ -7,11 +7,14 @@ using UnityEngine;
 public class DetectPlayer : MonoBehaviour
 {
 
-    public GameObject enemy;
+    private GameObject enemy;
+    private Vector3 base_pos;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemy = gameObject.transform.parent.parent.gameObject;
+        base_pos = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class DetectPlayer : MonoBehaviour
 
         Vector3 plp = gameObject.transform.parent.localPosition;
         gameObject.transform.parent.localPosition = new Vector3(Mathf.Abs(plp.x) * (enemy.GetComponent<SpriteRenderer>().flipX ? -1 : 1), plp.y, plp.z);
+        gameObject.transform.localPosition = base_pos;
     }
 
 

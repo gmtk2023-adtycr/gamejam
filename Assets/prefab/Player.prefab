@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2315315316929437381}
   - component: {fileID: 4319114482748722188}
   - component: {fileID: 788480768458208897}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4713376902039486794}
   - component: {fileID: 4170662748282321103}
   - component: {fileID: 367312554765264975}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: CanvasInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &245427609764135489
@@ -264,9 +264,9 @@ GameObject:
   - component: {fileID: 6028672861322417059}
   - component: {fileID: 4291343146511077089}
   - component: {fileID: 3813569828342024881}
-  - component: {fileID: 7215601137504303928}
-  - component: {fileID: 5789060939381966408}
-  m_Layer: 6
+  - component: {fileID: 670479463897325345}
+  - component: {fileID: 8927258872118952500}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49e2724b0cac51449b71c0f02bdd8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 4291343146511077089}
+  Speed: 4
 --- !u!50 &4291343146511077089
 Rigidbody2D:
   serializedVersion: 4
@@ -361,7 +361,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.034923553, y: 0.014966726}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -372,9 +372,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.44, y: 1.11}
+  m_Size: {x: 2.0087395, y: 2.337287}
   m_EdgeRadius: 0
---- !u!95 &7215601137504303928
+--- !u!95 &670479463897325345
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!212 &5789060939381966408
+--- !u!212 &8927258872118952500
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
