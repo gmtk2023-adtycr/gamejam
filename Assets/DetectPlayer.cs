@@ -14,7 +14,7 @@ public class DetectPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemy = gameObject.transform.parent.gameObject;    
+        enemy = gameObject.transform.parent.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -22,10 +22,13 @@ public class DetectPlayer : MonoBehaviour
     {
         Vector3 dir = GetEnemyDirection();
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
-        transform.position = enemy.transform.position;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.localPosition = Vector3.zero;
+        transform.parent.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+        Vector3 plp = gameObject.transform.parent.localPosition;
+        Debug.Log(plp.x + " " + enemy.GetComponent<SpriteRenderer>().flipX);
+        //parent_local_position.x = Mathf.Abs(parent_local_position.x) * (enemy.GetComponent<SpriteRenderer>().flipX ? - 1 : 1);
+
+        gameObject.transform.parent.localPosition = new Vector3(Mathf.Abs(plp.x) * (enemy.GetComponent<SpriteRenderer>().flipX ? -1 : 1), plp.y, plp.z);
     }
 
 
