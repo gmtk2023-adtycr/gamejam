@@ -11969,8 +11969,6 @@ MonoBehaviour:
   rooms:
   - door: {fileID: 2124319640}
     room: {fileID: 216238597}
-  - door: {fileID: 2022728438}
-    room: {fileID: 1204814811}
 --- !u!61 &142832354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12163,6 +12161,8 @@ MonoBehaviour:
     room: {fileID: 1462322038}
   - door: {fileID: 995718402}
     room: {fileID: 1659845062}
+  - door: {fileID: 2022728438}
+    room: {fileID: 1204814811}
 --- !u!61 &216238598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51205,7 +51205,7 @@ MonoBehaviour:
   - door: {fileID: 71329076}
     room: {fileID: 1130665919}
   - door: {fileID: 1694599570}
-    room: {fileID: 1130665919}
+    room: {fileID: 216238597}
   - door: {fileID: 311769116}
     room: {fileID: 752104756}
   - door: {fileID: 1566057257}
@@ -69702,7 +69702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039406503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 138.69, y: -1.11, z: 0}
+  m_LocalPosition: {x: 138.38, y: 2.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
