@@ -21,7 +21,7 @@ public class disableIfProgress : MonoBehaviour
         gameObject.SetActive(true);
 
         int i = 0;
-        while(i < testData.Count && gameObject.active)
+        while(i < testData.Count && gameObject.activeSelf)
         {
             gameObject.SetActive(testData[i].test());
             i++;
