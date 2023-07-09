@@ -171,6 +171,7 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls: []
+  Soundprefab: {fileID: 0}
 --- !u!61 &173884691
 BoxCollider2D:
   m_ObjectHideFlags: 0

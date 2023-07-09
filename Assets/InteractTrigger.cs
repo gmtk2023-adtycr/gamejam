@@ -7,6 +7,8 @@ public class InteragtTrigger : MonoBehaviour
 {
     public UnityEvent interact;
 
+    public GameObject Soundprefab;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Contains("Player"))
@@ -31,7 +33,8 @@ public class InteragtTrigger : MonoBehaviour
         {
             Debug.Log("interact");
             interact.Invoke();
-            SoundManager.Instance.PlaySFX("interaction");
+            GameObject go  = GameObject.Instantiate(Soundprefab);
+            go.transform.position = Camera.main.transform.position;
         }
     }
 }
