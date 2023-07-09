@@ -14,6 +14,11 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void Credit()
+    {
+        Debug.Log("Credit");
+        SceneManager.LoadScene("Credit");
+    }
 
     public void Quit()
     {
