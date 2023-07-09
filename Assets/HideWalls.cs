@@ -6,7 +6,7 @@ public class HideWalls : MonoBehaviour
 {
 
 
-    public GameObject Wall;
+    public List<GameObject> Walls;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class HideWalls : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Wall.SetActive(false);
+            Walls.ForEach(w => w.SetActive(false));
         }
     }
 
@@ -33,7 +33,7 @@ public class HideWalls : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Wall.SetActive(true);
+            Walls.ForEach(w => w.SetActive(true));
         }
     }
 }
