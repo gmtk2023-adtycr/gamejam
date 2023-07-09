@@ -40,7 +40,7 @@ public class InteragtTrigger : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && trigerOn)
         {
-            interact.Invoke();
+            interact?.Invoke();
             GameObject go  = GameObject.Instantiate(Soundprefab);
             go.transform.position = Camera.main.transform.position;
         }
