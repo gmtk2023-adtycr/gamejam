@@ -10,6 +10,7 @@ public class EnterRoom : MonoBehaviour
     {
             TaskGroupAddRemove.addTaskGroup?.Invoke(room.name);
     }
+
     private void OnDisable()
     {
             TaskGroupAddRemove.removeTaskGroup?.Invoke(room.name);
