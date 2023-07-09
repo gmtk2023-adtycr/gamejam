@@ -26,6 +26,8 @@ public class taskList : ScriptableObject
 
         PlayerPrefs.SetInt(name+id,val);
         PlayerPrefs.Save();
+
+        TaskUI.taskUpdate(name, id);
     }
 }
 
