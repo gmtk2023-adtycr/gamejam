@@ -18,7 +18,7 @@ public class taskDataDrawer : Editor
             string key = obj.name + i;
             int datavalue = PlayerPrefs.GetInt(key, 0);
             float temp = EditorGUILayout.IntField(key + " : ", datavalue);
-            if (temp != datavalue) { PlayerPrefs.SetFloat("key", temp); PlayerPrefs.Save(); }
+            if (temp != datavalue) { PlayerPrefs.SetFloat(key, temp); PlayerPrefs.Save(); }
         }
 
     }
