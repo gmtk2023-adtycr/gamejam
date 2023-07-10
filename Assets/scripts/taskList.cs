@@ -29,6 +29,13 @@ public class taskList : ScriptableObject
 
         TaskUI.taskUpdate(name, id);
     }
+    public bool test(int id)
+    {
+        int val = PlayerPrefs.GetInt(name + id, 0);
+        int testval = list[id].taskvalue;
+
+        return val == testval;
+    }
 }
 
 [System.Serializable]

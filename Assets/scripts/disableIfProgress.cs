@@ -37,10 +37,7 @@ public class testData
     public int id;
     public bool test()
     {
-        int val = PlayerPrefs.GetInt(task.name + id, 0);
-        int testval = task.list[id].taskvalue;
-
-        return val == testval;
+        return task.test(id);
     }
 
 }
