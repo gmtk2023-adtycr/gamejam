@@ -25,6 +25,7 @@ public class fadeBlabk : MonoBehaviour
     public static void setIntencity(float intencity)
     {
         fadeBlabk fade = GameObject.FindAnyObjectByType<fadeBlabk>();
+        if (fade != null ) 
         fade.intencity = intencity;
     }
 }
