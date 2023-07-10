@@ -13,12 +13,15 @@ public class stepSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Step = PlayerPrefs.GetInt("globalStep", 0);
     }
 
     public void SetStep(int id)
     {
         Step = id;
+
+        PlayerPrefs.SetInt("globalStep", id);
+        PlayerPrefs.Save();
     }
     // Update is called once per frame
     void Update()

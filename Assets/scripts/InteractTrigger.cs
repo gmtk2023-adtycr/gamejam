@@ -9,7 +9,9 @@ public class InteragtTrigger : MonoBehaviour
 
     public GameObject Soundprefab;
 
-    public bool trigerOn = false;
+    public bool autodestroy = false;
+
+    bool trigerOn = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -41,8 +43,14 @@ public class InteragtTrigger : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && trigerOn)
         {
             interact?.Invoke();
-            GameObject go  = GameObject.Instantiate(Soundprefab);
-            go.transform.position = Camera.main.transform.position;
+            if (Soundprefab != null)
+            {
+                GameObject go = GameObject.Instantiate(Soundprefab);
+                go.transform.position = Camera.main.transform.position;
+            }
+
+            if(autodestroy)
+                GameObject.Destroy(gameObject);
         }
     }
 }
