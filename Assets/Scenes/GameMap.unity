@@ -49347,6 +49347,7 @@ MonoBehaviour:
   - {fileID: 2013268154}
   - {fileID: 774318371}
   - {fileID: 1678993484}
+  - {fileID: 1536744101}
 --- !u!1 &774318371
 GameObject:
   m_ObjectHideFlags: 0
@@ -70744,7 +70745,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48, y: -1.56}
+  m_Offset: {x: 0.47999954, y: -2.4535656}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -70755,7 +70756,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.991455, y: 6.8}
+  m_Size: {x: 21.991455, y: 8.5871315}
   m_EdgeRadius: 0
 --- !u!4 &1165053352
 Transform:
@@ -84549,6 +84550,7 @@ MonoBehaviour:
   - {fileID: 2013268154}
   - {fileID: 774318371}
   - {fileID: 1678993484}
+  - {fileID: 1536744101}
 --- !u!1 &1491944392
 GameObject:
   m_ObjectHideFlags: 0
