@@ -11,7 +11,7 @@ public class SceneEndSound : MonoBehaviour
 
     private void OnEnable()
     {
-        if(m_AudioSource != null)
+        if(m_AudioSource == null)
             m_AudioSource = GetComponent<AudioSource>();
         m_AudioSource.time = 0;
     }

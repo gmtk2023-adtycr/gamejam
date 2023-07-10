@@ -40,7 +40,7 @@ public class DetectPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag.Contains("Player"))
         {
             Debug.Log("detected");
@@ -49,6 +49,7 @@ public class DetectPlayer : MonoBehaviour
         }
 
     }
+    /*
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Contains("Player"))
@@ -56,6 +57,6 @@ public class DetectPlayer : MonoBehaviour
             deathControl.isdetect = false;
         }
 
-    }
+    }*/
 
 }
