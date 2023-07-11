@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameGroup: 'Task :'
   list:
-  - taskName: Find wooden planks
-    taskvalue: 1
   - taskName: Find nails
+    taskvalue: 1
+  - taskName: Find wooden planks
     taskvalue: 1
   - taskName: Barricade the front door
     taskvalue: 1
