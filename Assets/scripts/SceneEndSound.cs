@@ -30,6 +30,7 @@ public class SceneEndSound : MonoBehaviour
         if (!m_AudioSource.isPlaying )
         {
             SceneManager.LoadScene(scene);
+            deathControl.isdetect = false;
         }
     }
 }
