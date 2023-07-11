@@ -26,7 +26,7 @@ public class TaskGroupUI : MonoBehaviour
                 taskUI.tasks = tasks;
                 taskUI.idTask = i;
 
-                go.transform.parent = panel;
+                go.transform.SetParent(panel);
                 go.transform.localPosition = new Vector3(go.transform.localPosition.x, go.transform.localPosition.y, 0);
                 go.transform.transform.localScale = Vector3.one;
 
