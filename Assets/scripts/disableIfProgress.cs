@@ -30,7 +30,7 @@ public class disableIfProgress : MonoBehaviour
                 i++;
             }
 
-            if(!gObject.activeSelf)
+            if(gObject.activeSelf && autoDestroy)
                 GameObject.Destroy(gameObject);
         }
         else
@@ -40,11 +40,11 @@ public class disableIfProgress : MonoBehaviour
             int i = 0;
             while (i < testData.Count && !gObject.activeSelf)
             {
-                gObject.SetActive(testData[i].test());
+                gObject.SetActive(!testData[i].test());
                 i++;
             }
 
-            if (gObject.activeSelf)
+            if (!gObject.activeSelf && autoDestroy)
                 GameObject.Destroy(gameObject);
         }
     }
