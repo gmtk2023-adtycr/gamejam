@@ -7,7 +7,9 @@ public class disableIfProgress : MonoBehaviour
 {
     public List<testData> testData = new List<testData>();
 
-    public GameObject gameObject;
+    public GameObject gObject;
+    public bool inverse = false;
+    public bool autoDestroy = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +19,34 @@ public class disableIfProgress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        gameObject.SetActive(true);
-
-        int i = 0;
-        while(i < testData.Count && gameObject.activeSelf)
+        if (!inverse)
         {
-            gameObject.SetActive(testData[i].test());
-            i++;
+            gObject.SetActive(true);
+
+            int i = 0;
+            while (i < testData.Count && gObject.activeSelf)
+            {
+                gObject.SetActive(testData[i].test());
+                i++;
+            }
+
+            if(!gObject.activeSelf)
+                GameObject.Destroy(gameObject);
         }
-        
+        else
+        {
+            gObject.SetActive(false);
+
+            int i = 0;
+            while (i < testData.Count && !gObject.activeSelf)
+            {
+                gObject.SetActive(testData[i].test());
+                i++;
+            }
+
+            if (gObject.activeSelf)
+                GameObject.Destroy(gameObject);
+        }
     }
 }
 
