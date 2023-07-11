@@ -16585,7 +16585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8380855240916187162, guid: 94510b1bc4c05464599512dd25618d9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -75
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45907,7 +45907,9 @@ MonoBehaviour:
   testData:
   - task: {fileID: 11400000, guid: bfd547e623f581945a8033faa09a88e1, type: 2}
     id: 0
-  gameObject: {fileID: 1503966039}
+  gObject: {fileID: 1503966039}
+  inverse: 0
+  autoDestroy: 0
 --- !u!4 &516138206
 Transform:
   m_ObjectHideFlags: 0
@@ -56030,7 +56032,9 @@ MonoBehaviour:
     id: 0
   - task: {fileID: 11400000, guid: bfd547e623f581945a8033faa09a88e1, type: 2}
     id: 1
-  gameObject: {fileID: 1390763424}
+  gObject: {fileID: 1390763424}
+  inverse: 0
+  autoDestroy: 0
 --- !u!4 &1024791056
 Transform:
   m_ObjectHideFlags: 0
@@ -56082,7 +56086,9 @@ MonoBehaviour:
     id: 1
   - task: {fileID: 11400000, guid: bfd547e623f581945a8033faa09a88e1, type: 2}
     id: 2
-  gameObject: {fileID: 2067334138}
+  gObject: {fileID: 2067334138}
+  inverse: 0
+  autoDestroy: 0
 --- !u!4 &1026270404
 Transform:
   m_ObjectHideFlags: 0
@@ -86683,7 +86689,9 @@ MonoBehaviour:
   testData:
   - task: {fileID: 11400000, guid: e6e53f30fc49fb2459e39f9b14e0d031, type: 2}
     id: 1
-  gameObject: {fileID: 468892027}
+  gObject: {fileID: 468892027}
+  inverse: 0
+  autoDestroy: 0
 --- !u!212 &1444819145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114722,7 +114730,9 @@ MonoBehaviour:
   testData:
   - task: {fileID: 11400000, guid: bfd547e623f581945a8033faa09a88e1, type: 2}
     id: 3
-  gameObject: {fileID: 1263358322}
+  gObject: {fileID: 1263358322}
+  inverse: 0
+  autoDestroy: 0
 --- !u!4 &1952985325
 Transform:
   m_ObjectHideFlags: 0
@@ -127841,7 +127851,9 @@ MonoBehaviour:
   testData:
   - task: {fileID: 11400000, guid: e6e53f30fc49fb2459e39f9b14e0d031, type: 2}
     id: 0
-  gameObject: {fileID: 1769681788}
+  gObject: {fileID: 1769681788}
+  inverse: 0
+  autoDestroy: 0
 --- !u!4 &2129275045
 Transform:
   m_ObjectHideFlags: 0

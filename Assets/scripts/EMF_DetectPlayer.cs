@@ -6,11 +6,11 @@ public class EMF_DetectPlayer : MonoBehaviour
 {
 
     public GameObject noise;
-    public AudioSource audio;
+    public AudioSource m_audio;
 
     private void Start()
     {
-        audio = this.GetComponent<AudioSource>();
+        m_audio = this.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,14 +18,14 @@ public class EMF_DetectPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(noise);
-            audio.Play();
+            m_audio.Play();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            audio.Stop();
+            m_audio.Stop();
         }
     }
 }
