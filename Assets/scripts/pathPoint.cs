@@ -6,6 +6,7 @@ using UnityEngine;
 public class pathPoint : MonoBehaviour
 {
     public pathPoint nextPoint;
+    public float waitingTime = 0f; // seconds
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,6 @@ public class pathPoint : MonoBehaviour
     void Update()
     {
         if(nextPoint != null) 
-        Debug.DrawLine(transform.position, nextPoint.transform.position, Color.yellow);
+            Debug.DrawLine(transform.position, nextPoint.transform.position, Color.yellow);
     }
 }
