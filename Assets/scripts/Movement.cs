@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour
         var collider = GetComponent<BoxCollider2D>();
 
         foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy")){
-            Debug.Log(enemy.name);
             var enemyBody = enemy.GetComponent<BoxCollider2D>();
             if(enemyBody != null)
                 Physics2D.IgnoreCollision(collider, enemyBody);
