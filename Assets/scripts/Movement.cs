@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,6 +20,15 @@ public class Movement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        var collider = GetComponent<BoxCollider2D>();
+
+        foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy")){
+            Debug.Log(enemy.name);
+            var enemyBody = enemy.GetComponent<BoxCollider2D>();
+            if(enemyBody != null)
+                Physics2D.IgnoreCollision(collider, enemyBody);
+        }
     }
 
     // Update is called once per frame

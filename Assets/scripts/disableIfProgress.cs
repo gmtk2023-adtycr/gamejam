@@ -13,12 +13,16 @@ public class disableIfProgress : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(gObject == null)
+            Debug.Log("Missing property gObject on object " + name);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(gObject == null)
+            return;
+        
         if (!inverse)
         {
             gObject.SetActive(true);
