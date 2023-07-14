@@ -10,7 +10,7 @@ public class entityTeleport : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.transform.position = recever.transform.position;
-        followPath fpath = other.GetComponent<followPath>();
+        FollowPath fpath = other.GetComponent<FollowPath>();
         if(fpath != null)
         {
            if(Vector3.Distance( fpath.point.transform.position,transform.position)<2f)

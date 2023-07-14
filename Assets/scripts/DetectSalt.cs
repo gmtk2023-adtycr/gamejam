@@ -10,7 +10,7 @@ public class DetectSalt : MonoBehaviour
 
     public List<GameObject> list = new List<GameObject>();
     bool returnWay = false;
-    pathPoint prev;
+    PathPoint prev;
 
 
     // Start is called before the first frame update
@@ -35,15 +35,15 @@ public class DetectSalt : MonoBehaviour
                 {
                     temp.Add(list[list.Count - 1 - i]);
                     if (temp.Count > 1)
-                        temp[i- 1].GetComponent<pathPoint>().nextPoint = temp[i].GetComponent<pathPoint>();
+                        temp[i- 1].GetComponent<PathPoint>().nextPoint = temp[i].GetComponent<PathPoint>();
                     
                 }
-                ennemy.GetComponent<followPath>().point = temp[0].GetComponent<pathPoint>();
+                ennemy.GetComponent<FollowPath>().point = temp[0].GetComponent<PathPoint>();
                 returnWay = true;
             }
             else if (Vector3.Distance(first.transform.position, ennemy.transform.position) < 0.1f && returnWay)
             {
-                ennemy.GetComponent<followPath>().point = prev;
+                ennemy.GetComponent<FollowPath>().point = prev;
 
                 foreach(GameObject temp in list)
                     GameObject.Destroy(temp);
@@ -56,26 +56,23 @@ public class DetectSalt : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        saltTrap trap = collision.GetComponent<saltTrap>();
-        if (trap != null)
-            if(trap.isOn)
-        {
-            int count = trap.line.positionCount;
-            for (int i = 0; i < count; i++)
-            {
-                GameObject go = new GameObject();
-                go.transform.position = trap.transform.position + trap.line.GetPosition(i);
-                pathPoint point = go.AddComponent<pathPoint>();
-                if (list.Count > 0)
-                    list[list.Count - 1].GetComponent<pathPoint>().nextPoint = point;
-                list.Add(go);
+        SaltTrap trap = collision.GetComponent<SaltTrap>();
+        if (trap == null || !trap.isOn) return;
 
-            }
-            returnWay = false;
-            prev = ennemy.GetComponent<followPath>().point;
-            ennemy.GetComponent<followPath>().point = list[0].GetComponent<pathPoint>();
+        int count = trap.line.positionCount;
+        for (int i = 0; i < count; i++)
+        {
+            GameObject go = new GameObject();
+            go.transform.position = trap.transform.position + trap.line.GetPosition(i);
+            PathPoint point = go.AddComponent<PathPoint>();
+            if (list.Count > 0)
+                list[list.Count - 1].GetComponent<PathPoint>().nextPoint = point;
+            list.Add(go);
 
         }
+        returnWay = false;
+        prev = ennemy.GetComponent<FollowPath>().point;
+        ennemy.GetComponent<FollowPath>().point = list[0].GetComponent<PathPoint>();
 
     }
 }

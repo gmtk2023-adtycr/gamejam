@@ -21,7 +21,8 @@ public class RoomPass : MonoBehaviour
         
         foreach (RoomDoor roomDoor in rooms) 
         {
-            Debug.DrawLine(transform.position, roomDoor.door.transform.position,Color.blue);
+            if(roomDoor.door != null)
+                Debug.DrawLine(transform.position, roomDoor.door.transform.position,Color.blue);
         }
 
     }
