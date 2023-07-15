@@ -15,6 +15,6 @@ public class FlickeringLight : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        light2D.intensity = 0.85f + Mathf.Sin(Time.time * 2f) * 0.15f;
+        light2D.intensity = 0.40f + Mathf.Sin(Time.time * 2f) * 0.15f;
     }
 }
