@@ -6,7 +6,6 @@ TagManager:
   tags:
   - room
   - Enemy
-  - Wall_1F_Left
   layers:
   - Default
   - TransparentFX
@@ -43,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Environment
+    uniqueID: 1071093441
     locked: 0
   - name: Meubles
     uniqueID: 1570072163

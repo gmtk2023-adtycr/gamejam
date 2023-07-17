@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConeRotateWithEnemy : MonoBehaviour
 {
  
-    public GameObject enemy;
+    private GameObject enemy;
     private Rigidbody2D enemyBody;
     private Vector3 base_pos;
 

@@ -41,7 +41,7 @@ public class LightConeCollider : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos(){
+    private void OnDrawGizmosSelected(){
         foreach (var v in GetVectors()){
             Debug.DrawLine(transform.parent.position, v, Color.red);
         }
