@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class InteractUI : MonoBehaviour
 {
-    public GameObject interactText;
-
 
     public static Action enterZone;
     public static Action exitZone;
+
+    private GameObject interactText;
+    
+    private void Awake(){
+        interactText = transform.GetChild(0).gameObject;
+    }
 
     private void OnEnable()
     {
