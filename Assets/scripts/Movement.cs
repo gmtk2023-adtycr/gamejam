@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 {
     
     public float Speed = 4f;
+    private bool dead;
 
     private Rigidbody2D body;
     private Animator animator;
@@ -33,16 +34,27 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(dead) return;
+        
         float dx = Input.GetAxis("Horizontal");
         float dy = Input.GetAxis("Vertical");
+        
+        
 
         float diagonal = 1f;
         if (dx != 0 && dy != 0)
             diagonal = 0.707f; // 1 / sqrt(2)
 
-        body.velocity = new Vector3(dx, dy) * Speed * diagonal;
+        body.velocity = new Vector2(dx, dy) * (Speed * diagonal);
         animator.SetFloat("Speed", body.velocity.magnitude);
         if(body.velocity.x != 0)
             spriteRenderer.flipX = body.velocity.x < 0;
     }
+
+    public void Die(){
+        body.velocity = Vector2.zero;
+        animator.SetBool("Dead", true);
+
+    }
+    
 }

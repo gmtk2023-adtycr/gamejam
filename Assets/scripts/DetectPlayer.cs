@@ -13,7 +13,7 @@ public class DetectPlayer : MonoBehaviour
         if (collision.gameObject.tag.Contains("Player"))
         {
             Debug.Log("Detected by " + transform.parent.parent.gameObject.name);
-            collision.gameObject.GetComponent<Movement>().enabled = false;
+            collision.gameObject.GetComponent<Movement>().Die();
             deathControl.isdetect = true;
         }
 
