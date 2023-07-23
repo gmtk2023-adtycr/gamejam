@@ -18,7 +18,7 @@ public class SceneEndSound : MonoBehaviour
 
     private void OnDisable()
     {
-        fadeBlabk.setIntencity(0);
+        FadeToBlack.setIntencity(0);
     }
 
 
@@ -26,11 +26,10 @@ public class SceneEndSound : MonoBehaviour
     void Update()
     {
 
-        fadeBlabk.setIntencity( m_AudioSource.time/ m_AudioSource.clip.length);
+        FadeToBlack.setIntencity( m_AudioSource.time/ m_AudioSource.clip.length);
         if (!m_AudioSource.isPlaying )
         {
             SceneManager.LoadScene(scene);
-            deathControl.isdetect = false;
         }
     }
 }
