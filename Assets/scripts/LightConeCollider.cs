@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+[RequireComponent(typeof(Light2D))]
 public class LightConeCollider : MonoBehaviour
 {
 
@@ -23,12 +24,12 @@ public class LightConeCollider : MonoBehaviour
 
     private IEnumerable<Vector3> GetVectors(){
 
-        var _light2D = GetComponent<Light2D>();
+        var light2D = GetComponent<Light2D>();
 
         Vector3 start = transform.parent.position;
         float base_rotation = (transform.parent.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
-        float dist = _light2D.pointLightOuterRadius;
-        float diff_angle = _light2D.pointLightOuterAngle * Mathf.Deg2Rad / steps;
+        float dist = light2D.pointLightOuterRadius;
+        float diff_angle = light2D.pointLightOuterAngle * Mathf.Deg2Rad / steps;
         
         for (int i = -steps/2; i < steps/2; i++){
             float x = start.x + dist * MathF.Cos(base_rotation + diff_angle * i);
