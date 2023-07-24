@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu]
 public class Task : MonoBehaviour
 {
 
