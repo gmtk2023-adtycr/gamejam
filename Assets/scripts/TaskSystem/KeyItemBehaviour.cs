@@ -8,10 +8,11 @@ using UnityEngine.EventSystems;
 public class KeyItemBehaviour : MonoBehaviour
 {
 
-    public Subject<bool> DoneSubject = new(false);
+    public event Action OnGet;
     public bool DestroyOnDone;
     
     private bool _playerHere;
+    private bool used;
     private GameObject _interactIndicator;
 
     private void Start(){
@@ -20,15 +21,17 @@ public class KeyItemBehaviour : MonoBehaviour
     }
 
     private void Update(){
-        if (Input.GetKeyDown(KeyCode.E) && _playerHere){
-            DoneSubject.Next(true);
+        if (Input.GetKeyDown(KeyCode.E) && _playerHere && !used)
+        {
+            used = true;
+            OnGet?.Invoke();
             if(DestroyOnDone)
                 Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(!collision.gameObject.CompareTag("Player")) return;
+        if(used || !collision.gameObject.CompareTag("Player")) return;
         
         _playerHere = true;
         _interactIndicator.SetActive(true);
