@@ -14,9 +14,6 @@ public class TaskManager : MonoBehaviour
     
     void Start()
     {
-        // disabled all tasks
-        for (int i = 0; i < transform.childCount; i++)
-            transform.GetChild(i).GetChild(i).gameObject.SetActive(false);
         NextTask(true);
     }
 
@@ -37,7 +34,7 @@ public class TaskManager : MonoBehaviour
             if(!phaseLoaded)
                 return;
         }
-        CurrentTask.gameObject.SetActive(true);
+        CurrentTask.Initialize();
         CurrentTask.OnDone.AddListener(e => NextTask());
         OnNextTask?.Invoke();
     }

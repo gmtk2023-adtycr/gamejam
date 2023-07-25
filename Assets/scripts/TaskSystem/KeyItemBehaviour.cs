@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class KeyItemBehaviour : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class KeyItemBehaviour : MonoBehaviour
     public bool DestroyOnDone;
 
     private bool _playerHere;
-    public bool used;
+    public bool Active { get; set; }
     private GameObject _interactIndicator;
 
     private void Awake(){
@@ -22,22 +23,19 @@ public class KeyItemBehaviour : MonoBehaviour
         _interactIndicator.SetActive(false);
     }
 
-    private void Update(){
-        if (Input.GetKeyDown(KeyCode.E) && _playerHere && !used)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && _playerHere && Active)
         {
-            used = true;
+            Active = false;
             OnGet?.Invoke();
-            if(DestroyOnDone)
+            if (DestroyOnDone)
                 Destroy(gameObject);
         }
     }
 
-    public void Reset(){
-      used = false;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision){
-        if(used || !collision.gameObject.CompareTag("Player")) return;
+        if(!Active || !collision.gameObject.CompareTag("Player")) return;
 
         _playerHere = true;
         _interactIndicator.SetActive(true);

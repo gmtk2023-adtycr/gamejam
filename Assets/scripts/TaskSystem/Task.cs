@@ -7,23 +7,25 @@ using UnityEngine.Serialization;
 
 public class Task : MonoBehaviour
 {
-
-    public List<GameObject> Requirements = new();
+    
     public string Description;
-
+    public List<GameObject> Requirements = new();
     public EventTrigger.TriggerEvent OnDone;
 
     private int SubTaskDoneCount;
 
-    void Start()
+    public void Initialize()
     {
         foreach (var gameObject in Requirements)
         {
             var kyb = gameObject.GetComponent<KeyItemBehaviour>();
-            if(kyb == null)
+            if (kyb == null) {
                 Debug.LogError($"GameObject {gameObject.name} must have a KeyItemBehaviour script");
-            else
-                kyb.OnGet += TriggerOnDone;
+                return;
+            }
+
+            kyb.Active = true;
+            kyb.OnGet += TriggerOnDone;
         }
     }
 
