@@ -17,6 +17,8 @@ public class KeyItemBehaviour : MonoBehaviour
 
     private void Start(){
         _interactIndicator = transform.GetChild(0).gameObject;
+        _interactIndicator.transform.localScale =
+            new Vector3(1f / transform.localScale.x, 1f / transform.localScale.y, 1f);
         _interactIndicator.SetActive(false);
     }
 

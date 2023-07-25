@@ -67,21 +67,18 @@ public class RoomDefiner : MonoBehaviour
 public class RoomDefinerEditor : Editor
 {
 
-    private GameObject gameObject;
     private RoomDefiner _target;
     
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
         _target = (RoomDefiner)target;
-        gameObject = _target.gameObject;
         EditorGUILayout.BeginHorizontal();
         
         if (GUILayout.Button("Create/Update collider"))
             _target.CreateCollider();
         if (GUILayout.Button("Remove collider"))
             _target.RemoveCollider();
-
 
         EditorGUILayout.EndHorizontal();
     }
