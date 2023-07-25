@@ -10,12 +10,12 @@ public class KeyItemBehaviour : MonoBehaviour
 
     public event Action OnGet;
     public bool DestroyOnDone;
-    
+
     private bool _playerHere;
-    private bool used;
+    public bool used;
     private GameObject _interactIndicator;
 
-    private void Start(){
+    private void Awake(){
         _interactIndicator = transform.GetChild(0).gameObject;
         _interactIndicator.transform.localScale =
             new Vector3(1f / transform.localScale.x, 1f / transform.localScale.y, 1f);
@@ -32,16 +32,20 @@ public class KeyItemBehaviour : MonoBehaviour
         }
     }
 
+    public void Reset(){
+      used = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision){
         if(used || !collision.gameObject.CompareTag("Player")) return;
-        
+
         _playerHere = true;
         _interactIndicator.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision){
         if(!collision.gameObject.CompareTag("Player")) return;
-        
+
         _playerHere = false;
         _interactIndicator.SetActive(false);
     }
