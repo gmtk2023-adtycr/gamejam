@@ -11,10 +11,7 @@ public class DisplayTask : MonoBehaviour
     {
         _taskManager = GameObject.FindGameObjectWithTag("Phases").GetComponent<TaskManager>();
         _text = GetComponentInChildren<TextMeshProUGUI>();
-        
-        Debug.Log(_taskManager);
-        Debug.Log(_text);
-
+        // mise à jour du texte affiché à chaque nouvelle tâche
         _taskManager.OnNextTask += UpdateDisplay;
     }
 

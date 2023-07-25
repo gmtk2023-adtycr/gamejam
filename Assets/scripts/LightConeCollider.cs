@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -13,7 +14,7 @@ public class LightConeCollider : MonoBehaviour
 
     void FixedUpdate(){
         var start = transform.parent.position;
-        foreach (var ray in GetVectors()){
+        foreach (var ray in GetVectors().ToList()){
             RaycastHit2D hit = Physics2D.Raycast(start, ray - start, Vector3.Distance(start, ray), LayerMask.GetMask("Player"));
             if (hit.collider != null){
                 gameObject.SendMessage("OnTriggerEnter2D", hit.collider);
