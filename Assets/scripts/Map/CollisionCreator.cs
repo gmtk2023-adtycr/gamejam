@@ -5,20 +5,28 @@ using UnityEngine.Tilemaps;
 
 public class CollisionCreator : MonoBehaviour
 {
-    private Tilemap _map;
-
+    
     private static readonly string COLLISION_OBJECT_NAME = "AUTO_COLLISION";
+
+    public bool CreateShadowCaster = true;
+    public bool SelfShadows = true;
+    
+    private Tilemap _map;
 
     public void Start()
     {
         _map = GetComponent<Tilemap>();
-        if (_map == null)
+        if (_map == null){
             Debug.LogError($"{name} : can not add CollisionCreator on object without a tilemap");
-        else
-            CreateCollider();
+            return;
+        }
+        var collisionObject = CreateCollider();
+        if (CreateShadowCaster){
+            collisionObject.AddComponent<ShadowCaster2DCreator>().CreateShadowCaster(SelfShadows);
+        }
     }
 
-    public void CreateCollider()
+    private GameObject CreateCollider()
     {
         var collision = new GameObject(COLLISION_OBJECT_NAME, typeof(Tilemap), typeof(TilemapCollider2D), typeof(CompositeCollider2D));
         collision.transform.SetParent(transform.parent);
@@ -28,7 +36,7 @@ public class CollisionCreator : MonoBehaviour
         var tilemap = collision.GetComponent<Tilemap>();
         var basetile = GetFirstTileBase();
 
-        var lowerLeftCorner = GetLowerLeftCorner();
+        var lowerLeftCorner = _map.GetLowerLeftCorner();
         
 
         for (int x = lowerLeftCorner.x - 2; x < _map.cellBounds.xMax + 2; x++)
@@ -40,22 +48,11 @@ public class CollisionCreator : MonoBehaviour
                     tilemap.SetTile(pos, basetile);
             }
         }
+
+        return collision;
     }
 
-    private Vector2Int GetLowerLeftCorner()
-    {
-        int minX = Int32.MaxValue;
-        int minY = Int32.MaxValue;
-        foreach (var pos in _map.cellBounds.allPositionsWithin)
-        {
-            if(_map.HasTile(pos)){
-                minX = Math.Min(minX, pos.x);
-                minY = Math.Min(minY, pos.y);
-            }
-        }
 
-        return new Vector2Int(minX, minY);
-    }
 
     private TileBase GetFirstTileBase()
     {
@@ -69,6 +66,7 @@ public class CollisionCreator : MonoBehaviour
     }
 }
 
+/*
 [CustomEditor(typeof(CollisionCreator)), CanEditMultipleObjects]
 public class CollisionCreatorEditor : Editor
 {
@@ -80,18 +78,15 @@ public class CollisionCreatorEditor : Editor
         DrawDefaultInspector();
         _target = (CollisionCreator)target;
         
-        return;//for debug
         EditorGUILayout.BeginHorizontal();
 
         if (GUILayout.Button("Create/Update collider"))
         {
             _target.Start();
-            _target.CreateCollider();
-
         }
 
         EditorGUILayout.EndHorizontal();
     }
 
-
 }
+*/

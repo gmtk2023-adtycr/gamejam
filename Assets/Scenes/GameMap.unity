@@ -543,10 +543,10 @@ GameObject:
   m_Component:
   - component: {fileID: 107514763}
   - component: {fileID: 107514762}
+  - component: {fileID: 107514767}
   - component: {fileID: 107514761}
   - component: {fileID: 107514764}
   - component: {fileID: 107514766}
-  - component: {fileID: 107514767}
   - component: {fileID: 107514768}
   m_Layer: 0
   m_Name: Main Camera
@@ -627,7 +627,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &107514764
 MonoBehaviour:
@@ -781,6 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67df5265679a2fd4b9dc6c0ca3a69166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerTransform: {fileID: 1422947898}
 --- !u!95 &107514768
 Animator:
   serializedVersion: 5
@@ -802,6 +803,67 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &126059681
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 119.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.27620748
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.961098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -147.932
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092495300218517873, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_Name
+      value: LightCone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
 --- !u!1001 &142928857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1118,7 +1180,7 @@ Transform:
   m_Children:
   - {fileID: 1788930447}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271156873
 GameObject:
@@ -5009,6 +5071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6f6a2618da4a7d97def95da17bf77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreateShadowCaster: 1
 --- !u!1001 &375089819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5180,6 +5243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10d8ce8020d61488df1023b051b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walls: []
 --- !u!60 &406620825
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5330,6 +5394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10d8ce8020d61488df1023b051b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walls: []
 --- !u!60 &489556698
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6232,7 +6297,7 @@ Transform:
   - {fileID: 406178311}
   - {fileID: 220707667}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &968045891
 GameObject:
@@ -12188,7 +12253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1392448040
 MonoBehaviour:
@@ -12374,6 +12439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10d8ce8020d61488df1023b051b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walls: []
 --- !u!60 &1408012223
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12423,6 +12489,11 @@ PolygonCollider2D:
       - {x: 4, y: 3}
       - {x: -4, y: 3}
   m_UseDelaunayMesh: 0
+--- !u!4 &1422947898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4254830406959723466, guid: 4603880d9e46c9d43ae8e51827645bbc, type: 3}
+  m_PrefabInstance: {fileID: 1886040021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1452505765
 GameObject:
   m_ObjectHideFlags: 0
@@ -12468,7 +12539,7 @@ Transform:
   - {fileID: 1290511410}
   - {fileID: 210466428}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463248982
 PrefabInstance:
@@ -14906,6 +14977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10d8ce8020d61488df1023b051b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walls: []
 --- !u!60 &1996268350
 PolygonCollider2D:
   m_ObjectHideFlags: 0
