@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b21ed2f00f1e69b47b30ca2fa5ea19ea
+guid: 8d1f23d37dacb024dbb1f6d577831c0e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Animcoucou_0
+      name: horloge_anim_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7
-        height: 9
+        width: 19
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23fb8a1aa4bdaed4ea5c2ef654b8e7de
-      internalID: -1865688877
+      spriteID: bd60d1d66cd19ce4d928d9880884414f
+      internalID: 1815160632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_1
+      name: horloge_anim_1
       rect:
         serializedVersion: 2
-        x: 7
+        x: 19
         y: 0
-        width: 7
-        height: 9
+        width: 19
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2afe20bbfa5124a996ccfb5f51f593
-      internalID: 1700654840
+      spriteID: c005f931b18b14c4f8b2c495731ab5af
+      internalID: -1833790989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_2
+      name: horloge_anim_2
       rect:
         serializedVersion: 2
-        x: 14
+        x: 38
         y: 0
-        width: 7
-        height: 9
+        width: 19
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dd5dbecd55ca4148a9ad5b75bc1d313
-      internalID: -974078043
+      spriteID: aa3b5e3f4d0aabc408720f489d383547
+      internalID: -1980202561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_3
+      name: horloge_anim_3
       rect:
         serializedVersion: 2
-        x: 21
+        x: 57
         y: 0
-        width: 7
-        height: 9
+        width: 19
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80be36643fa47d84b96ad281e7ebcbda
-      internalID: -1188904822
+      spriteID: 21a2733ad0a1278438c544b31091e200
+      internalID: -1848692903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_4
+      name: horloge_anim_4
       rect:
         serializedVersion: 2
-        x: 28
+        x: 76
         y: 0
-        width: 7
-        height: 9
+        width: 19
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,113 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff0bbfe982ddfd6438402d211a5fd933
-      internalID: -1104113331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_5
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c31a883d48b064e4c86ae6bbf864e184
-      internalID: 1162118811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_6
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eecc7709fb9a4eb4881300108f26fc2b
-      internalID: 1358217345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_7
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be20ea0a62c57e840a41fe568e12c3c3
-      internalID: -1809632263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_8
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 157818c98d5bfcb4eb8c39613c68b40f
-      internalID: 1350447856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_9
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32ae1b89fd66b884fab7ac825ccd1d07
-      internalID: 1839176046
+      spriteID: 516a2405559ffea409300ff397be38f0
+      internalID: 107703149
       vertices: []
       indices: 
       edges: []
@@ -330,16 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Animcoucou_0: -1865688877
-      Animcoucou_1: 1700654840
-      Animcoucou_2: -974078043
-      Animcoucou_3: -1188904822
-      Animcoucou_4: -1104113331
-      Animcoucou_5: 1162118811
-      Animcoucou_6: 1358217345
-      Animcoucou_7: -1809632263
-      Animcoucou_8: 1350447856
-      Animcoucou_9: 1839176046
+      horloge_anim_0: 1815160632
+      horloge_anim_1: -1833790989
+      horloge_anim_2: -1980202561
+      horloge_anim_3: -1848692903
+      horloge_anim_4: 107703149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

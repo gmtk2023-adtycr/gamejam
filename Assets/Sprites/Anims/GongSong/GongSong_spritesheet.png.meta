@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b21ed2f00f1e69b47b30ca2fa5ea19ea
+guid: d79b05a111873d0439e3c4173ce96167
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Animcoucou_0
+      name: GongSong_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7
-        height: 9
+        width: 34
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23fb8a1aa4bdaed4ea5c2ef654b8e7de
-      internalID: -1865688877
+      spriteID: e1d09b8fcaeb16e4e992ff48c307d8d7
+      internalID: -1679677776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_1
+      name: GongSong_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 7
+        x: 34
         y: 0
-        width: 7
-        height: 9
+        width: 34
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2afe20bbfa5124a996ccfb5f51f593
-      internalID: 1700654840
+      spriteID: 5c06ef57b8a65b7478debee3844ac57f
+      internalID: 1790110345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_2
+      name: GongSong_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 14
+        x: 68
         y: 0
-        width: 7
-        height: 9
+        width: 34
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dd5dbecd55ca4148a9ad5b75bc1d313
-      internalID: -974078043
+      spriteID: a31bab1afed19524099b3f019e79fba4
+      internalID: -841389252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_3
+      name: GongSong_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 21
+        x: 102
         y: 0
-        width: 7
-        height: 9
+        width: 34
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80be36643fa47d84b96ad281e7ebcbda
-      internalID: -1188904822
+      spriteID: 9af33a46186d09a4caf005e69b0208ea
+      internalID: -1838859855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_4
+      name: GongSong_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 28
+        x: 136
         y: 0
-        width: 7
-        height: 9
+        width: 34
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff0bbfe982ddfd6438402d211a5fd933
-      internalID: -1104113331
+      spriteID: 8d3cb9ef45250fa4fbcc94bf55e250a6
+      internalID: -1316136974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_5
+      name: GongSong_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 35
+        x: 170
         y: 0
-        width: 7
-        height: 9
+        width: 34
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c31a883d48b064e4c86ae6bbf864e184
-      internalID: 1162118811
+      spriteID: 7f7545d4f180b98469ce8421049f9ca8
+      internalID: 1652697642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_6
+      name: GongSong_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 42
+        x: 204
         y: 0
-        width: 7
-        height: 9
+        width: 34
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,71 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eecc7709fb9a4eb4881300108f26fc2b
-      internalID: 1358217345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_7
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be20ea0a62c57e840a41fe568e12c3c3
-      internalID: -1809632263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_8
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 157818c98d5bfcb4eb8c39613c68b40f
-      internalID: 1350447856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_9
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32ae1b89fd66b884fab7ac825ccd1d07
-      internalID: 1839176046
+      spriteID: 23ab6f0d33b773d429199fc82566ba0d
+      internalID: -229262887
       vertices: []
       indices: 
       edges: []
@@ -330,16 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Animcoucou_0: -1865688877
-      Animcoucou_1: 1700654840
-      Animcoucou_2: -974078043
-      Animcoucou_3: -1188904822
-      Animcoucou_4: -1104113331
-      Animcoucou_5: 1162118811
-      Animcoucou_6: 1358217345
-      Animcoucou_7: -1809632263
-      Animcoucou_8: 1350447856
-      Animcoucou_9: 1839176046
+      GongSong_spritesheet_0: -1679677776
+      GongSong_spritesheet_1: 1790110345
+      GongSong_spritesheet_2: -841389252
+      GongSong_spritesheet_3: -1838859855
+      GongSong_spritesheet_4: -1316136974
+      GongSong_spritesheet_5: 1652697642
+      GongSong_spritesheet_6: -229262887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

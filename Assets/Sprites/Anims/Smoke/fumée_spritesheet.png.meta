@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b21ed2f00f1e69b47b30ca2fa5ea19ea
+guid: a7ff9976b6f56f24d9c4dea9113dd720
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Animcoucou_0
+      name: "fum\xE9e_spritesheet_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7
-        height: 9
+        width: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23fb8a1aa4bdaed4ea5c2ef654b8e7de
-      internalID: -1865688877
+      spriteID: 34a432dec5272da4c8a73e6b00d25470
+      internalID: 567183703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_1
+      name: "fum\xE9e_spritesheet_1"
       rect:
         serializedVersion: 2
-        x: 7
+        x: 27
         y: 0
-        width: 7
-        height: 9
+        width: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2afe20bbfa5124a996ccfb5f51f593
-      internalID: 1700654840
+      spriteID: a603e9de03147094d987e4e610db9d44
+      internalID: -199057718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_2
+      name: "fum\xE9e_spritesheet_2"
       rect:
         serializedVersion: 2
-        x: 14
+        x: 54
         y: 0
-        width: 7
-        height: 9
+        width: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dd5dbecd55ca4148a9ad5b75bc1d313
-      internalID: -974078043
+      spriteID: 06837afdec8b694449ad8aba50bfc3ee
+      internalID: -1234521377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_3
+      name: "fum\xE9e_spritesheet_3"
       rect:
         serializedVersion: 2
-        x: 21
+        x: 81
         y: 0
-        width: 7
-        height: 9
+        width: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80be36643fa47d84b96ad281e7ebcbda
-      internalID: -1188904822
+      spriteID: a6c317ee8dd6a124097cdf2a8513a4a0
+      internalID: -887368414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_4
+      name: "fum\xE9e_spritesheet_4"
       rect:
         serializedVersion: 2
-        x: 28
+        x: 108
         y: 0
-        width: 7
-        height: 9
+        width: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff0bbfe982ddfd6438402d211a5fd933
-      internalID: -1104113331
+      spriteID: 4f131bade501e8140bebe20ec4334c4b
+      internalID: 2101230358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_5
+      name: "fum\xE9e_spritesheet_5"
       rect:
         serializedVersion: 2
-        x: 35
+        x: 135
         y: 0
-        width: 7
-        height: 9
+        width: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,92 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c31a883d48b064e4c86ae6bbf864e184
-      internalID: 1162118811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_6
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eecc7709fb9a4eb4881300108f26fc2b
-      internalID: 1358217345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_7
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be20ea0a62c57e840a41fe568e12c3c3
-      internalID: -1809632263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_8
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 157818c98d5bfcb4eb8c39613c68b40f
-      internalID: 1350447856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_9
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32ae1b89fd66b884fab7ac825ccd1d07
-      internalID: 1839176046
+      spriteID: 5f2b4867cd2513047a97d519cb2dd651
+      internalID: 1056804138
       vertices: []
       indices: 
       edges: []
@@ -330,16 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Animcoucou_0: -1865688877
-      Animcoucou_1: 1700654840
-      Animcoucou_2: -974078043
-      Animcoucou_3: -1188904822
-      Animcoucou_4: -1104113331
-      Animcoucou_5: 1162118811
-      Animcoucou_6: 1358217345
-      Animcoucou_7: -1809632263
-      Animcoucou_8: 1350447856
-      Animcoucou_9: 1839176046
+      "fum\xE9e_spritesheet_0": 567183703
+      "fum\xE9e_spritesheet_1": -199057718
+      "fum\xE9e_spritesheet_2": -1234521377
+      "fum\xE9e_spritesheet_3": -887368414
+      "fum\xE9e_spritesheet_4": 2101230358
+      "fum\xE9e_spritesheet_5": 1056804138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

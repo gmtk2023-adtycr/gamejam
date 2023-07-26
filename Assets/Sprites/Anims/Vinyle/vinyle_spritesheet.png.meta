@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b21ed2f00f1e69b47b30ca2fa5ea19ea
+guid: 22a47007c775f2142a73fc33b57b6e7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Animcoucou_0
+      name: vinyle_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23fb8a1aa4bdaed4ea5c2ef654b8e7de
-      internalID: -1865688877
+      spriteID: 4616b8185927365419a2f245b38b1d88
+      internalID: 1039219159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_1
+      name: vinyle_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 7
+        x: 39
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2afe20bbfa5124a996ccfb5f51f593
-      internalID: 1700654840
+      spriteID: 9c0f11869269e164aacf02c3a4a1bd76
+      internalID: -703427388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_2
+      name: vinyle_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 14
+        x: 78
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dd5dbecd55ca4148a9ad5b75bc1d313
-      internalID: -974078043
+      spriteID: c48807a1d2323944ba71af7e273cc2d6
+      internalID: 1627307372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_3
+      name: vinyle_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 21
+        x: 117
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80be36643fa47d84b96ad281e7ebcbda
-      internalID: -1188904822
+      spriteID: da2fbb4fdb471c54c811b0ec42d2d952
+      internalID: -1833900564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_4
+      name: vinyle_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 28
+        x: 156
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff0bbfe982ddfd6438402d211a5fd933
-      internalID: -1104113331
+      spriteID: 002360b6df6b20545b5ef285488affd8
+      internalID: 305332856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_5
+      name: vinyle_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 35
+        x: 195
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c31a883d48b064e4c86ae6bbf864e184
-      internalID: 1162118811
+      spriteID: f72401c8b96b10b46a94835905fdc792
+      internalID: 1101631046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_6
+      name: vinyle_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 42
+        x: 234
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eecc7709fb9a4eb4881300108f26fc2b
-      internalID: 1358217345
+      spriteID: 14afd654d0b86d74d99a4a36859e2488
+      internalID: -123832735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animcoucou_7
+      name: vinyle_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 49
+        x: 273
         y: 0
-        width: 7
-        height: 9
+        width: 39
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,50 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be20ea0a62c57e840a41fe568e12c3c3
-      internalID: -1809632263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_8
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 157818c98d5bfcb4eb8c39613c68b40f
-      internalID: 1350447856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Animcoucou_9
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32ae1b89fd66b884fab7ac825ccd1d07
-      internalID: 1839176046
+      spriteID: a8d949aec4f86204b8e0e1a55858e19e
+      internalID: -126551460
       vertices: []
       indices: 
       edges: []
@@ -330,16 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Animcoucou_0: -1865688877
-      Animcoucou_1: 1700654840
-      Animcoucou_2: -974078043
-      Animcoucou_3: -1188904822
-      Animcoucou_4: -1104113331
-      Animcoucou_5: 1162118811
-      Animcoucou_6: 1358217345
-      Animcoucou_7: -1809632263
-      Animcoucou_8: 1350447856
-      Animcoucou_9: 1839176046
+      vinyle_spritesheet_0: 1039219159
+      vinyle_spritesheet_1: -703427388
+      vinyle_spritesheet_2: 1627307372
+      vinyle_spritesheet_3: -1833900564
+      vinyle_spritesheet_4: 305332856
+      vinyle_spritesheet_5: 1101631046
+      vinyle_spritesheet_6: -123832735
+      vinyle_spritesheet_7: -126551460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
