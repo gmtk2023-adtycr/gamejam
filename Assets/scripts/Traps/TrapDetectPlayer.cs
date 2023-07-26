@@ -11,23 +11,15 @@ public class TrapDetectPlayer : MonoBehaviour
 
     private void Start()
     {
-        m_audio = this.GetComponent<AudioSource>();
+        m_audio = GetComponent<AudioSource>();
+        GetComponent<LightConeCollider>().OnDetectPlayer += OnDetectPlayer;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnDetectPlayer(GameObject player)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log($"Detected by {gameObject.transform.parent.parent.name}");
-            Instantiate(noise);
-            m_audio.Play();
-        }
+        Debug.Log($"Detected by {gameObject.transform.parent.parent.name}");
+        Instantiate(noise);
+        m_audio.Play();
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            m_audio.Stop();
-        }
-    }
+
 }

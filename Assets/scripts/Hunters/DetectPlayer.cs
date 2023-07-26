@@ -7,16 +7,15 @@ using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
 {
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
     {
-        //Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag.Contains("Player"))
-        {
-            Debug.Log("Detected by " + transform.parent.parent.gameObject.name);
-            collision.gameObject.GetComponent<Movement>().Die();
-        }
+        GetComponent<LightConeCollider>().OnDetectPlayer += OnDetectPlayer;
+    }
 
+    private void OnDetectPlayer(GameObject player)
+    {
+        Debug.Log("Detected by " + transform.parent.parent.gameObject.name);
+        player.GetComponent<Movement>().Die();
     }
     
 

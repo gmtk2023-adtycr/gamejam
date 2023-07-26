@@ -12,12 +12,14 @@ public class LightConeCollider : MonoBehaviour
     [Min(1)]
     public int steps = 10;
 
+    public event Action<GameObject> OnDetectPlayer;
+
     void FixedUpdate(){
         var start = transform.parent.position;
         foreach (var ray in GetVectors().ToList()){
             RaycastHit2D hit = Physics2D.Raycast(start, ray - start, Vector3.Distance(start, ray), LayerMask.GetMask("Player"));
             if (hit.collider != null){
-                gameObject.SendMessage("OnTriggerEnter2D", hit.collider);
+                OnDetectPlayer?.Invoke(hit.collider.gameObject);
                 break;
             }
         }

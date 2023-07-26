@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,16 +10,12 @@ public class HideWalls : MonoBehaviour
 
     public List<GameObject> Walls;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(Application.isEditor) return;
+        var playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
+        if(Physics2D.IsTouching(GetComponent<PolygonCollider2D>(), playerCollider))
+            OnTriggerStay2D(playerCollider);
     }
 
     private void OnTriggerStay2D(Collider2D collision)

@@ -9,7 +9,6 @@ public class TilemapExplorer
 {
 
     private readonly Tilemap _map;
-    private Vector3 _exploredPosition;
     private List<Vector3Int> _lastCalculatedTiles;
 
     public delegate bool Propagation(Tilemap map, Vector3Int pos1, Vector3Int pos2);    
@@ -26,12 +25,9 @@ public class TilemapExplorer
         (0, 1)
     };
     
-    public List<Vector3Int> ExploreSpace(Vector3 position, Propagation comparator)
+    public List<Vector3Int> ExploreSpace(Vector3 position, Propagation comparator, bool forceUpdate = false)
     {
-        if (position.Equals(_exploredPosition))
-            return _lastCalculatedTiles;
         HashSet<Vector3Int> tiles = new ();
-        _exploredPosition = position;
         
         var startingCell = _map.WorldToCell(position);
         if(!_map.HasTile(startingCell))

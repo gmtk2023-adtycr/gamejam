@@ -7,18 +7,19 @@ using static UnityEngine.GraphicsBuffer;
 public class FollowPlayer : MonoBehaviour
 {
 
-    public Transform PlayerTransform;
+    public Transform _playerTransform;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update(){
         Vector3 targetPosition =
-            new Vector3(PlayerTransform.position.x, PlayerTransform.position.y, transform.position.z);
+            new Vector3(_playerTransform.position.x, _playerTransform.position.y, transform.position.z);
         transform.position = new Vector3(targetPosition.x, targetPosition.y, transform.position.z);
+
     }
 }

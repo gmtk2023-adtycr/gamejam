@@ -29,7 +29,7 @@ public class CollisionCreator : MonoBehaviour
     private GameObject CreateCollider()
     {
         var collision = new GameObject(COLLISION_OBJECT_NAME, typeof(Tilemap), typeof(TilemapCollider2D), typeof(CompositeCollider2D));
-        collision.transform.SetParent(transform.parent);
+        collision.transform.SetParent(transform.parent, false);
         collision.GetComponent<TilemapCollider2D>().usedByComposite = true;
         collision.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 

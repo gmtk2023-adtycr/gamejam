@@ -39,6 +39,7 @@ public class RoomDefiner : MonoBehaviour
             collider = gameObject.AddComponent<PolygonCollider2D>();
         var coveredTiles = ExploreRoom();
         collider.points = _tilemapExplorer.ContourShape(coveredTiles).Select(v3 => (Vector2)(v3 - transform.position)).ToArray();
+        collider.isTrigger = true;
     }
 
     public void RemoveCollider() {
