@@ -9,18 +9,17 @@ using UnityEngine.Serialization;
 public class KeyItemBehaviour : MonoBehaviour
 {
 
-    public event Action OnGet;
+    public bool Active = true;
     public bool DestroyOnDone;
 
-    private bool _playerHere;
-    public bool Active { get; set; }
-    private GameObject _interactIndicator;
+    public event Action OnGet;
 
-    private void Awake(){
-        _interactIndicator = transform.GetChild(0).gameObject;
-        _interactIndicator.transform.localScale =
-            new Vector3(1f / transform.localScale.x, 1f / transform.localScale.y, 1f);
-        _interactIndicator.SetActive(false);
+    private bool _playerHere;
+    private Material _outlineMaterial;
+    private static readonly int Active1 = Shader.PropertyToID("_Active");
+
+    private void Start(){
+        _outlineMaterial = GetComponent<SpriteRenderer>().material;
     }
 
     private void Update()
@@ -38,14 +37,14 @@ public class KeyItemBehaviour : MonoBehaviour
         if(!Active || !collision.gameObject.CompareTag("Player")) return;
 
         _playerHere = true;
-        _interactIndicator.SetActive(true);
+        _outlineMaterial.SetInteger(Active1, 1);
     }
 
     private void OnTriggerExit2D(Collider2D collision){
         if(!collision.gameObject.CompareTag("Player")) return;
 
-        _playerHere = false;
-        _interactIndicator.SetActive(false);
+        _playerHere = false;        
+        _outlineMaterial.SetInteger(Active1, 0);
     }
 
 }
