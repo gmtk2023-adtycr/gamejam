@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 public class KeyItemBehaviour : MonoBehaviour
 {
 
-    public bool Active = true;
+    public bool Active{ get; set; }
     public bool DestroyOnDone;
 
     public event Action OnGet;

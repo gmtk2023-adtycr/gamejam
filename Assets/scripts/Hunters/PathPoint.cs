@@ -1,23 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [ExecuteAlways]
 public class PathPoint : MonoBehaviour
 {
-    public PathPoint nextPoint;
-    public float waitingTime = 0f; // seconds
 
-    // Start is called before the first frame update
-    void Start()
+    private static Vector3 DrawOffset = (Vector3.up + Vector3.right) / 2;
+
+    public float waitingTime = 0f; // seconds
+    public PathPoint NextPoint => transform.parent.GetChild(NextIndex).GetComponent<PathPoint>();
+
+    private int Index => transform.GetSiblingIndex();
+    private int NextIndex => (Index+1) % transform.parent.childCount;
+
+
+    void OnDrawGizmos()
     {
-        
+        Debug.DrawLine(transform.position + DrawOffset, NextPoint.transform.position + DrawOffset, Color.yellow);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(nextPoint != null) 
-            Debug.DrawLine(transform.position, nextPoint.transform.position, Color.yellow);
+    private void OnDrawGizmosSelected(){
+        Handles.Label(transform.position, $"p_{Index+1}");
     }
 }

@@ -5,21 +5,29 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class TrapDetectPlayer : MonoBehaviour
 {
+    
+    public float Delay = 1;
+    
+    private GameObject _noisePrefab;
+    private bool _active = true;
 
-    public GameObject noise;
-    public AudioSource m_audio;
-
-    private void Start()
+    private void Awake()
     {
-        m_audio = GetComponent<AudioSource>();
+        _noisePrefab = Resources.Load<GameObject>("Noise");
         GetComponent<LightConeCollider>().OnDetectPlayer += OnDetectPlayer;
     }
 
     private void OnDetectPlayer(GameObject player)
     {
+        if(!_active) return;
+        _active = false;
         Debug.Log($"Detected by {gameObject.transform.parent.parent.name}");
-        Instantiate(noise);
-        m_audio.Play();
+        Instantiate(_noisePrefab).transform.position = player.transform.position;
+        Invoke(nameof(Activate), Delay);
+    }
+
+    private void Activate(){
+        _active = true;
     }
 
 }
