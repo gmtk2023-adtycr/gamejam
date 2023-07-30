@@ -6,7 +6,8 @@ using UnityEngine;
 public class FollowPath : MonoBehaviour
 {
 
-    public static string PATH_PARENT_NAME = "Path";
+    private static string PATH_PARENT_NAME = "Path";
+    private static float DISTANCE_THRESHOLD = 0.5f;
 
     private HunterMovement _movement;
     private PathDefiner _path;
@@ -16,34 +17,32 @@ public class FollowPath : MonoBehaviour
     void Start(){
         _movement = GetComponent<HunterMovement>();
         _path = GetPath();
+        _path.Initialize();
         if (_path.transform.childCount == 0){
             enabled = false;
             return;
         }
         _path.transform.parent = transform.parent;
-        GoToTarget();
+        Invoke(nameof(GoToTarget), 0.1f);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (_waiting)
+        if (_waiting || Vector3.Distance(transform.position, _path.Target.transform.position) > DISTANCE_THRESHOLD)
             return;
-        
-        if (Vector3.Distance(transform.position, _path.Target.transform.position) < 0.1f){
-            if (_path.Target.waitingTime > 0f){
-                _waiting = true;
-                _movement.Stop();
-                Invoke(nameof(StopWaiting), _path.Target.waitingTime);
-            }
-            _path.NextTarget();
+
+        if (_path.Target.waitingTime > 0f){
+            _waiting = true;
+            _movement.Stop();
+            Invoke(nameof(StopWaiting), _path.Target.waitingTime);
         }
-        else
-            GoToTarget();
+        _path.NextTarget();
+        GoToTarget();
 
     }
 
-    private void GoToTarget()
+    public void GoToTarget()
     {
         _movement.WalkToPos(_path.Target.transform.position);
     }
@@ -62,5 +61,10 @@ public class FollowPath : MonoBehaviour
 
         throw new Exception($"Hunter {name} has no path defined");
     }
-    
+
+    private void OnDrawGizmos(){
+        Gizmos.color = Color.cyan;
+        if(_path != null)
+            Gizmos.DrawSphere(_path.Target.transform.position, DISTANCE_THRESHOLD / 2f);
+    }
 }

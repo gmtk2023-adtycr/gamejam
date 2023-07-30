@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -7,12 +10,7 @@ using UnityEngine.Tilemaps;
 public class Grid
 {
 
-    private Node[,] grid;
-    private readonly Tilemap _map;
-    private readonly int _gridSizeX;
-    private readonly int _gridSizeY;
-    private Vector2Int _mapLowerLeftCorner;
-
+    public int NODE_PER_TILE = 5;
     private static List<Vector2Int> DIRECTIONS = new List<Vector2Int>()
     {
         Vector2Int.up,
@@ -25,43 +23,78 @@ public class Grid
         Vector2Int.up + Vector2Int.left
     };
 
+    private List<Node> _nodes;
+    private Tilemap _map;
+    public int MaxSize => _gridSizeX * _gridSizeY;
+    private int _gridSizeX;
+    private int _gridSizeY;
+    private Vector2Int _mapLowerLeftCorner;
+
+
     public Grid(Tilemap map){
         _map = map;
-        _mapLowerLeftCorner = _map.GetLowerLeftCorner();
-        _gridSizeX = _map.cellBounds.xMax - _mapLowerLeftCorner.x;
-        _gridSizeY = _map.cellBounds.yMax - _mapLowerLeftCorner.y;
+        Initialize();
         CreateGrid();
     }
-	
+
+    private void Initialize(){
+        _mapLowerLeftCorner = _map.GetLowerLeftCorner() + new Vector2Int(-2, -2);
+        _gridSizeX = _map.cellBounds.xMax - _mapLowerLeftCorner.x;
+        _gridSizeY = _map.cellBounds.yMax - _mapLowerLeftCorner.y;
+        _gridSizeX *= NODE_PER_TILE;
+        _gridSizeY *= NODE_PER_TILE;
+    }
+
+
 
     void CreateGrid() {
-        grid = new Node[_gridSizeX,_gridSizeY];
-        var worldBottomLeft = _map.GetLowerLeftCorner();
+        _nodes = new();
 
-        for (int x = 0; x < _gridSizeX; x ++) {
-            for (int y = 0; y < _gridSizeY; y ++){
-                var pos = new Vector3Int(_mapLowerLeftCorner.x + x, _mapLowerLeftCorner.y + y);
-                grid[x,y] = new Node(pos, _map.HasTile(pos), x, y);
+        for (int y = 0; y < _gridSizeY; y ++){
+            for (int x = 0; x < _gridSizeX; x ++) {
+                var tilePos = new Vector3Int(
+                    _mapLowerLeftCorner.x + x / NODE_PER_TILE, 
+                    _mapLowerLeftCorner.y + y / NODE_PER_TILE
+                );
+                float dx = (float) (x % NODE_PER_TILE) / NODE_PER_TILE;
+                float dy = (float) (y % NODE_PER_TILE) / NODE_PER_TILE;
+                var worldPos = new Vector3(tilePos.x + dx, tilePos.y + dy) 
+                               + _map.transform.position
+                               + (Vector3.up + Vector3.right) * 0.5f / NODE_PER_TILE;
+                _nodes.Add(new Node(worldPos, _map.HasTile(tilePos), x, y));
             }
+        }
+        CreatePenalties();
+    }
+
+    private void CreatePenalties(){
+        var nodesToProcess = _nodes.Where(n => n.Walkable).ToList();
+        var penalties = Enumerable.Range(1, 20)
+            .Select(x => Math.Pow(x, 1.5f) * 10)
+            .Reverse()
+            .ToList();
+        int penaltyIndex = 0;
+        
+        while (nodesToProcess.Any()){
+            var nodesPenalty = nodesToProcess.Where(node => {
+                var neighbours = GetNeighbours(node);
+                bool nextToWall = neighbours.Any(n => !n.Walkable);
+                bool atEdge = node.GridX == 0 || node.GridY == 0 || node.GridX == _gridSizeX - 1 ||
+                              node.GridY == _gridSizeY - 1;
+                bool nextToNodeWithPenalty = neighbours.Any(n => n.Penalty > 0);
+                return nextToWall || atEdge || nextToNodeWithPenalty;
+            }).ToList();
+            nodesPenalty.ForEach(n => n.Penalty = (int)penalties[penaltyIndex]);
+            penaltyIndex = Math.Min(penaltyIndex + 1, penalties.Count - 1);
+            nodesToProcess.RemoveAll(n => nodesPenalty.Contains(n));
         }
     }
 
-    private Vector2Int WorldPosToGridIndex(Vector3 worldPos){
-        var tileMapPos = _map.WorldToCell(worldPos);
-        return new Vector2Int(tileMapPos.x - _mapLowerLeftCorner.x, tileMapPos.y - _mapLowerLeftCorner.y);
+    public Node NodeFromWorldPoint(Vector3 worldPosition){
+        return _nodes.OrderBy(node => Vector3.Distance(worldPosition, node.Position))
+            .First();
     }
     
-    public Node NodeFromWorldPoint(Vector3 worldPosition){
-        var gridIndexes = WorldPosToGridIndex(worldPosition);
-        return grid[gridIndexes.x,gridIndexes.y];
-    }
-
-    public Vector3 WorldPosFromNode(Node node){
-        var x = node.GridX + _mapLowerLeftCorner.x;
-        var y = node.GridY + _mapLowerLeftCorner.y;
-        return _map.CellToWorld(new Vector3Int(x, y));
-    }
-
     public List<Node> GetNeighbours(Node node){
         List<Node> neighbours = new List<Node>();
 
@@ -75,18 +108,61 @@ public class Grid
 
             bool cutCorner = true;
             if (Math.Abs(direction.x) + Math.Abs(direction.y) == 2) //diagonal
-                cutCorner = grid[node.GridX, node.GridY + direction.y].Walkable
-                            && grid[node.GridX + direction.x, node.GridY].Walkable;
+                cutCorner = GetNode(node.GridX, node.GridY + direction.y).Walkable
+                            && GetNode(node.GridX + direction.x, node.GridY).Walkable;
 
             if (cutCorner)
-                neighbours.Add(grid[checkX, checkY]);
+                neighbours.Add(GetNode(checkX, checkY));
         }
 
 
         return neighbours;
     }
 
+    private Node GetNode(int x, int y){
+        return _nodes[x + y * _gridSizeX];
+    }
+
     public bool OutOfBound(Vector3 startPos, Vector3 targetPos){
         return !(_map.HasTile(_map.WorldToCell(startPos)) && _map.HasTile(_map.WorldToCell(targetPos)));
     }
+    
+    
+    /*
+     * 
+    private void OnDrawGizmos(){
+        if (_map != null && _lastNodePerTile != NODE_PER_TILE){
+            _lastNodePerTile = NODE_PER_TILE;
+            Initialize();
+            CreateGrid();
+        }
+        if(_nodes == null) return;
+        _pathFinding ??= new PathFinding(this);
+
+        var startNode = StartPos != null ? NodeFromWorldPoint(StartPos.position) : null;
+        var endNode =  EndPos != null ? NodeFromWorldPoint(EndPos.position) : null;
+
+        List<Node> path = new();
+        List<Node> startNodeNeighbours = new();
+        if (startNode != null && endNode != null){
+            path = _pathFinding.FindPath(StartPos.position, EndPos.position);
+            startNodeNeighbours = GetNeighbours(startNode);
+        }
+        
+
+        foreach (var node in _nodes){
+            if(node == startNode)
+                Gizmos.color = Color.green;
+            else if(node == endNode)
+                Gizmos.color = Color.red;
+            else if(startNodeNeighbours.Contains(node))
+                Gizmos.color = Color.yellow;
+            else if(path.Contains(node))
+                Gizmos.color = Color.magenta;
+            else
+                Gizmos.color = node.Walkable ? Color.Lerp(Color.blue, Color.cyan, node.fCost / 150f) : Color.black;
+            Gizmos.DrawSphere(node.Position, .5f / NODE_PER_TILE);
+        }
+    }
+     */
 }

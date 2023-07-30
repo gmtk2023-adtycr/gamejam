@@ -14,45 +14,37 @@ public class PathFinding
         _grid = new Grid(map);
     }
     
-    public List<Vector3> FindPath(Vector3 startPos, Vector3 targetPos){
-        if (_grid.OutOfBound(startPos, targetPos))
-            return new List<Vector3>();
-        if (Vector3.Distance(startPos, targetPos) < .5f)
-            return new List<Vector3>() {targetPos};
+    public List<Node> FindPath(Vector3 startPos, Vector3 targetPos){
+        if (_grid.OutOfBound(startPos, targetPos)){
+            Debug.LogError("Out of bound !!");
+            return new List<Node>();
+        }
+        
         var startNode = _grid.NodeFromWorldPoint(startPos);
         var targetNode = _grid.NodeFromWorldPoint(targetPos);
 
-        var openSet = new List<Node>();
+        var openSet = new Heap<Node>(_grid.MaxSize);
         var closedSet = new HashSet<Node>();
         openSet.Add(startNode);
 
         while (openSet.Count > 0) {
-            Node node = openSet[0];
-            for (int i = 1; i < openSet.Count; i ++) {
-                if (openSet[i].fCost < node.fCost || openSet[i].fCost == node.fCost) {
-                    if (openSet[i].hCost < node.hCost)
-                        node = openSet[i];
-                }
-            }
+            Node currentNode = openSet.RemoveFirst();
+            closedSet.Add(currentNode);
 
-            openSet.Remove(node);
-            closedSet.Add(node);
-
-            if (node == targetNode) {
+            if (currentNode == targetNode)
                 return RetracePath(startNode,targetNode);
-                
-            }
+            
 
-            foreach (Node neighbour in _grid.GetNeighbours(node)) {
+            foreach (Node neighbour in _grid.GetNeighbours(currentNode)) {
                 if (!neighbour.Walkable || closedSet.Contains(neighbour)) {
                     continue;
                 }
 
-                int newCostToNeighbour = node.gCost + GetDistance(node, neighbour);
-                if (newCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour)) {
-                    neighbour.gCost = newCostToNeighbour;
+                int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour) + currentNode.Penalty;
+                if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour)) {
+                    neighbour.gCost = newMovementCostToNeighbour;
                     neighbour.hCost = GetDistance(neighbour, targetNode);
-                    neighbour.Parent = node;
+                    neighbour.Parent = currentNode;
 
                     if (!openSet.Contains(neighbour))
                         openSet.Add(neighbour);
@@ -60,11 +52,11 @@ public class PathFinding
             }
         }
 
-        throw new Exception("Target pos not found ??");
+        return new();
     }
 
     
-    private List<Vector3> RetracePath(Node startNode, Node endNode) {
+    private List<Node> RetracePath(Node startNode, Node endNode) {
         List<Node> path = new List<Node>();
         Node currentNode = endNode;
 
@@ -74,7 +66,7 @@ public class PathFinding
         }
         path.Reverse();
 
-        return path.Select(node => _grid.WorldPosFromNode(node)).ToList();
+        return path;
     }
 
     int GetDistance(Node nodeA, Node nodeB) {
