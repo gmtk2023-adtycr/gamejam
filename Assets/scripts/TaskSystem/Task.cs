@@ -24,7 +24,7 @@ public class Task : MonoBehaviour
                 return;
             }
 
-            kyb.Active = true;
+            //kyb.Active = true;
             kyb.OnGet += TriggerOnDone;
         }
     }
