@@ -25,6 +25,7 @@ public class BehaviourManager : MonoBehaviour
     public void ResumePath(){
         _followPath.enabled = true;
         _goToNoise.enabled = false;
+        _followPath.GoToTarget();
     }
     
 }

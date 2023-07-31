@@ -18,7 +18,7 @@ public class PathDefiner : MonoBehaviour
     private int DiffIndex => Loop || _forward ? 1 : -1;
 
 
-    private void Start(){
+    public void Initialize(){
         _points = Enumerable.Range(0, transform.childCount)
             .Select(index => transform.GetChild(index).GetComponent<PathPoint>())
             .ToArray();

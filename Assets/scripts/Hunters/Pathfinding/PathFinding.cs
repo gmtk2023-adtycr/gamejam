@@ -8,22 +8,16 @@ using UnityEngine.Tilemaps;
 public class PathFinding
 {
 
-    private readonly Grid _grid;
-
-    public PathFinding(Tilemap map){
-        _grid = new Grid(map);
-    }
-    
-    public List<Node> FindPath(Vector3 startPos, Vector3 targetPos){
-        if (_grid.OutOfBound(startPos, targetPos)){
+    public List<Node> FindPath(Grid grid, Vector3 startPos, Vector3 targetPos){
+        if (grid.OutOfBound(startPos, targetPos)){
             Debug.LogError("Out of bound !!");
             return new List<Node>();
         }
         
-        var startNode = _grid.NodeFromWorldPoint(startPos);
-        var targetNode = _grid.NodeFromWorldPoint(targetPos);
+        var startNode = grid.NodeFromWorldPoint(startPos);
+        var targetNode = grid.NodeFromWorldPoint(targetPos);
 
-        var openSet = new Heap<Node>(_grid.MaxSize);
+        var openSet = new Heap<Node>(grid.MaxSize);
         var closedSet = new HashSet<Node>();
         openSet.Add(startNode);
 
@@ -35,7 +29,7 @@ public class PathFinding
                 return RetracePath(startNode,targetNode);
             
 
-            foreach (Node neighbour in _grid.GetNeighbours(currentNode)) {
+            foreach (Node neighbour in grid.GetNeighbours(currentNode)) {
                 if (!neighbour.Walkable || closedSet.Contains(neighbour)) {
                     continue;
                 }
@@ -55,7 +49,7 @@ public class PathFinding
         return new();
     }
 
-    
+
     private List<Node> RetracePath(Node startNode, Node endNode) {
         List<Node> path = new List<Node>();
         Node currentNode = endNode;

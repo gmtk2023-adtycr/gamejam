@@ -20,7 +20,7 @@ public class ConeRotateWithEnemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (enemyBody.velocity.x == 0f && enemyBody.velocity.y == 0f)
+        if (enemyBody.velocity is {x: 0f, y: 0f})
             return;
         
         Vector3 dir = enemyBody.velocity;

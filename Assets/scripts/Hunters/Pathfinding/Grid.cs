@@ -4,13 +4,14 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 
-public class Grid
+[RequireComponent(typeof(Tilemap))]
+public class Grid : MonoBehaviour
 {
 
-    public int NODE_PER_TILE = 5;
     private static List<Vector2Int> DIRECTIONS = new List<Vector2Int>()
     {
         Vector2Int.up,
@@ -30,19 +31,21 @@ public class Grid
     private int _gridSizeY;
     private Vector2Int _mapLowerLeftCorner;
 
+    // Testing
+    public int NodePerTile{ get; set; } = 5;
+    public bool DrawGrid;
+    public Transform StartPos, EndPos;
+    
 
-    public Grid(Tilemap map){
-        _map = map;
-        Initialize();
-        CreateGrid();
-    }
-
-    private void Initialize(){
+    public void Start(){
+        _map = GetComponent<Tilemap>();
         _mapLowerLeftCorner = _map.GetLowerLeftCorner() + new Vector2Int(-2, -2);
         _gridSizeX = _map.cellBounds.xMax - _mapLowerLeftCorner.x;
         _gridSizeY = _map.cellBounds.yMax - _mapLowerLeftCorner.y;
-        _gridSizeX *= NODE_PER_TILE;
-        _gridSizeY *= NODE_PER_TILE;
+        _gridSizeX *= NodePerTile;
+        _gridSizeY *= NodePerTile;
+        CreateGrid();        
+        CreatePenalties();
     }
 
 
@@ -53,18 +56,17 @@ public class Grid
         for (int y = 0; y < _gridSizeY; y ++){
             for (int x = 0; x < _gridSizeX; x ++) {
                 var tilePos = new Vector3Int(
-                    _mapLowerLeftCorner.x + x / NODE_PER_TILE, 
-                    _mapLowerLeftCorner.y + y / NODE_PER_TILE
+                    _mapLowerLeftCorner.x + x / NodePerTile, 
+                    _mapLowerLeftCorner.y + y / NodePerTile
                 );
-                float dx = (float) (x % NODE_PER_TILE) / NODE_PER_TILE;
-                float dy = (float) (y % NODE_PER_TILE) / NODE_PER_TILE;
+                float dx = (float) (x % NodePerTile) / NodePerTile;
+                float dy = (float) (y % NodePerTile) / NodePerTile;
                 var worldPos = new Vector3(tilePos.x + dx, tilePos.y + dy) 
                                + _map.transform.position
-                               + (Vector3.up + Vector3.right) * 0.5f / NODE_PER_TILE;
+                               + (Vector3.up + Vector3.right) * 0.5f / NodePerTile;
                 _nodes.Add(new Node(worldPos, _map.HasTile(tilePos), x, y));
             }
         }
-        CreatePenalties();
     }
 
     private void CreatePenalties(){
@@ -126,27 +128,21 @@ public class Grid
     public bool OutOfBound(Vector3 startPos, Vector3 targetPos){
         return !(_map.HasTile(_map.WorldToCell(startPos)) && _map.HasTile(_map.WorldToCell(targetPos)));
     }
-    
-    
-    /*
-     * 
+
+
     private void OnDrawGizmos(){
-        if (_map != null && _lastNodePerTile != NODE_PER_TILE){
-            _lastNodePerTile = NODE_PER_TILE;
-            Initialize();
-            CreateGrid();
-        }
-        if(_nodes == null) return;
-        _pathFinding ??= new PathFinding(this);
+        if (_map == null || _nodes == null)
+            Start();
+
+        if(!DrawGrid || _nodes == null) return;
 
         var startNode = StartPos != null ? NodeFromWorldPoint(StartPos.position) : null;
         var endNode =  EndPos != null ? NodeFromWorldPoint(EndPos.position) : null;
 
         List<Node> path = new();
-        List<Node> startNodeNeighbours = new();
         if (startNode != null && endNode != null){
-            path = _pathFinding.FindPath(StartPos.position, EndPos.position);
-            startNodeNeighbours = GetNeighbours(startNode);
+            var _pathFinding = new PathFinding();
+            path = _pathFinding.FindPath(this, StartPos.position, EndPos.position);
         }
         
 
@@ -155,14 +151,31 @@ public class Grid
                 Gizmos.color = Color.green;
             else if(node == endNode)
                 Gizmos.color = Color.red;
-            else if(startNodeNeighbours.Contains(node))
-                Gizmos.color = Color.yellow;
             else if(path.Contains(node))
                 Gizmos.color = Color.magenta;
             else
                 Gizmos.color = node.Walkable ? Color.Lerp(Color.blue, Color.cyan, node.fCost / 150f) : Color.black;
-            Gizmos.DrawSphere(node.Position, .5f / NODE_PER_TILE);
+            Gizmos.DrawSphere(node.Position, .5f / NodePerTile);
         }
     }
-     */
+
+}
+
+[CustomEditor(typeof(Grid)), CanEditMultipleObjects]
+class GridEditor : Editor
+{
+    public override void OnInspectorGUI(){
+        base.OnInspectorGUI();
+        var grid = (Grid) target;
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.PrefixLabel("Nodes per tile");
+        int newNodePerTile = (int)EditorGUILayout.Slider(grid.NodePerTile, 1, 6);
+        if (newNodePerTile != grid.NodePerTile){
+            grid.NodePerTile = newNodePerTile;
+            grid.Start();
+        }
+        EditorGUILayout.EndHorizontal();
+
+    }
 }
