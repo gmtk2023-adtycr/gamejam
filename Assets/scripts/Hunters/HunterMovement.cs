@@ -14,7 +14,8 @@ public class HunterMovement : MonoBehaviour
 
     private Rigidbody2D _body;
     private PathFinding _pathFinding;
-    
+    private Grid _grid;
+
     private Vector3 _target;
     private bool _moving;
     
@@ -26,6 +27,7 @@ public class HunterMovement : MonoBehaviour
     private void Start(){
         _body = GetComponent<Rigidbody2D>();
         _pathFinding = new PathFinding();
+        _grid = Floor.GetComponent<Grid>();
     }
 
     private void FixedUpdate(){
@@ -49,7 +51,7 @@ public class HunterMovement : MonoBehaviour
         if(_target.Equals(pos))
             return;
         _target = pos;
-        _path = _pathFinding.FindPath(GetGrid(), transform.position, _target);
+        _path = _pathFinding.FindPath(_grid, transform.position, _target);
         _pathIndex = 0;
         _moving = true;
     }
@@ -59,12 +61,6 @@ public class HunterMovement : MonoBehaviour
         _body.velocity = Vector2.zero;
     }
 
-    private Grid GetGrid(){
-        var grid = GetComponentInParent<Grid>();
-        if (grid == null)
-            throw new Exception("Hunter not under grid hierarchy");
-        return grid;
-    }
 
     private void OnDrawGizmosSelected(){
         if(_path == null) return;

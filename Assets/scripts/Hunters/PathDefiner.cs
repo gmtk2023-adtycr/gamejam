@@ -10,7 +10,7 @@ public class PathDefiner : MonoBehaviour
 {
 
     public bool Loop = true;
-    public PathPoint Target => _points[_targetIndex];
+    public PathPoint Target => _points == null || _points.Length == 0 ? null : _points[_targetIndex];
 
     private PathPoint[] _points;
     private int _targetIndex;
@@ -19,9 +19,10 @@ public class PathDefiner : MonoBehaviour
 
 
     public void Initialize(){
-        _points = Enumerable.Range(0, transform.childCount)
-            .Select(index => transform.GetChild(index).GetComponent<PathPoint>())
-            .ToArray();
+        if(_points == null)
+            _points = Enumerable.Range(0, transform.childCount)
+                .Select(index => transform.GetChild(index).GetComponent<PathPoint>())
+                .ToArray();
 
     }
 
