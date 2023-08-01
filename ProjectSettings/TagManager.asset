@@ -7,6 +7,7 @@ TagManager:
   - room
   - Enemy
   - Phases
+  - Wall_1F_Left
   layers:
   - Default
   - TransparentFX
@@ -47,9 +48,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Meubles
+  - name: "Meubles (derri\xE8re Player)"
     uniqueID: 1570072163
     locked: 0
   - name: Lights
     uniqueID: 2259708091
+    locked: 0
+  - name: Player
+    uniqueID: 3159839037
+    locked: 0
+  - name: Premier plan (devant Player)
+    uniqueID: 916959265
     locked: 0
