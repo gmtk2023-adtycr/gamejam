@@ -12,26 +12,28 @@ public class Task : MonoBehaviour
     public List<GameObject> Requirements = new();
     public EventTrigger.TriggerEvent OnDone;
 
-    private int SubTaskDoneCount;
+    private int _subTaskDoneCount;
 
     public void Initialize()
     {
         foreach (var gameObject in Requirements)
         {
-            var kyb = gameObject.GetComponent<KeyItemBehaviour>();
+            var kyb = gameObject.GetComponent<UsableItem>();
             if (kyb == null) {
                 Debug.LogError($"GameObject {gameObject.name} must have a KeyItemBehaviour script");
-                return;
             }
-
-            //kyb.Active = true;
-            kyb.OnGet += TriggerOnDone;
+            else{
+                if (!kyb.Active) //if item is not active before the task, disable it after the task is done
+                    kyb.OnUse += () => kyb.Active = false;
+                kyb.OnUse += TriggerOnDone;
+                kyb.Active = true;
+            }
         }
     }
 
     private void TriggerOnDone()
     {
-        if(++SubTaskDoneCount == Requirements.Count)
+        if(++_subTaskDoneCount == Requirements.Count)
             OnDone.Invoke(new BaseEventData(EventSystem.current));
     }
 

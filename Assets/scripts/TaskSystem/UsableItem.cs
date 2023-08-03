@@ -9,7 +9,8 @@ using UnityEngine.Serialization;
 public class UsableItem : MonoBehaviour
 {
 
-    public bool Active{ get; set; } = true;
+    public bool Active;
+    public bool DestroyOnDone = true;
     public event Action OnUse;
 
 
@@ -26,6 +27,8 @@ public class UsableItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _playerHere && Active)
         {
             OnUse?.Invoke();
+            if(DestroyOnDone)
+                Destroy(gameObject);
         }
     }
 

@@ -10,7 +10,6 @@ public class HunterMovement : MonoBehaviour
 {
 
     public float Speed;
-    public Tilemap Floor;
 
     private Rigidbody2D _body;
     private PathFinding _pathFinding;
@@ -27,7 +26,7 @@ public class HunterMovement : MonoBehaviour
     private void Start(){
         _body = GetComponent<Rigidbody2D>();
         _pathFinding = new PathFinding();
-        _grid = Floor.GetComponent<Grid>();
+        _grid = Grid.GetGridForPos(transform.position);
     }
 
     private void FixedUpdate(){
@@ -48,7 +47,7 @@ public class HunterMovement : MonoBehaviour
     }
 
     public void WalkToPos(Vector3 pos){
-        if(_target.Equals(pos))
+        if(_target.Equals(pos) && _moving)
             return;
         _target = pos;
         _path = _pathFinding.FindPath(_grid, transform.position, _target);

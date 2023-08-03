@@ -1,18 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
-
 
 [RequireComponent(typeof(Tilemap))]
 public class Grid : MonoBehaviour
 {
 
-    private static List<Vector2Int> DIRECTIONS = new List<Vector2Int>()
+    private static readonly List<Vector2Int> DIRECTIONS = new List<Vector2Int>()
     {
         Vector2Int.up,
         Vector2Int.up + Vector2Int.right,
@@ -24,6 +21,8 @@ public class Grid : MonoBehaviour
         Vector2Int.up + Vector2Int.left
     };
 
+    private static List<Grid> Grids = new ();
+
     private List<Node> _nodes;
     private Tilemap _map;
     public int MaxSize => _gridSizeX * _gridSizeY;
@@ -32,12 +31,22 @@ public class Grid : MonoBehaviour
     private Vector2Int _mapLowerLeftCorner;
 
     // Testing
-    public int NodePerTile{ get; set; } = 5;
+    public int NodePerTile { get; set; } = 5;
     public bool DrawGrid;
     public Transform StartPos, EndPos;
-    
 
-    public void Start(){
+
+    public static Grid GetGridForPos(Vector3 pos){
+        return Grids.First(g =>
+            g._nodes.First().Position.x <= pos.x &&
+            g._nodes.First().Position.y <= pos.y &&
+            g._nodes.Last().Position.x >= pos.x &&
+            g._nodes.Last().Position.y >= pos.y
+        );
+    }
+
+    public void Awake(){
+        Grids.Add(this);
         _map = GetComponent<Tilemap>();
         _mapLowerLeftCorner = _map.GetLowerLeftCorner() + new Vector2Int(-2, -2);
         _gridSizeX = _map.cellBounds.xMax - _mapLowerLeftCorner.x;
@@ -132,7 +141,7 @@ public class Grid : MonoBehaviour
 
     private void OnDrawGizmos(){
         if (_map == null || _nodes == null)
-            Start();
+            Awake();
 
         if(!DrawGrid || _nodes == null) return;
 
@@ -173,7 +182,7 @@ class GridEditor : Editor
         int newNodePerTile = (int)EditorGUILayout.Slider(grid.NodePerTile, 1, 6);
         if (newNodePerTile != grid.NodePerTile){
             grid.NodePerTile = newNodePerTile;
-            grid.Start();
+            grid.Awake();
         }
         EditorGUILayout.EndHorizontal();
 

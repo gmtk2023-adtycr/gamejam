@@ -23,6 +23,7 @@ public class TaskManager : MonoBehaviour
     /// Si la tâche actuelle est la dernière, on détruit le manager
     /// </summary>
     /// <param name="first">true first time it's called</param>
+    [ContextMenu("NextTask")]
     private void NextTask(bool first = false)
     {
         if(!first) 

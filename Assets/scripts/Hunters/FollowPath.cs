@@ -28,7 +28,7 @@ public class FollowPath : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_waiting || Vector3.Distance(transform.position, Path.Target.transform.position) > DISTANCE_THRESHOLD)
+        if (_waiting || Vector2.Distance(transform.position, Path.Target.transform.position) > DISTANCE_THRESHOLD)
             return;
 
         if (Path.Target.waitingTime > 0f){
