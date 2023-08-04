@@ -1,49 +1,65 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[RequireComponent(typeof(HunterMovement))]
 public class FollowPath : MonoBehaviour
 {
 
-    private static string PATH_PARENT_NAME = "Path";
     private static float DISTANCE_THRESHOLD = 0.5f;
+    
+    public float Speed = 2;
+    public PathDefiner StartingPath;
+    
+    private Rigidbody2D _body;
 
-    private HunterMovement _movement;
-    public PathDefiner Path;
-
+    private Stack<IPath> _paths = new();
+    private IPath _path => _paths.Count == 0 ? null : _paths.Peek();
     private bool _waiting;
 
-    void Start(){
-        _movement = GetComponent<HunterMovement>();
-        Path.Initialize();
-        if (Path.transform.childCount == 0){
-            enabled = false;
-            return;
+    void Awake()
+    {
+        _body = GetComponent<Rigidbody2D>();
+        if (StartingPath != null)
+        {
+            SetPath(StartingPath);
         }
-        Invoke(nameof(GoToTarget), 0.1f);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (_waiting || Vector2.Distance(transform.position, Path.Target.transform.position) > DISTANCE_THRESHOLD)
-            return;
+        if (_waiting || _paths.Count == 0) return;
 
-        if (Path.Target.waitingTime > 0f){
-            _waiting = true;
-            _movement.Stop();
-            Invoke(nameof(StopWaiting), Path.Target.waitingTime);
+        if (_path.Over)
+            _paths.Pop();
+        if(_path.Target == null)
+            Debug.LogError($"{name} as null target {_path}");
+        
+        if (Vector2.Distance(transform.position, _path.Target.Position) < DISTANCE_THRESHOLD)
+        {
+            if (_path.Target.WaitingTime > 0f)
+            {
+                _waiting = true;
+                Stop();
+                Invoke(nameof(StopWaiting), _path.Target.WaitingTime);
+            }
+            _path.NextTarget();
         }
-        Path.NextTarget();
-        GoToTarget();
-
+        
+        if(!_waiting)
+            GoToTarget();
     }
 
     public void GoToTarget()
     {
-        _movement.WalkToPos(Path.Target.transform.position);
+        var direction = _path.Target.Position - transform.position;
+        _body.velocity = direction.normalized * Speed;
+    }
+
+    public void Stop()
+    {
+        _body.velocity = Vector2.zero;
     }
 
     private void StopWaiting(){
@@ -51,15 +67,21 @@ public class FollowPath : MonoBehaviour
         GoToTarget();
     }
 
-    public void SetPath(PathDefiner path){
-        Path = path;
+    public void SetPath(IPath newPath){
+        _paths.Push(newPath);
+        _path.Initialize();
+    }
+
+    public void RemovePath()
+    {
+        _paths.Pop();
     }
 
     private void OnDrawGizmos(){
-        if(Path == null || Path.Target == null) return;
+        if(_path?.Target == null) return;
         
         Gizmos.color = Color.cyan;
-        Gizmos.DrawSphere(Path.Target.transform.position, DISTANCE_THRESHOLD / 2f);
+        Gizmos.DrawSphere(_path.Target.Position, DISTANCE_THRESHOLD / 2f);
     }
     
     

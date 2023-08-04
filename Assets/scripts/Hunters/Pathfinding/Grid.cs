@@ -150,8 +150,7 @@ public class Grid : MonoBehaviour
 
         List<Node> path = new();
         if (startNode != null && endNode != null){
-            var _pathFinding = new PathFinding();
-            path = _pathFinding.FindPath(this, StartPos.position, EndPos.position);
+            path = PathFinding.FindPath(this, StartPos.position, EndPos.position);
         }
         
 

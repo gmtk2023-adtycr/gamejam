@@ -6,11 +6,12 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class PathDefiner : MonoBehaviour
+public class PathDefiner : MonoBehaviour, IPath
 {
 
     public bool Loop = true;
-    public PathPoint Target => _points == null || _points.Length == 0 ? null : _points[_targetIndex];
+    public IPointPath Target => _points == null || _points.Length == 0 ? null : _points[_targetIndex];
+    public bool Over => false;
 
     private PathPoint[] _points;
     private int _targetIndex;

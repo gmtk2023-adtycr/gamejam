@@ -8,9 +8,9 @@ using UnityEngine.Tilemaps;
 public class PathFinding
 {
 
-    public List<Node> FindPath(Grid grid, Vector3 startPos, Vector3 targetPos){
+    public static List<Node> FindPath(Grid grid, Vector3 startPos, Vector3 targetPos){
         if (grid.OutOfBound(startPos, targetPos)){
-            Debug.LogError("Out of bound !!");
+            //Debug.LogError("Out of bound !!");
             return new List<Node>();
         }
         
@@ -50,7 +50,7 @@ public class PathFinding
     }
 
 
-    private List<Node> RetracePath(Node startNode, Node endNode) {
+    private static List<Node> RetracePath(Node startNode, Node endNode) {
         List<Node> path = new List<Node>();
         Node currentNode = endNode;
 
@@ -60,10 +60,25 @@ public class PathFinding
         }
         path.Reverse();
 
-        return path;
+        return SimplifyPath(path);
+    }
+    
+    private static List<Node> SimplifyPath(List<Node> path) {
+        List<Node> waypoints = new();
+        Vector2 directionOld = Vector2.zero;
+		
+        for (int i = 1; i < path.Count; i ++) {
+            Vector2 directionNew = new Vector2(path[i-1].GridX - path[i].GridX,path[i-1].GridY - path[i].GridY);
+            if (directionNew != directionOld) {
+                waypoints.Add(path[i]);
+            }
+            directionOld = directionNew;
+        }
+
+        return waypoints;
     }
 
-    int GetDistance(Node nodeA, Node nodeB) {
+    private static int GetDistance(Node nodeA, Node nodeB) {
         int dstX = Mathf.Abs(nodeA.GridX - nodeB.GridX);
         int dstY = Mathf.Abs(nodeA.GridY - nodeB.GridY);
 

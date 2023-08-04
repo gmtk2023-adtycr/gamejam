@@ -10,8 +10,15 @@ public class WarnNearestHunter : MonoBehaviour
             .ToList()
             .OrderBy(hunter => (transform.position - hunter.transform.position).magnitude)
             .First();
-        nearestHunter.GetComponent<BehaviourManager>().TrackNoise(transform.position);
+
+        var path = MakeNoisePath(nearestHunter);
+        nearestHunter.GetComponent<FollowPath>().SetPath(path);
         Destroy(this);
     }
 
+    private IPath MakeNoisePath(GameObject hunter)
+    {
+        var nodePath = PathFinding.FindPath(Grid.GetGridForPos(transform.position), hunter.transform.position, transform.position);
+        return new NodePath(nodePath);
+    }
 }

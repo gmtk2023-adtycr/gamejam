@@ -12,7 +12,6 @@ public class HunterMovement : MonoBehaviour
     public float Speed;
 
     private Rigidbody2D _body;
-    private PathFinding _pathFinding;
     private Grid _grid;
 
     private Vector3 _target;
@@ -25,7 +24,6 @@ public class HunterMovement : MonoBehaviour
 
     private void Start(){
         _body = GetComponent<Rigidbody2D>();
-        _pathFinding = new PathFinding();
         _grid = Grid.GetGridForPos(transform.position);
     }
 
@@ -50,7 +48,7 @@ public class HunterMovement : MonoBehaviour
         if(_target.Equals(pos) && _moving)
             return;
         _target = pos;
-        _path = _pathFinding.FindPath(_grid, transform.position, _target);
+        _path = PathFinding.FindPath(_grid, transform.position, _target);
         _pathIndex = 0;
         _moving = true;
     }
