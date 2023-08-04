@@ -14181,7 +14181,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 578338867638593498, guid: 3fa6b5f391ca4974881e271d1ad59dc8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3115252211792202618, guid: 3fa6b5f391ca4974881e271d1ad59dc8, type: 3}
       propertyPath: m_RootOrder
@@ -14234,7 +14234,7 @@ PrefabInstance:
     - target: {fileID: 4351768423027657017, guid: 3fa6b5f391ca4974881e271d1ad59dc8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 071c309823a34f94ba2a854485429dab, type: 3}
+      objectReference: {fileID: 21300000, guid: cc2f8c5ac0ce10b489f43d9a376cb70e, type: 3}
     - target: {fileID: 4351768423027657017, guid: 3fa6b5f391ca4974881e271d1ad59dc8, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -53367,8 +53367,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.45569998, y: 0.00075000525, z: 0}
-    m_Extent: {x: 2.048, y: 1.6294501, z: 0}
+    m_Center: {x: 0.4533, y: 0.0015499592, z: 0}
+    m_Extent: {x: 2.0555, y: 1.62905, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -81798,6 +81798,10 @@ PrefabInstance:
     - target: {fileID: 6589644079682749752, guid: c0c4732e4d0e1b1428977913bc3a3257, type: 3}
       propertyPath: m_Name
       value: MainDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020159350891416650, guid: c0c4732e4d0e1b1428977913bc3a3257, type: 3}
+      propertyPath: DestroyOnDone
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
