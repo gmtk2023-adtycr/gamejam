@@ -14,6 +14,9 @@ public class Movement : MonoBehaviour
     private Rigidbody2D body;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    
+    private static readonly int Speed1 = Animator.StringToHash("Speed");
+    private static readonly int VerticalDirection = Animator.StringToHash("VerticalDirection");
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +49,10 @@ public class Movement : MonoBehaviour
             diagonal = 0.707f; // 1 / sqrt(2)
 
         body.velocity = new Vector2(dx, dy) * (Speed * diagonal);
-        animator.SetFloat("Speed", body.velocity.magnitude);
+        animator.SetFloat(Speed1, body.velocity.magnitude);
         if(body.velocity.x != 0)
             spriteRenderer.flipX = body.velocity.x < 0;
+        animator.SetInteger(VerticalDirection, body.velocity.y > 0 ? 1 : (body.velocity.y < 0 ? -1 : 0));
     }
 
     public void Die(){
