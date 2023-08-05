@@ -62,6 +62,10 @@ public class FollowPath : MonoBehaviour
         _body.velocity = Vector2.zero;
     }
 
+    public void NextTarget(){
+        _path.NextTarget();
+    }
+
     private void StopWaiting(){
         _waiting = false;
         GoToTarget();
