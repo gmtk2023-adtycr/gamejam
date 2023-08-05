@@ -50,6 +50,14 @@ public class DoorBehaviourEditor : Editor
             _target.Start();
             _target.ChangeOpen();
         }
+
+        if (GUILayout.Button("Flip X")){
+            _target.Start();
+            var sprite = _target.GetComponent<SpriteRenderer>();
+            sprite.flipX = !sprite.flipX;
+            var collider = _target.GetComponent<BoxCollider2D>();
+            collider.offset = new Vector2(-collider.offset.x,collider.offset.y);
+        }
         
 
 
