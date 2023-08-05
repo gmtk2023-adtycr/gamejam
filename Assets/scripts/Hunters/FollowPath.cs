@@ -29,12 +29,10 @@ public class FollowPath : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_waiting || _paths.Count == 0) return;
-
         if (_path.Over)
             _paths.Pop();
-        if(_path.Target == null)
-            Debug.LogError($"{name} as null target {_path}");
+        if (_waiting || _paths.Count == 0 || _path.Target == null) return;
+        
         
         if (Vector2.Distance(transform.position, _path.Target.Position) < DISTANCE_THRESHOLD)
         {

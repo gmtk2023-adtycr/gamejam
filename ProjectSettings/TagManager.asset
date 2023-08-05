@@ -7,7 +7,7 @@ TagManager:
   - room
   - Enemy
   - Phases
-  - Wall_1F_Left
+  - SubCollider
   layers:
   - Default
   - TransparentFX

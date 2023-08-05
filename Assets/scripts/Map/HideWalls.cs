@@ -20,7 +20,7 @@ public class HideWalls : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("SubCollider") && collision.gameObject.transform.parent.CompareTag("Player"))
         {
             Walls.ForEach(w => {
                 //w.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, .7f);
@@ -32,7 +32,7 @@ public class HideWalls : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("SubCollider") && collision.gameObject.transform.parent.CompareTag("Player"))
         {
             Walls.ForEach(w => {
                 //w.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, 1f);

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class DoorBehaviour : MonoBehaviour
 {
@@ -12,15 +13,19 @@ public class DoorBehaviour : MonoBehaviour
     private bool _opened = false;
     private BoxCollider2D _collider2D;
     private SpriteRenderer _spriteRenderer;
+    private ShadowCaster2D _shadowCaster;
 
     public void Start(){
         _collider2D = GetComponent<BoxCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _shadowCaster = GetComponent<ShadowCaster2D>();
+        SetOpened(_opened);
     }
 
     public void SetOpened(bool opened){
         _opened = opened;
         _collider2D.enabled = !opened;
+        _shadowCaster.enabled = !opened;
         _spriteRenderer.sprite = opened ? OpenedSprite : ClosedSprite;
     }
 

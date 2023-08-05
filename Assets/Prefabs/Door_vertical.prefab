@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3559921154779501548}
   - component: {fileID: 4351768423027657017}
   - component: {fileID: 578338867638593498}
-  m_Layer: 0
+  - component: {fileID: 6864520511135084191}
+  m_Layer: 7
   m_Name: Door_vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,3 +146,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &6864520511135084191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299989910133036723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: c196d73f000000006366955dbb68b0863d5157bc21b0a736
+  m_ShapePath:
+  - {x: 0, y: -1, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 1, y: 1, z: 0}
+  - {x: 1, y: -1, z: 0}
+  m_ShapePathHash: 278263061
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -179962
+  m_LocalBounds:
+    m_Center: {x: 0.5, y: 0, z: 0}
+    m_Extent: {x: 0.5, y: 1, z: 0}
