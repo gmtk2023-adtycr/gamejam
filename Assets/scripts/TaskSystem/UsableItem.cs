@@ -18,6 +18,11 @@ public class UsableItem : MonoBehaviour
     private Material _outlineMaterial;
     private static readonly int Active1 = Shader.PropertyToID("_Active");
 
+
+    [SerializeField] private AudioSource Task_AudioSource;
+    [SerializeField] private AudioClip Interaction_Sound;
+    [Range(0.0f,3.0f)] public float volume = 1.0f;
+
     private void Start(){
         _outlineMaterial = GetComponent<SpriteRenderer>().material;
     }
@@ -27,6 +32,7 @@ public class UsableItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _playerHere && Active)
         {
             OnUse?.Invoke();
+            Task_AudioSource.PlayOneShot(Interaction_Sound, volume);
             if(DestroyOnDone)
                 Destroy(gameObject);
         }

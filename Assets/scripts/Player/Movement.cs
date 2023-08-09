@@ -18,6 +18,11 @@ public class Movement : MonoBehaviour
     private static readonly int Speed1 = Animator.StringToHash("Speed");
     private static readonly int VerticalDirection = Animator.StringToHash("VerticalDirection");
 
+    
+    [SerializeField] private AudioSource myAudioSource;
+    [SerializeField] private AudioClip DeathSound;
+    [SerializeField] private float volume = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +63,7 @@ public class Movement : MonoBehaviour
     public void Die(){
         body.velocity = Vector2.zero;
         animator.SetBool("Dead", true);
-
+        myAudioSource.PlayOneShot(DeathSound, volume);
     }
     
 }

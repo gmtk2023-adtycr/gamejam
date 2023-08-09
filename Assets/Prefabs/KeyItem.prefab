@@ -172,3 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Active: 0
+  DestroyOnDone: 1
+  Task_AudioSource: {fileID: 0}
+  Interaction_Sound: {fileID: 8300000, guid: 66684ecaf7854da4d987fe3b1e24d463, type: 3}
+  volume: 1
