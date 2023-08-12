@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class FlickeringLight : MonoBehaviour
+public class FlickeringLightOther : MonoBehaviour
 {
 
     private Light2D light2D;
@@ -15,6 +15,6 @@ public class FlickeringLight : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        light2D.intensity = 0.40f + Mathf.Sin(Time.time * 2f) * 0.15f;
+        light2D.intensity = 0.30f + Mathf.Sin(Time.time * .25f) * 0.1f;
     }
 }
