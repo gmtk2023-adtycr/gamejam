@@ -9,7 +9,7 @@ public class DoorBehaviour : MonoBehaviour
 {
 
     public Sprite OpenedSprite, ClosedSprite;
-    
+
     private bool _opened = false;
     private BoxCollider2D _collider2D;
     private SpriteRenderer _spriteRenderer;
@@ -33,7 +33,7 @@ public class DoorBehaviour : MonoBehaviour
         SetOpened(!_opened);
     }
 
-    
+
 }
 
 
@@ -43,7 +43,7 @@ public class DoorBehaviourEditor : Editor
 
     private GameObject gameObject;
     private DoorBehaviour _target;
-    
+
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
@@ -63,13 +63,12 @@ public class DoorBehaviourEditor : Editor
             var collider = _target.GetComponent<BoxCollider2D>();
             collider.offset = new Vector2(-collider.offset.x,collider.offset.y);
         }
-        
+
 
 
         EditorGUILayout.EndHorizontal();
     }
-    
-    
+
+
 
 }
-
