@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 public class DoorBehaviour : MonoBehaviour
 {
 
     public Sprite OpenedSprite, ClosedSprite;
 
-    private bool _opened = false;
+    private bool Opened => !_collider2D.enabled;
     private BoxCollider2D _collider2D;
     private SpriteRenderer _spriteRenderer;
     private ShadowCaster2D _shadowCaster;
@@ -19,18 +20,17 @@ public class DoorBehaviour : MonoBehaviour
         _collider2D = GetComponent<BoxCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _shadowCaster = GetComponent<ShadowCaster2D>();
-        SetOpened(_opened);
+        //SetOpened(Opened);
     }
 
     public void SetOpened(bool opened){
-        _opened = opened;
         _collider2D.enabled = !opened;
         _shadowCaster.enabled = !opened;
         _spriteRenderer.sprite = opened ? OpenedSprite : ClosedSprite;
     }
 
     public void ChangeOpen(){
-        SetOpened(!_opened);
+        SetOpened(!Opened);
     }
 
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -64,6 +65,11 @@ public class Movement : MonoBehaviour
         body.velocity = Vector2.zero;
         animator.SetBool("Dead", true);
         myAudioSource.PlayOneShot(DeathSound, volume);
+        Invoke(nameof(GoToGameOverScene), 1f);
+    }
+
+    private void GoToGameOverScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
 }

@@ -16,7 +16,7 @@ public class UsableItem : MonoBehaviour
 
     private bool _playerHere;
     private Material _outlineMaterial;
-    private static readonly int Active1 = Shader.PropertyToID("_Active");
+    private static readonly int ActiveProperty = Shader.PropertyToID("_Active");
 
 
     [SerializeField] private AudioSource Task_AudioSource;
@@ -42,14 +42,14 @@ public class UsableItem : MonoBehaviour
         if(!Active || !collision.gameObject.CompareTag("Player")) return;
 
         _playerHere = true;
-        _outlineMaterial.SetInteger(Active1, 1);
+        _outlineMaterial.SetInteger(ActiveProperty, 1);
     }
 
     private void OnTriggerExit2D(Collider2D collision){
         if(!collision.gameObject.CompareTag("Player")) return;
 
         _playerHere = false;        
-        _outlineMaterial.SetInteger(Active1, 0);
+        _outlineMaterial.SetInteger(ActiveProperty, 0);
     }
 
 }
