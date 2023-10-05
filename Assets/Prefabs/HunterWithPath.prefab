@@ -31,7 +31,7 @@ Transform:
   - {fileID: 9131991330669711673}
   - {fileID: 3348125668238943788}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7859371577468739557
 GameObject:
@@ -86,6 +86,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5594645824089191884}
     m_Modifications:
+    - target: {fileID: 169621203808180951, guid: 0ad37b697d04ec343bfec1290c23aa6a, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 169621203808180951, guid: 0ad37b697d04ec343bfec1290c23aa6a, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2011676899277175019, guid: 0ad37b697d04ec343bfec1290c23aa6a, type: 3}
       propertyPath: m_Name
       value: Hunter

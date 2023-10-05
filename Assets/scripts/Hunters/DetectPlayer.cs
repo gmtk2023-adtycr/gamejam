@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using PrimeTween;
 
 public class DetectPlayer : MonoBehaviour
 {
@@ -15,8 +16,9 @@ public class DetectPlayer : MonoBehaviour
     private void OnDetectPlayer(GameObject player)
     {
         Debug.Log("Detected by " + transform.parent.parent.gameObject.name);
+        Tween.ShakeCamera(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(), strengthFactor: 2.0f);
         player.GetComponent<Movement>().Die();
     }
-    
+
 
 }
