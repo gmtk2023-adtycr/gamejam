@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2dbc3b2744faf6468a48559152cbaf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivotSpeed: 2
+  pivotSpeed: 1
 --- !u!1 &7760513862532178690 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3007809321863361875, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
