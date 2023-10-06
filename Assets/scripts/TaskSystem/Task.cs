@@ -33,8 +33,11 @@ public class Task : MonoBehaviour
 
     private void TriggerOnDone()
     {
-        if(++_subTaskDoneCount == Requirements.Count)
+        if (++_subTaskDoneCount == Requirements.Count){
             OnDone.Invoke(new BaseEventData(EventSystem.current));
+            PlayerPrefs.SetString("Last_Task", name);
+        }
+            
     }
 
 }

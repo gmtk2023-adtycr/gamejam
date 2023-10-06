@@ -15,6 +15,8 @@ public class TaskManager : MonoBehaviour
     void Start()
     {
         NextTask(true);
+        if(PlayerPrefs.HasKey("Last_Task"))
+            GoToTask(PlayerPrefs.GetString("Last_Task"));
     }
 
     /// <summary>
@@ -23,7 +25,6 @@ public class TaskManager : MonoBehaviour
     /// Si la tâche actuelle est la dernière, on détruit le manager
     /// </summary>
     /// <param name="first">true first time it's called</param>
-    [ContextMenu("NextTask")]
     private void NextTask(bool first = false)
     {
         if(!first) 
@@ -60,5 +61,13 @@ public class TaskManager : MonoBehaviour
         _currentTaskId = 0;
         return true;
     }
+
+    private void GoToTask(String taskID){
+        while (CurrentTask.name != taskID){
+            CurrentTask.Requirements.ForEach(Destroy);
+            NextTask();
+        }
+    }
+    
     
 }
