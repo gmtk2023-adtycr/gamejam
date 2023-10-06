@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
 {
     
     public float Speed = 4f;
-    private bool dead;
 
     private Rigidbody2D body;
     private Animator animator;
@@ -43,8 +42,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dead) return;
-        
         float dx = Input.GetAxis("Horizontal");
         float dy = Input.GetAxis("Vertical");
         
@@ -62,6 +59,7 @@ public class Movement : MonoBehaviour
     }
 
     public void Die(){
+        enabled = false;
         body.velocity = Vector2.zero;
         animator.SetBool("Dead", true);
         myAudioSource.PlayOneShot(DeathSound, volume);

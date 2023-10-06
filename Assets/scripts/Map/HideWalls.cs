@@ -29,11 +29,16 @@ public class HideWalls : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other){
+        this.OnTriggerStay2D(other);
+    }
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("SubCollider") && collision.gameObject.transform.parent.CompareTag("Player"))
         {
+            print(name + "TriggerExit");
             Walls.ForEach(w => {
                 //w.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, 1f);
                 w.SetActive(true);

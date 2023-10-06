@@ -37,6 +37,7 @@ public class Teleporter : MonoBehaviour
     }
 
     private void ReceiveEntity(GameObject entity, Vector3 posDiff){
+        if(_dontTP.ContainsKey(entity)) return;
         _dontTP.Add(entity, true);
         entity.transform.position = transform.position + posDiff;
         entity.GetComponent<FollowPath>()?.NextTarget();
