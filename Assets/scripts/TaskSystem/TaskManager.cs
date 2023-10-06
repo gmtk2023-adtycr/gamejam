@@ -11,11 +11,15 @@ public class TaskManager : MonoBehaviour
     
     public Task CurrentTask => _tasksOfCurrentPhase[_currentTaskId];
     public event Action OnNextTask;
+
+    public string DebugTask = "";
     
     void Start()
     {
         NextTask(true);
-        if(PlayerPrefs.HasKey("Last_Task"))
+        if(!string.IsNullOrEmpty(DebugTask))
+            GoToTask(DebugTask);
+        else if(PlayerPrefs.HasKey("Last_Task"))
             GoToTask(PlayerPrefs.GetString("Last_Task"));
     }
 
@@ -64,7 +68,13 @@ public class TaskManager : MonoBehaviour
 
     private void GoToTask(String taskID){
         while (CurrentTask.name != taskID){
-            CurrentTask.Requirements.ForEach(Destroy);
+            CurrentTask.Requirements.ForEach(go => {
+                var item = go.GetComponent<UsableItem>();
+                if (item != null && item.DestroyOnDone){
+                    Destroy(go);
+                }
+            });
+            CurrentTask.MarkAsDone();
             NextTask();
         }
     }

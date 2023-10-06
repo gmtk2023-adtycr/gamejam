@@ -37,7 +37,10 @@ public class Task : MonoBehaviour
             OnDone.Invoke(new BaseEventData(EventSystem.current));
             PlayerPrefs.SetString("Last_Task", name);
         }
-            
+    }
+
+    public void MarkAsDone(){
+        _subTaskDoneCount = Requirements.Count;
     }
 
 }
