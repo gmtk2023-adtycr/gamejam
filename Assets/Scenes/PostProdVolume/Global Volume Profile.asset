@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8240247041494668197
+--- !u!114 &-8297693556363409110
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,25 +9,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
-  m_Name: Vignette
+  m_Script: {fileID: 11500000, guid: abdf82dce54b9634196816626582aa87, type: 3}
+  m_Name: ChromaticVolume
   m_EditorClassIdentifier: 
   active: 1
-  color:
+  Active:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: 1
+  When:
+    m_OverrideState: 0
+    m_Value: 500
+  Chroma:
+    m_OverrideState: 1
+    m_Value: 10
+--- !u!114 &-6580925292558510677
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: -0.3
+  xMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+  yMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
+  scale:
+    m_OverrideState: 0
+    m_Value: 1
+--- !u!114 &-4683349158247689828
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 1
+  type:
+    m_OverrideState: 1
+    m_Value: 9
   intensity:
     m_OverrideState: 1
-    m_Value: 0.296
-  smoothness:
+    m_Value: 0.5
+  response:
+    m_OverrideState: 1
+    m_Value: 1
+  texture:
     m_OverrideState: 0
-    m_Value: 0.2
-  rounded:
-    m_OverrideState: 0
-    m_Value: 0
+    m_Value: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +89,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: 6789541010103078531}
-  - {fileID: -8240247041494668197}
+  - {fileID: -6580925292558510677}
+  - {fileID: -4683349158247689828}
+  - {fileID: 8442671154700386056}
+  - {fileID: -8297693556363409110}
+  - {fileID: 1612837735438059223}
+--- !u!114 &1612837735438059223
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9552dc531ee036d499efc8422245ab19, type: 3}
+  m_Name: GlitchVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  Active:
+    m_OverrideState: 1
+    m_Value: 1
+  When:
+    m_OverrideState: 0
+    m_Value: 500
+  Noise:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  Size:
+    m_OverrideState: 0
+    m_Value: 20.3
+  BlockDensity:
+    m_OverrideState: 0
+    m_Value: 0.2
+  LineDensity:
+    m_OverrideState: 0
+    m_Value: 0.7
+  Speed:
+    m_OverrideState: 1
+    m_Value: 0.05
 --- !u!114 &6789541010103078531
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -55,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   skipIterations:
     m_OverrideState: 0
     m_Value: 1
@@ -64,7 +150,7 @@ MonoBehaviour:
     m_Value: 0.91
   intensity:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 5
   scatter:
     m_OverrideState: 1
     m_Value: 0.739
@@ -90,3 +176,38 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &8442671154700386056
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cfa44da4f34c64bb4e878d6833959b, type: 3}
+  m_Name: VCRVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  Active:
+    m_OverrideState: 1
+    m_Value: 1
+  When:
+    m_OverrideState: 0
+    m_Value: 500
+  Noise:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  Stripes:
+    m_OverrideState: 1
+    m_Value: 0.2
+  Noisy:
+    m_OverrideState: 1
+    m_Value: 0.1
+  VerticalShift:
+    m_OverrideState: 1
+    m_Value: 0.01
+  HorizontalShift:
+    m_OverrideState: 1
+    m_Value: 0.01
