@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4911513530720237081}
   - component: {fileID: 2685759886701925823}
   - component: {fileID: 4469294427809553134}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EscalierDescendant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 9063738195687516825}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &575625197541936920
 MonoBehaviour:

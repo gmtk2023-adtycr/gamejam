@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -8,6 +9,8 @@ public class FollowPath : MonoBehaviour
 {
 
     private static float DISTANCE_THRESHOLD = 0.5f;
+    
+    public GameObject HunterIndicatorPrefab, HunterIndicator;
     
     public float Speed = 2;
     public PathDefiner StartingPath;
@@ -43,6 +46,7 @@ public class FollowPath : MonoBehaviour
                 Invoke(nameof(StopWaiting), _path.Target.WaitingTime);
             }
             _path.NextTarget();
+            CheckForIndicator();
         }
         
         if(!_waiting)
@@ -77,6 +81,27 @@ public class FollowPath : MonoBehaviour
     public void RemovePath()
     {
         _paths.Pop();
+    }
+    
+    private void CheckForIndicator(){
+        if(HunterIndicator != null)
+            Destroy(HunterIndicator);
+        //var stairs = GameObject.FindObjectsOfType<Teleporter>()
+        //    .Select(stair => stair.GetComponent<BoxCollider2D>());
+        var tpMask = LayerMask.GetMask("Teleporter");
+
+        var start = transform.position;
+        var end = _path.Target.Position;
+        RaycastHit2D hit = Physics2D.Raycast(start, end - start, Vector3.Distance(start, end), tpMask);
+        if (hit.collider != null ){
+            var tp = hit.collider.GetComponent<Teleporter>();
+            if (tp != null)
+                AddHunterIndicator(tp.Destination);
+        }
+    }
+
+    private void AddHunterIndicator(Teleporter tp){
+        
     }
 
     private void OnDrawGizmos(){
