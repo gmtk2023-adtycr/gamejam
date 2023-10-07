@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdf82dce54b9634196816626582aa87, type: 3}
   m_Name: ChromaticVolume
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   Active:
     m_OverrideState: 1
     m_Value: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: 500
   Chroma:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 7.9
 --- !u!114 &-6580925292558510677
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -119,16 +119,16 @@ MonoBehaviour:
     dimension: 1
   Size:
     m_OverrideState: 0
-    m_Value: 20.3
+    m_Value: 26.1
   BlockDensity:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 0.177
   LineDensity:
-    m_OverrideState: 0
-    m_Value: 0.7
+    m_OverrideState: 1
+    m_Value: 0.092
   Speed:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: 0.01
 --- !u!114 &6789541010103078531
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -196,18 +196,18 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 500
   Noise:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 8900000, guid: e3304978ea15abf42bfe52fe77503e75, type: 3}
     dimension: 1
   Stripes:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.02
   Noisy:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0
   VerticalShift:
     m_OverrideState: 1
-    m_Value: 0.01
+    m_Value: 0.02
   HorizontalShift:
     m_OverrideState: 1
-    m_Value: 0.01
+    m_Value: 0.02
