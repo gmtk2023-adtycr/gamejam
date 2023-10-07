@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private AudioSource myAudioSource;
     [SerializeField] private AudioClip DeathSound;
     [SerializeField] private float volume = 1.0f;
+    private bool deathSoundPlayed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +63,9 @@ public class Movement : MonoBehaviour
         enabled = false;
         body.velocity = Vector2.zero;
         animator.SetBool("Dead", true);
+        if(!deathSoundPlayed){
         myAudioSource.PlayOneShot(DeathSound, volume);
+        deathSoundPlayed=true;        }
         Invoke(nameof(GoToGameOverScene), 1f);
     }
 
