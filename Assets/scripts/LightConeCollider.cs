@@ -11,17 +11,47 @@ public class LightConeCollider : MonoBehaviour
 
     [Min(1)]
     public int steps = 10;
-
+    public AudioClip trap_talkie_sfx;
+    [Range(0.0f,3.0f)] public float volume=1.0f;
+    public AudioSource AudioSource;
+    private bool hasPlayedSound = false;
     public event Action<GameObject> OnDetectPlayer;
 
-    void FixedUpdate(){
+
+    private void PlaySound()
+    {
+        if (trap_talkie_sfx != null)
+        {
+            AudioSource.PlayOneShot(trap_talkie_sfx);}
+    }
+
+    
+        private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && !hasPlayedSound)
+        {
+            PolygonCollider2D polygonCollider = GetComponent<PolygonCollider2D>();
+            OnDetectPlayer?.Invoke(other.gameObject);
+            PlaySound();
+            hasPlayedSound = true;
+        }
+        else{
+            hasPlayedSound = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
         var start = transform.parent.position;
-        foreach (var ray in GetVectors().ToList()){
+        foreach (var ray in GetVectors().ToList())
+        {
             RaycastHit2D hit = Physics2D.Raycast(start, ray - start, Vector3.Distance(start, ray), LayerMask.GetMask("Player"));
-            if (hit.collider != null){
+            
+            if (hit.collider != null && !hasPlayedSound)
+                {
                 OnDetectPlayer?.Invoke(hit.collider.gameObject);
                 break;
-            }
+                }
         }
     }
 
