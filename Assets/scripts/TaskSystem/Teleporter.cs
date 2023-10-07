@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -15,7 +16,8 @@ public class Teleporter : MonoBehaviour
 
     public Teleporter Destination;
     public TeleporterType Type;
-    
+
+    private GameObject _indicator;
     private UsableItem _usableItem;
     private Dictionary<GameObject, bool> _dontTP = new();
 
@@ -24,7 +26,14 @@ public class Teleporter : MonoBehaviour
             _usableItem = GetComponent<UsableItem>();
             _usableItem.OnUse += TeleportPlayer;
         }
+        else
+            _indicator = transform.Find("Indicateur").gameObject;
+    }
 
+    public void FixedUpdate(){
+        var indicator = Destination._indicator;
+        if(indicator != null)
+            indicator.SetActive(FindObjectsOfType<FollowPath>().Any(h => (transform.position - h.transform.position).magnitude < 5f));
     }
 
     private void TeleportPlayer(){
@@ -56,5 +65,10 @@ public class Teleporter : MonoBehaviour
     private void OnDrawGizmosSelected(){
         if (Destination != null)
             Debug.DrawLine(transform.position, Destination.transform.position, Color.yellow);
+    }
+
+    public void ShowIndicator(){
+        if(_indicator != null)
+            _indicator.SetActive(true);
     }
 }
