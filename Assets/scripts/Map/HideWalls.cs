@@ -38,7 +38,6 @@ public class HideWalls : MonoBehaviour
     {
         if (collision.CompareTag("SubCollider") && collision.gameObject.transform.parent.CompareTag("Player"))
         {
-            print(name + "TriggerExit");
             Walls.ForEach(w => {
                 //w.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, 1f);
                 w.SetActive(true);

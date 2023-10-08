@@ -10,24 +10,31 @@ public class PathDefiner : MonoBehaviour, IPath
 {
 
     public bool Loop = true;
+    public bool NextPathWhenOver = false;
     public IPointPath Target => _points == null || _points.Length == 0 ? null : _points[_targetIndex];
-    public bool Over => false;
+    public bool Over{ get; private set; }
 
     private PathPoint[] _points;
     private int _targetIndex;
     private bool _forward = true;
     private int DiffIndex => Loop || _forward ? 1 : -1;
 
+    public event Action OnOver;
+
 
     public void Initialize(){
-        if(_points == null)
-            _points = Enumerable.Range(0, transform.childCount)
-                .Select(index => transform.GetChild(index).GetComponent<PathPoint>())
-                .ToArray();
-
+        _points ??= Enumerable.Range(0, transform.childCount)
+            .Select(index => transform.GetChild(index).GetComponent<PathPoint>())
+            .ToArray();
     }
 
     public void NextTarget(){
+        if (NextPathWhenOver && _targetIndex >= _points.Length - 1){
+            print("Over");
+            Over = true;
+            OnOver?.Invoke();
+        }
+        
         if (!Loop){
             if ((_forward && _targetIndex == _points.Length - 1) || (!_forward && _targetIndex == 0))
                 _forward = !_forward;
