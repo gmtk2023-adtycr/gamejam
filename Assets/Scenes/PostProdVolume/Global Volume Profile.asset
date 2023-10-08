@@ -109,7 +109,7 @@ MonoBehaviour:
   active: 1
   Active:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   When:
     m_OverrideState: 0
     m_Value: 500
@@ -121,7 +121,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 26.1
   BlockDensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.177
   LineDensity:
     m_OverrideState: 1

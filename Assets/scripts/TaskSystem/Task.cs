@@ -19,8 +19,13 @@ public class Task : MonoBehaviour
         foreach (var gameObject in Requirements)
         {
             var kyb = gameObject.GetComponent<UsableItem>();
-            if (kyb == null) {
-                Debug.LogError($"GameObject {gameObject.name} must have a KeyItemBehaviour script");
+            if (kyb == null){
+                var path = gameObject.GetComponent<PathDefiner>();
+                if(path == null)
+                    Debug.LogError($"GameObject {gameObject.name} must have a KeyItemBehaviour script");
+                else{
+                    path.OnOver += TriggerOnDone;
+                }
             }
             else{
                 if (!kyb.Active) //if item is not active before the task, disable it after the task is done

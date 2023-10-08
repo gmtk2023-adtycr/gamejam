@@ -11,4 +11,10 @@ public class NodePoint : IPointPath
         Position = node.Position;
     }
     
+    public void Arrival(){
+    }
+
+    public void Departure(){
+    }
+    
 }
