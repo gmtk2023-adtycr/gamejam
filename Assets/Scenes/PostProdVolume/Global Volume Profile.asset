@@ -196,7 +196,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 500
   Noise:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {fileID: 8900000, guid: e3304978ea15abf42bfe52fe77503e75, type: 3}
     dimension: 1
   Stripes:
