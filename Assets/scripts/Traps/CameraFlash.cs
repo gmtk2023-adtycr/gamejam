@@ -9,7 +9,6 @@ public class CameraFlash : MonoBehaviour
     public float timeOn = .2f;
     public float timeOff = 2;
     public AudioSource audioOn;
-    public AudioSource audioOff;
     
     
     private float time;
@@ -43,13 +42,7 @@ public class CameraFlash : MonoBehaviour
         if(isOn && !audioOn.isPlaying) 
         {
             audioOn.Play();
-            audioOff.Stop();
         }
-        else
-            if(!isOn && !audioOff.isPlaying)
-        {
-            audioOn.Stop();
-            audioOff.Play();
-        }
+
     }
 }

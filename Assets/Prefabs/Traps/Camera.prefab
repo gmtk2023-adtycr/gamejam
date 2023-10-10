@@ -101,9 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeOn: 0.2
-  timeOff: 2
+  timeOff: 2.2
   audioOn: {fileID: 4604199855866181332}
-  audioOff: {fileID: -3620085037440356472}
 --- !u!82 &4604199855866181332
 AudioSource:
   m_ObjectHideFlags: 0
@@ -114,9 +113,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3383757689907113825, guid: 7f53a970eb12c9a42b5302e8c1726e9d, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0262fadc7d0f14b4d82a08eef060c358, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4df6d63db335d5f4eafa5341df4f60c3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -125,9 +124,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 18
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
