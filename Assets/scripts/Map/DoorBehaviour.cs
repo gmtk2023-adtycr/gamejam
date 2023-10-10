@@ -16,7 +16,7 @@ public class DoorBehaviour : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private ShadowCaster2D _shadowCaster;
 
-    public void Start(){
+    public void Awake(){
         _collider2D = GetComponent<BoxCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _shadowCaster = GetComponent<ShadowCaster2D>();
@@ -52,12 +52,12 @@ public class DoorBehaviourEditor : Editor
         EditorGUILayout.BeginHorizontal();
 
         if (GUILayout.Button("Open/close")){
-            _target.Start();
+            _target.Awake();
             _target.ChangeOpen();
         }
 
         if (GUILayout.Button("Flip X")){
-            _target.Start();
+            _target.Awake();
             var sprite = _target.GetComponent<SpriteRenderer>();
             sprite.flipX = !sprite.flipX;
             var collider = _target.GetComponent<BoxCollider2D>();

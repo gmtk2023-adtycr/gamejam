@@ -46,6 +46,7 @@ public class Task : MonoBehaviour
 
     public void MarkAsDone(){
         _subTaskDoneCount = Requirements.Count;
+        OnDone.Invoke(new BaseEventData(EventSystem.current));
     }
 
 }

@@ -74,8 +74,7 @@ public class TaskManager : MonoBehaviour
                     Destroy(go);
                 }
             });
-            CurrentTask.MarkAsDone();
-            NextTask();
+            CurrentTask.MarkAsDone(); //will trigger next task
         }
     }
     

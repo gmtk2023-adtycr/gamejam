@@ -46,9 +46,6 @@ public class FollowPath : MonoBehaviour
         }
         if (_waiting || _paths.Count == 0 || _path.Target == null) return;
         
-        if(transform.parent.name == "Hunter1WithPath")
-            print("Following " + _path.Target.Position);
-        
         if (Vector2.Distance(transform.position, _path.Target.Position) < DISTANCE_THRESHOLD)
         {
             _path.Target.Arrival();
