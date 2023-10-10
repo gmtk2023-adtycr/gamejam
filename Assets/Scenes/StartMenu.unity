@@ -2186,7 +2186,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5451531843421222760, guid: 7f53a970eb12c9a42b5302e8c1726e9d, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b4ac8412683386a46a573777a9a9a53a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 965c78d91a99fd34f855ccf75e5b16cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2499,7 +2499,7 @@ GameObject:
   - component: {fileID: 885660169}
   - component: {fileID: 885660168}
   m_Layer: 5
-  m_Name: Image
+  m_Name: image how to play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5708,7 +5708,7 @@ GameObject:
   - component: {fileID: 1894847958}
   - component: {fileID: 1894847957}
   m_Layer: 5
-  m_Name: 'CANVAS HOW TO PLAY '
+  m_Name: How to play background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

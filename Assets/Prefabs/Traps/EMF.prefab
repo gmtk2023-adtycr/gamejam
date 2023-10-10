@@ -93,6 +93,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6102850724064437187}
     m_Modifications:
+    - target: {fileID: 770743523712754624, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 3929501377965981628}
     - target: {fileID: 1914736974736517426, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
       propertyPath: m_Color.b
       value: 0.25537488
