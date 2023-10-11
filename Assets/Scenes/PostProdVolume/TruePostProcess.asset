@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8297693556363409110
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdf82dce54b9634196816626582aa87, type: 3}
+  m_Name: ChromaticVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  Active:
+    m_OverrideState: 1
+    m_Value: 1
+  When:
+    m_OverrideState: 0
+    m_Value: 500
+  Chroma:
+    m_OverrideState: 1
+    m_Value: 5
 --- !u!114 &-6580925292558510677
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -12,10 +34,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: -0.3
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -43,13 +65,13 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 9
   intensity:
     m_OverrideState: 1
-    m_Value: 0.466
+    m_Value: 0.5
   response:
     m_OverrideState: 1
-    m_Value: 0.775
+    m_Value: 1
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -63,41 +85,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Name: TruePostProcess
   m_EditorClassIdentifier: 
   components:
   - {fileID: 6789541010103078531}
   - {fileID: -6580925292558510677}
   - {fileID: -4683349158247689828}
-  - {fileID: 1869036020010489806}
---- !u!114 &1869036020010489806
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
-  m_Name: Vignette
-  m_EditorClassIdentifier: 
-  active: 1
-  color:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  center:
-    m_OverrideState: 0
-    m_Value: {x: 0.5, y: 0.5}
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.189
-  smoothness:
-    m_OverrideState: 0
-    m_Value: 0.173
-  rounded:
-    m_OverrideState: 0
-    m_Value: 0
+  - {fileID: 8442671154700386056}
+  - {fileID: -8297693556363409110}
 --- !u!114 &6789541010103078531
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -115,20 +110,20 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   threshold:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.91
   intensity:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 5
   scatter:
     m_OverrideState: 1
-    m_Value: 0.133
+    m_Value: 0.739
   clamp:
-    m_OverrideState: 1
-    m_Value: 66
+    m_OverrideState: 0
+    m_Value: 65452.2
   tint:
-    m_OverrideState: 1
-    m_Value: {r: 0.66874534, g: 0.63995194, b: 0.6886792, a: 1}
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -145,3 +140,38 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &8442671154700386056
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cfa44da4f34c64bb4e878d6833959b, type: 3}
+  m_Name: VCRVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  Active:
+    m_OverrideState: 1
+    m_Value: 1
+  When:
+    m_OverrideState: 0
+    m_Value: 500
+  Noise:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  Stripes:
+    m_OverrideState: 1
+    m_Value: 0.05
+  Noisy:
+    m_OverrideState: 1
+    m_Value: 0.1
+  VerticalShift:
+    m_OverrideState: 1
+    m_Value: 0.005
+  HorizontalShift:
+    m_OverrideState: 1
+    m_Value: 0.005
