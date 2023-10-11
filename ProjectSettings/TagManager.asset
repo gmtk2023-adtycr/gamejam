@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Phases
   - SubCollider
+  - HorlogeCamera
   layers:
   - Default
   - TransparentFX
