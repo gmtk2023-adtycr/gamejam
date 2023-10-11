@@ -2088,6 +2088,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 5776238845882691704}
+  myAudioMixer: {fileID: 24100000, guid: 7f53a970eb12c9a42b5302e8c1726e9d, type: 2}
+  muffled: 1500
+  not_muffled: 22000
 --- !u!1 &8629867511777737799
 GameObject:
   m_ObjectHideFlags: 0
