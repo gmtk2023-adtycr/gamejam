@@ -18,8 +18,17 @@ public class LightConeCollider : MonoBehaviour
     public AudioSource AudioSource;
     private bool hasPlayedSound = false;
     public event Action<GameObject> OnDetectPlayer;
+    private Light2D light2DComponent;
+      private Color originalColor; 
 
+    void Start()
+    {
+        // Get the Light2D component attached to the same GameObject
+        light2DComponent = GetComponent<Light2D>();
 
+        // Store the original color of the Light2D component
+        originalColor = light2DComponent.color;
+    }
     private void PlaySound()
     {
         if (trap_talkie_sfx != null && !AudioSource.isPlaying)
@@ -63,8 +72,10 @@ public class LightConeCollider : MonoBehaviour
                 OnDetectPlayer?.Invoke(hit.collider.gameObject);
                 PlaySoundDetected();
                 playerDetected=true;
+                light2DComponent.color = Color.red;
                 break;
                 }
+            else{            light2DComponent.color = originalColor;}
         }
     }
 
