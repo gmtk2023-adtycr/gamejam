@@ -1006,7 +1006,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221873197
 MonoBehaviour:
@@ -2339,7 +2339,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855145323
 GameObject:
@@ -2383,7 +2383,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &863915774
 GameObject:
@@ -2715,7 +2715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &955680791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,7 +2746,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021056230
 GameObject:
@@ -3351,7 +3351,7 @@ RectTransform:
   - {fileID: 19606013}
   - {fileID: 1894847956}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4456,7 +4456,7 @@ Transform:
   - {fileID: 1184321393}
   - {fileID: 1936380716}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1384100984
 GameObject:
@@ -6829,13 +6829,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 3236107579190054277, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6218545140164331533, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 221873195}
     - target: {fileID: 6859585934229776422, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6859585934229776422, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6876,6 +6880,10 @@ PrefabInstance:
     - target: {fileID: 6859585934229776422, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754257278182052611, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
