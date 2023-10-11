@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.088
+    m_Value: 0.05
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.425
+    m_Value: 0.466
   response:
     m_OverrideState: 1
     m_Value: 0.775
@@ -90,8 +90,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
-    m_OverrideState: 0
-    m_Value: 0.309
+    m_OverrideState: 1
+    m_Value: 0.189
   smoothness:
     m_OverrideState: 0
     m_Value: 0.173
@@ -119,13 +119,13 @@ MonoBehaviour:
     m_Value: 0.91
   intensity:
     m_OverrideState: 1
-    m_Value: 0.35
+    m_Value: 0
   scatter:
     m_OverrideState: 1
-    m_Value: 0.313
+    m_Value: 0.323
   clamp:
     m_OverrideState: 1
-    m_Value: 65452.2
+    m_Value: 65
   tint:
     m_OverrideState: 1
     m_Value: {r: 0.66874534, g: 0.63995194, b: 0.6886792, a: 1}
