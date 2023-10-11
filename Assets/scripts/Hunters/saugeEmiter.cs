@@ -26,9 +26,10 @@ public class saugeEmiter : MonoBehaviour
         {
             GameObject go = GameObject.Instantiate( prefab);
             go.transform.position= transform.position + Vector3.up * Random.Range(-sizeRand, sizeRand) + Vector3.right * Random.Range(-sizeRand, sizeRand);
+            Destroy(go, .5f);
             timeLeft = 0;
         }
 
 
-    }
+    }   
 }
