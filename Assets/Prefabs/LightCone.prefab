@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   steps: 10
   trap_talkie_sfx: {fileID: 8300000, guid: 4eff3c2864db9c040897b3dd0d4a756f, type: 3}
+  player_in_zone_sfx: {fileID: 0}
+  zone_AudioSource: {fileID: 0}
   volume: 1
   AudioSource: {fileID: 0}
 --- !u!95 &1807000063187153132

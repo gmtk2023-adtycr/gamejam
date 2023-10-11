@@ -226,6 +226,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6102850724064437187}
     m_Modifications:
+    - target: {fileID: 770743523712754624, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 770743523712754624, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 1834926919310888224}
+    - target: {fileID: 770743523712754624, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: zone_AudioSource
+      value: 
+      objectReference: {fileID: 1834926919310888224}
+    - target: {fileID: 770743523712754624, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: player_in_zone_sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ce3b3e944fae8f44b3dad186fa29bce, type: 3}
     - target: {fileID: 1914736974736517426, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
       propertyPath: m_Color.b
       value: 0.25882354
@@ -286,7 +302,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightCone
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6357512319538306931, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -337,9 +354,9 @@ AudioSource:
   m_GameObject: {fileID: 7760513862532178690}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3383757689907113825, guid: 7f53a970eb12c9a42b5302e8c1726e9d, type: 2}
   m_audioClip: {fileID: 8300000, guid: c45e8a2a16ff07e4b9239a20bb0bd0b2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

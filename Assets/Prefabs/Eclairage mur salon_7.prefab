@@ -32,7 +32,7 @@ Transform:
   - {fileID: 1059683806136317184}
   - {fileID: 6435774721900161926}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &8955753428141747383
 AudioSource:
@@ -273,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6435774721900161926}
   - component: {fileID: 5662418441820003648}
-  - component: {fileID: 145565059765117443}
+  - component: {fileID: 7719343202187353581}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.8745979, b: 0.4764151, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: c196d73f000000006366955dbb68b0863d5157bc21b0a736cb53fbea9f507a67c1c5ec2da58057da9b679616
@@ -346,7 +346,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!95 &145565059765117443
+--- !u!95 &7719343202187353581
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -356,7 +356,7 @@ Animator:
   m_GameObject: {fileID: 7533353043031527635}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b67ded834dde3c4b81784c7b39ab5cb, type: 2}
+  m_Controller: {fileID: 9100000, guid: f7acfe421d7a8244b9555acea81a21e3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
