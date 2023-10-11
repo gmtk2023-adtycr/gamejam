@@ -69,6 +69,7 @@ public class Movement : MonoBehaviour
         deathSoundPlayed=true;        }
         //Invoke(nameof(GoToGameOverScene), 1f);
         DeathGameObject.SetActive(true);
+        GetComponent<BoxCollider2D>().enabled = false;
 
     }
     /*private void GoToGameOverScene(){
