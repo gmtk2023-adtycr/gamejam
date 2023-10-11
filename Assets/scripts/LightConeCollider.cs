@@ -15,35 +15,46 @@ public class LightConeCollider : MonoBehaviour
     public AudioClip player_in_zone_sfx;
     public AudioSource zone_AudioSource;
     [Range(0.0f,3.0f)] public float volume=1.0f;
+        [Range(0.0f,3.0f)] public float volume2=0.3f;
     public AudioSource AudioSource;
     private bool hasPlayedSound = false;
     public event Action<GameObject> OnDetectPlayer;
     private Light2D light2DComponent;
-      private Color originalColor; 
+    private Color originalColor; 
+    float flickerSpeed = 5f; // Speed of the flickering effect
+    float flickerIntensity = 0.2f; // Intensity of the flickering effect
 
     void Start()
     {
         // Get the Light2D component attached to the same GameObject
         light2DComponent = GetComponent<Light2D>();
-
         // Store the original color of the Light2D component
         originalColor = light2DComponent.color;
+        
     }
-    private void PlaySound()
+
+    private void Update(){
+                // Apply flickering effect to the light's intensity using a sine wave
+        float flickerValue = Mathf.Sin(Time.time * flickerSpeed) * flickerIntensity;
+        light2DComponent.intensity = 1f + flickerValue; // Set the intensity of the light with flickering effect
+
+    }
+         public void PlaySound()
     {
         if (trap_talkie_sfx != null && !AudioSource.isPlaying)
         {
             AudioSource.PlayOneShot(trap_talkie_sfx);}
     }
 
-        private void PlaySoundDetected()
+
+        public void PlaySoundDetected()
     {
-        if (trap_talkie_sfx != null && !AudioSource.isPlaying)
+        if (trap_talkie_sfx != null && !zone_AudioSource.isPlaying)
         {
-            AudioSource.PlayOneShot(player_in_zone_sfx, volume);}
+            zone_AudioSource.PlayOneShot(player_in_zone_sfx, volume2);}
     }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player") && !hasPlayedSound)
         {
@@ -56,7 +67,6 @@ public class LightConeCollider : MonoBehaviour
             hasPlayedSound = false;
         }
     }
-
 
 
     void FixedUpdate()
