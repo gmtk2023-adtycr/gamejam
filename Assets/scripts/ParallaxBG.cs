@@ -1,29 +1,25 @@
-/*using UnityEngine;
-using System.Collections;
-using UnityEngine.InputSystem;
+using UnityEngine;
 
-public class ParallaxBG : MonoBehaviour {
+public class ParallaxBG : MonoBehaviour
+{
     Vector2 StartPos;
     [SerializeField] float moveModifier;
 
-    private void Start(){
+    private void Start()
+    {
         StartPos = transform.position;
     }
 
-    private void Update(){
-        //Vector2 pz = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        Vector2 pz = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
-        //Debug.Log(pz);
-        //Debug.Log(pz.x);
-        //Debug.Log(pz.y);
-        float posX = Mathf.Lerp(transform.position.x, StartPos.x + (pz.x * moveModifier), 2f * Time.deltaTime);
-        float posY = Mathf.Lerp(transform.position.y, StartPos.y + (pz.y * moveModifier), 2f * Time.deltaTime);
+    private void Update()
+    {
+        // Utilisez Input.mousePosition pour obtenir la position de la souris
+        Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-        transform.position = new Vector3(
-          posX,
-          posY,
-          0
-        );
+        // Calculez la nouvelle position en fonction de la position de la souris
+        float posX = Mathf.Lerp(transform.position.x, StartPos.x + (mousePosition.x * moveModifier), 2f * Time.deltaTime);
+        float posY = Mathf.Lerp(transform.position.y, StartPos.y + (mousePosition.y * moveModifier), 2f * Time.deltaTime);
+
+        // Mettez à jour la position du sprite
+        transform.position = new Vector3(posX, posY, 0);
     }
 }
-*/
