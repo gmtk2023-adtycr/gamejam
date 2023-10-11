@@ -6811,29 +6811,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2042344145944606749, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2042344145944606749, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 3220563547288715003, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
       propertyPath: m_Name
       value: LevelHolder
-      objectReference: {fileID: 0}
-    - target: {fileID: 4322710089024920603, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6218545140164331533, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6410275060779507719, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859585934229776422, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
       propertyPath: m_RootOrder
