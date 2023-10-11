@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdf82dce54b9634196816626582aa87, type: 3}
   m_Name: ChromaticVolume
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   Active:
     m_OverrideState: 1
     m_Value: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
     m_OverrideState: 1
     m_Value: -0.3
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cfa44da4f34c64bb4e878d6833959b, type: 3}
   m_Name: VCRVolume
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   Active:
     m_OverrideState: 1
     m_Value: 1

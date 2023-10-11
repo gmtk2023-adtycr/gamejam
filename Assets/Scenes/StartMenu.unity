@@ -6829,6 +6829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 6218545140164331533, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 221873195}
     - target: {fileID: 6859585934229776422, guid: 173ada548804bcd498d62e522818ebeb, type: 3}
       propertyPath: m_RootOrder
       value: 0
