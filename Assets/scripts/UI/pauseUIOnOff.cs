@@ -9,7 +9,7 @@ public class pauseUIOnOff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,14 +29,13 @@ public class pauseUIOnOff : MonoBehaviour
             Time.timeScale = 1;
         else
             Time.timeScale = 0;
-
-    }
-    public void returnMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void QuitGame(){
-        Application.Quit();
+    // }
+    // public void returnMenu()
+    // {
+    //     SceneManager.LoadScene(0);
+    // }
+    //
+    // public void QuitGame(){
+    //     Application.Quit();
     }
 }

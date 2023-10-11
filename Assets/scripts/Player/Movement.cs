@@ -8,21 +8,22 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    
+
     public float Speed = 4f;
 
     private Rigidbody2D body;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    
+
     private static readonly int Speed1 = Animator.StringToHash("Speed");
     private static readonly int VerticalDirection = Animator.StringToHash("VerticalDirection");
 
-    
+
     [SerializeField] private AudioSource myAudioSource;
     [SerializeField] private AudioClip DeathSound;
     [SerializeField] private float volume = 1.0f;
     private bool deathSoundPlayed = false;
+    public GameObject DeathGameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +46,8 @@ public class Movement : MonoBehaviour
     {
         float dx = Input.GetAxis("Horizontal");
         float dy = Input.GetAxis("Vertical");
-        
-        
+
+
 
         float diagonal = 1f;
         if (dx != 0 && dy != 0)
@@ -66,11 +67,12 @@ public class Movement : MonoBehaviour
         if(!deathSoundPlayed){
         myAudioSource.PlayOneShot(DeathSound, volume);
         deathSoundPlayed=true;        }
-        Invoke(nameof(GoToGameOverScene), 1f);
-    }
+        //Invoke(nameof(GoToGameOverScene), 1f);
+        DeathGameObject.SetActive(true);
 
-    private void GoToGameOverScene(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    
+    /*private void GoToGameOverScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }*/
+
 }
