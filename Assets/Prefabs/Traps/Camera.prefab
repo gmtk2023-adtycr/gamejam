@@ -310,11 +310,11 @@ PrefabInstance:
     - target: {fileID: 770743523712754624, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
       propertyPath: zone_AudioSource
       value: 
-      objectReference: {fileID: 1317874360987321254}
+      objectReference: {fileID: 4074831418913801489}
     - target: {fileID: 770743523712754624, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
       propertyPath: player_in_zone_sfx
       value: 
-      objectReference: {fileID: 8300000, guid: 7ce3b3e944fae8f44b3dad186fa29bce, type: 3}
+      objectReference: {fileID: 8300000, guid: 3261f63e5fff8094b942653f39d1f1a8, type: 3}
     - target: {fileID: 1914736974736517426, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
       propertyPath: m_Color.b
       value: 0.25882354
@@ -326,6 +326,10 @@ PrefabInstance:
     - target: {fileID: 1914736974736517426, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
       propertyPath: m_Color.r
       value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380424926887334171, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
       propertyPath: m_RootOrder
@@ -387,6 +391,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8146052912666343851}
   m_SourcePrefab: {fileID: 100100000, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+--- !u!82 &4074831418913801489 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8380424926887334171, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
+  m_PrefabInstance: {fileID: 5530971781214999562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4123740991043804784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8501543834048891514, guid: fd4b021a32cf04b48963d708db200cca, type: 3}
@@ -407,7 +416,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3383757689907113825, guid: 7f53a970eb12c9a42b5302e8c1726e9d, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d8228871ec8915341aef808a6808ecdc, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
