@@ -24,7 +24,10 @@ public class UsableItem : MonoBehaviour
     [Range(0.0f,3.0f)] public float volume = 1.0f;
 
     private void Start(){
-        _outlineMaterial = GetComponent<SpriteRenderer>().material;
+        var sprite = GetComponent<SpriteRenderer>();
+        if (sprite == null)
+            sprite = transform.parent.GetComponent<SpriteRenderer>();
+        _outlineMaterial = sprite.material;
     }
 
     private void Update()
