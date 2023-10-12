@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TaskManager : MonoBehaviour
@@ -53,6 +54,7 @@ public class TaskManager : MonoBehaviour
     private bool LoadNextPhase()
     {
         _currentPhaseId++;
+        EnableTraps();
         if (transform.childCount == _currentPhaseId)
         {
             Destroy(this);
@@ -64,6 +66,13 @@ public class TaskManager : MonoBehaviour
             _tasksOfCurrentPhase.Add(phaseTransform.GetChild(i).gameObject.GetComponent<Task>());
         _currentTaskId = 0;
         return true;
+    }
+
+    private void EnableTraps(){
+        var traps = GameObject.FindObjectsOfType<TrapPhase>();
+        foreach (var trap in traps){
+            trap.gameObject.SetActive(trap.Phase == Phase.All || (int) trap.Phase == _currentPhaseId);
+        }
     }
 
     private void GoToTask(String taskID){
