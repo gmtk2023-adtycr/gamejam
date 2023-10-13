@@ -24,7 +24,7 @@ public class LightConeCollider : MonoBehaviour
     float flickerSpeed = 5f; // Speed of the flickering effect
     float flickerIntensity = 0.2f; // Intensity of the flickering effect
 
-    private float originalSpeed;
+    private float originalSpeedPlayer;
 
     void Start()
     {
@@ -33,6 +33,7 @@ public class LightConeCollider : MonoBehaviour
         // Store the original color of the Light2D component
         originalColor = light2DComponent.color;
 
+        originalSpeedPlayer = GameObject.Find("Player").GetComponent<Movement>().Speed;
     }
 
     private void Update(){
@@ -83,11 +84,15 @@ public class LightConeCollider : MonoBehaviour
                 {
                 OnDetectPlayer?.Invoke(hit.collider.gameObject);
                 PlaySoundDetected();
+                GameObject.Find("Player").GetComponent<Movement>().Speed = 5f;
                 playerDetected=true;
                 light2DComponent.color = Color.red;
                 break;
                 }
-            else{            light2DComponent.color = originalColor;}
+            else{
+                light2DComponent.color = originalColor;
+                GameObject.Find("Player").GetComponent<Movement>().Speed = originalSpeedPlayer;
+                }
         }
     }
 
