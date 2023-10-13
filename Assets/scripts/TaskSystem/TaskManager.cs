@@ -9,12 +9,12 @@ public class TaskManager : MonoBehaviour
 
     private List<Task> _tasksOfCurrentPhase = new();
     private int _currentPhaseId = -1, _currentTaskId;
-    
+
     public Task CurrentTask => _tasksOfCurrentPhase[_currentTaskId];
     public event Action OnNextTask;
 
     public string DebugTask = "";
-    
+
     void Start()
     {
         NextTask(true);
@@ -32,7 +32,7 @@ public class TaskManager : MonoBehaviour
     /// <param name="first">true first time it's called</param>
     private void NextTask(bool first = false)
     {
-        if(!first) 
+        if(!first)
             CurrentTask.gameObject.SetActive(false);
         _currentTaskId++;
         if (first || _currentTaskId == _tasksOfCurrentPhase.Count)
@@ -69,9 +69,9 @@ public class TaskManager : MonoBehaviour
     }
 
     private void EnableTraps(){
-        var traps = GameObject.FindObjectsOfType<TrapPhase>();
+        var traps = GameObject.FindObjectsOfType<TrapPhase>(true);
         foreach (var trap in traps){
-            trap.gameObject.SetActive(trap.Phase == Phase.All || (int) trap.Phase == _currentPhaseId);
+            trap.gameObject.SetActive(trap.Phase == Phase.All || (int) trap.Phase <= _currentPhaseId);
         }
     }
 
@@ -86,6 +86,6 @@ public class TaskManager : MonoBehaviour
             CurrentTask.MarkAsDone(); //will trigger next task
         }
     }
-    
-    
+
+
 }
