@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class TrapDetectPlayer : MonoBehaviour
 {
-    
+
     public float Delay = 1;
-    
+
     private GameObject _noisePrefab;
     private bool _active = true;
 

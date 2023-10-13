@@ -20,9 +20,11 @@ public class LightConeCollider : MonoBehaviour
     private bool hasPlayedSound = false;
     public event Action<GameObject> OnDetectPlayer;
     private Light2D light2DComponent;
-    private Color originalColor; 
+    private Color originalColor;
     float flickerSpeed = 5f; // Speed of the flickering effect
     float flickerIntensity = 0.2f; // Intensity of the flickering effect
+
+    private float originalSpeed;
 
     void Start()
     {
@@ -30,7 +32,7 @@ public class LightConeCollider : MonoBehaviour
         light2DComponent = GetComponent<Light2D>();
         // Store the original color of the Light2D component
         originalColor = light2DComponent.color;
-        
+
     }
 
     private void Update(){
@@ -76,7 +78,7 @@ public class LightConeCollider : MonoBehaviour
         foreach (var ray in GetVectors().ToList())
         {
             RaycastHit2D hit = Physics2D.Raycast(start, ray - start, Vector3.Distance(start, ray), LayerMask.GetMask("Player"));
-            
+
             if (hit.collider != null && !playerDetected)
                 {
                 OnDetectPlayer?.Invoke(hit.collider.gameObject);
@@ -97,7 +99,7 @@ public class LightConeCollider : MonoBehaviour
         float base_rotation = (transform.parent.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
         float dist = light2D.pointLightOuterRadius;
         float diff_angle = light2D.pointLightOuterAngle * Mathf.Deg2Rad / steps;
-        
+
         for (int i = -steps/2; i < steps/2; i++){
             float x = start.x + dist * MathF.Cos(base_rotation + diff_angle * i);
             float y = start.y + dist * MathF.Sin(base_rotation + diff_angle * i);
@@ -105,7 +107,7 @@ public class LightConeCollider : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(start, end - start, dist, LayerMask.GetMask("Collision"));
             yield return (hit.collider == null ? end : hit.point);
         }
-        
+
 
     }
 
