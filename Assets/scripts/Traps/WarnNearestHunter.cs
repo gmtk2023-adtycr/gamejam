@@ -18,24 +18,24 @@ public class WarnNearestHunter : MonoBehaviour
     }
 
     private IPath MakeNoisePath(GameObject hunter)
-{
-    Grid grid = Grid.GetGridForPos(transform.position);
-
-    // Check if the grid is null before proceeding
-    if (grid == null)
     {
-        Debug.LogWarning("Grid is null! (script: WarnNearestHunter)");
-        return null;
+        Grid grid = Grid.GetGridForPos(transform.position);
+
+        // Check if the grid is null before proceeding
+        if (grid == null)
+        {
+            Debug.LogWarning("Grid is null! (script: WarnNearestHunter)");
+            return null;
+        }
+
+        var nodePath = PathFinding.FindPath(grid, hunter.transform.position, transform.position);
+
+        // Check if the nodePath is valid before creating a new NodePath
+        if (nodePath == null || nodePath.Count == 0)
+        {
+            return null;
+        }
+
+        return new NodePath(nodePath);
     }
-
-    var nodePath = PathFinding.FindPath(grid, hunter.transform.position, transform.position);
-
-    // Check if the nodePath is valid before creating a new NodePath
-    if (nodePath == null || nodePath.Count == 0)
-    {
-        return null;
-    }
-
-    return new NodePath(nodePath);
-}
 }

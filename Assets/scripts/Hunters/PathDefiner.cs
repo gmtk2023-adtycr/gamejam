@@ -11,8 +11,13 @@ public class PathDefiner : MonoBehaviour, IPath
 
     public bool Loop = true;
     public bool NextPathWhenOver = false;
+    [SerializeField]
+    private bool _running = false;
+    
     public IPointPath Target => _points == null || _points.Length == 0 ? null : _points[_targetIndex];
     public bool Over{ get; private set; }
+    
+    public bool Running => _running;
 
     private PathPoint[] _points;
     private int _targetIndex;

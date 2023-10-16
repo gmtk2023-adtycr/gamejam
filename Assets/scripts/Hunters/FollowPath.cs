@@ -7,7 +7,8 @@ public class FollowPath : MonoBehaviour
 
     private static float DISTANCE_THRESHOLD = 0.5f;
     
-    public float Speed = 2;
+    public float WalkingSpeed = 2;
+    public float RunningSpeed = 5;
     public PathDefiner StartingPath;
     
     private Rigidbody2D _body;
@@ -65,7 +66,8 @@ public class FollowPath : MonoBehaviour
     public void GoToTarget()
     {
         var direction = _path.Target.Position - transform.position;
-        _body.velocity = direction.normalized * Speed;
+        var speed = _path.Running ? RunningSpeed : WalkingSpeed;
+        _body.velocity = direction.normalized * speed;
     }
 
     public void Stop()

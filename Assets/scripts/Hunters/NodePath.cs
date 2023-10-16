@@ -6,6 +6,7 @@ public class NodePath : IPath
 
     private Stack<NodePoint> _points = new();
     public bool Over => _points.Count == 0;
+    public bool Running => true;
 
     public NodePath(List<Node> nodes)
     {
