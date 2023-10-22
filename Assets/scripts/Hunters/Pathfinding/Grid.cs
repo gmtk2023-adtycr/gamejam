@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -61,6 +62,10 @@ public class Grid : MonoBehaviour
 
     void CreateGrid() {
         _nodes = new();
+        var meubles = GameObject.FindObjectsOfType<BoxCollider2D>()
+            .Where(collider => collider.GetComponent<UsableItem>() == null)
+            .ToList();
+        var nodeWidth = 1f / NodePerTile;
 
         for (int y = 0; y < _gridSizeY; y ++){
             for (int x = 0; x < _gridSizeX; x ++) {
@@ -73,7 +78,9 @@ public class Grid : MonoBehaviour
                 var worldPos = new Vector3(tilePos.x + dx, tilePos.y + dy) 
                                + _map.transform.position
                                + (Vector3.up + Vector3.right) * 0.5f / NodePerTile;
-                _nodes.Add(new Node(worldPos, _map.HasTile(tilePos), x, y));
+                var walkable = _map.HasTile(tilePos);
+                walkable &= !meubles.Any(m => m.OverlapPoint(new Vector2(worldPos.x + nodeWidth, worldPos.y + nodeWidth)));
+                _nodes.Add(new Node(worldPos, walkable, x, y));
             }
         }
     }
