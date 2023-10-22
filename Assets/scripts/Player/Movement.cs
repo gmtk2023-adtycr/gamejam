@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
 {
 
     public float Speed = 4f;
+    private float originSpeed;
 
     private Rigidbody2D body;
     private Animator animator;
@@ -26,8 +27,8 @@ public class Movement : MonoBehaviour
     public GameObject DeathGameObject;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
+        originSpeed = Speed;
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -72,8 +73,15 @@ public class Movement : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
 
     }
-    /*private void GoToGameOverScene(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }*/
+
+
+    public void Slow(){
+        Speed = originSpeed * .4f;
+        Invoke(nameof(ResetSpeed), 3f);
+    }
+
+    private void ResetSpeed(){
+        Speed = originSpeed;
+    }
 
 }

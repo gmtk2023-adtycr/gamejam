@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -23,7 +24,9 @@ public class TrapDetectPlayer : MonoBehaviour
         _active = false;
         Debug.Log($"Detected by {gameObject.transform.parent.parent.name}");
         Instantiate(_noisePrefab).transform.position = player.transform.position;
+        player.GetComponent<Movement>().Slow();
         Invoke(nameof(Activate), Delay);
+        
     }
 
     private void Activate(){
