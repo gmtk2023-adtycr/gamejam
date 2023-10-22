@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public enum TeleporterType
@@ -16,10 +13,11 @@ public class Teleporter : MonoBehaviour
 
     public Teleporter Destination;
     public TeleporterType Type;
+    public Vector2 PosDiff;
 
     private GameObject _indicator;
     private UsableItem _usableItem;
-    private Dictionary<GameObject, bool> _dontTP = new();
+    private List<GameObject> _dontTP = new();
 
     private void Start(){
         if (Type == TeleporterType.OnUse){
@@ -41,19 +39,20 @@ public class Teleporter : MonoBehaviour
     }
 
     private void TeleportEntity(GameObject entity){
+        if(!entity.CompareTag("Player") && !entity.CompareTag("Enemy")) return;
         var posDiff = entity.transform.position - transform.position;
-        Destination.ReceiveEntity(entity, posDiff);
+        Destination.ReceiveEntity(entity, posDiff + new Vector3(PosDiff.x, PosDiff.y));
     }
 
     private void ReceiveEntity(GameObject entity, Vector3 posDiff){
-        if(_dontTP.ContainsKey(entity)) return;
-        _dontTP.Add(entity, true);
-        entity.transform.position = transform.position + posDiff;
+        if(_dontTP.Contains(entity)) return;
+        //_dontTP.Add(entity);
+        entity.transform.SetPositionAndRotation(transform.position + posDiff, entity.transform.rotation);
         entity.GetComponent<FollowPath>()?.NextTarget();
     }
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (Type == TeleporterType.OnEnter && !_dontTP.ContainsKey(col.gameObject)){
+        if (Type == TeleporterType.OnEnter && !_dontTP.Contains(col.gameObject)){
             TeleportEntity(col.gameObject);
         }    
     }
