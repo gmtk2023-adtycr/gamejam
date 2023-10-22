@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
         animator.SetFloat(Speed1, body.velocity.magnitude);
         if(body.velocity.x != 0)
             spriteRenderer.flipX = body.velocity.x < 0;
-        animator.SetInteger(VerticalDirection, body.velocity.y > 0 ? 1 : (body.velocity.y < 0 ? -1 : 0));
+        animator.SetInteger(VerticalDirection, Math.Abs(body.velocity.x) > 0 ? 0 : body.velocity.y > 0 ? 1 : -1);
     }
 
     public void Die(){
