@@ -17,7 +17,10 @@ public class LightConeCollider : MonoBehaviour
     [Range(0.0f, 3.0f)] public float volume2 = 0.3f;
     public AudioSource AudioSource;
     private bool hasPlayedSound = false;
+
+    private bool playerHere = false;
     public event Action<GameObject> OnDetectPlayer;
+    public event Action OnPlayerExit;
     
     private Light2D light2DComponent;
     private Color originalColor;
@@ -68,19 +71,26 @@ public class LightConeCollider : MonoBehaviour
 
     void FixedUpdate(){
         var start = transform.parent.position;
+        bool newPlayerHere = false;
         foreach (var ray in GetVectors().ToList()){
             RaycastHit2D hit = Physics2D.Raycast(start, ray - start, Vector3.Distance(start, ray),
                 LayerMask.GetMask("Player"));
-
+            
             if (hit.collider != null){
+                newPlayerHere = true;
                 OnDetectPlayer?.Invoke(hit.collider.gameObject);
                 PlaySoundDetected();
-                light2DComponent.color = Color.red;
-                Invoke(nameof(ResetColor), 1f);
                 break;
             }
 
         }
+
+        if (!newPlayerHere && playerHere){
+            OnPlayerExit?.Invoke();
+        }
+
+        playerHere = newPlayerHere;
+        light2DComponent.color = playerHere ? Color.red : originalColor;
     }
 
     private IEnumerable<Vector3> GetVectors(){
@@ -98,10 +108,6 @@ public class LightConeCollider : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(start, end - start, dist, LayerMask.GetMask("Collision"));
             yield return (hit.collider == null ? end : hit.point);
         }
-    }
-
-    private void ResetColor(){
-        light2DComponent.color = originalColor;
     }
 
     private void OnDrawGizmosSelected(){

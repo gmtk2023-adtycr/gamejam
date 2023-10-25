@@ -16,6 +16,7 @@ public class TrapDetectPlayer : MonoBehaviour
     {
         _noisePrefab = Resources.Load<GameObject>("Noise");
         GetComponent<LightConeCollider>().OnDetectPlayer += OnDetectPlayer;
+        GetComponent<LightConeCollider>().OnPlayerExit += OnPlayerExit;
     }
 
     private void OnDetectPlayer(GameObject player)
@@ -25,12 +26,12 @@ public class TrapDetectPlayer : MonoBehaviour
         Debug.Log($"Detected by {gameObject.transform.parent.parent.name}");
         Instantiate(_noisePrefab).transform.position = player.transform.position;
         player.GetComponent<Movement>().Slow();
-        Invoke(nameof(Activate), Delay);
-        
     }
 
-    private void Activate(){
+    private void OnPlayerExit(){
         _active = true;
+        GameObject.FindWithTag("Player")
+            .GetComponent<Movement>()
+            .ResetSpeed();
     }
-
 }

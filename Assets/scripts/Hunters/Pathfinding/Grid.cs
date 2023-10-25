@@ -46,6 +46,10 @@ public class Grid : MonoBehaviour
         );
     }
 
+    public static void ResetGrids(){
+        Grids = new();
+    }
+
     public void Awake(){
         Grids.Add(this);
         _map = GetComponent<Tilemap>();

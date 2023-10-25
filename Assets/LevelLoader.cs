@@ -19,6 +19,7 @@ public class LevelLoader : MonoBehaviour
       Time.timeScale = 1;
       transition.SetTrigger("Start");
       yield return new WaitForSeconds(transitionTime);
+      Grid.ResetGrids();
       SceneManager.LoadScene(scene);
     }
 }

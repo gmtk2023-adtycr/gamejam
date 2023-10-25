@@ -77,10 +77,9 @@ public class Movement : MonoBehaviour
 
     public void Slow(){
         Speed = originSpeed * .4f;
-        Invoke(nameof(ResetSpeed), 3f);
     }
 
-    private void ResetSpeed(){
+    public void ResetSpeed(){
         Speed = originSpeed;
     }
 
