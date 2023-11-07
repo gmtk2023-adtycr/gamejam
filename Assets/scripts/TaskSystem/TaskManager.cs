@@ -7,6 +7,8 @@ using UnityEngine;
 public class TaskManager : MonoBehaviour
 {
 
+    public static bool Loading = false;
+    
     private List<Task> _tasksOfCurrentPhase = new();
     private int _currentPhaseId = -1, _currentTaskId;
 
@@ -76,6 +78,7 @@ public class TaskManager : MonoBehaviour
     }
 
     private void GoToTask(String taskID){
+        Loading = true;
         while (CurrentTask.name != taskID){
             CurrentTask.Requirements.ForEach(go => {
                 var item = go.GetComponent<UsableItem>();
@@ -85,6 +88,7 @@ public class TaskManager : MonoBehaviour
             });
             CurrentTask.MarkAsDone(); //will trigger next task
         }
+        Loading = false;
     }
 
 
