@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,10 @@ public class CameraMovement : MonoBehaviour
 {
     public Transform target;
     public float smoothing;
-    public Vector2 maxPosition;
-    public Vector2 minPosition;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private Camera _camera;
+
+    private void Start(){
+        _camera = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -19,13 +18,19 @@ public class CameraMovement : MonoBehaviour
     {
         if(transform.position != target.position){
             Vector3 targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
+            var grid = Grid.GetGridForPos(targetPosition);
+            var minPos = grid.WalkableLowerLeftCorner;
+            var offset = new Vector3(_camera.orthographicSize * _camera.aspect, _camera.orthographicSize);
+            minPos += offset;
+            var maxPos = grid.WalkableUpperRightCorner;
+            maxPos -= offset;
 
-            targetPosition.x=Mathf.Clamp(targetPosition.x, minPosition.x, maxPosition.x);
-            targetPosition.y=Mathf.Clamp(targetPosition.y, minPosition.y, maxPosition.y);
+            targetPosition.x = Mathf.Clamp(targetPosition.x, minPos.x, maxPos.x);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, minPos.y, maxPos.y);
 
-            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, .5f);
         }
     
     }
-
+    
 }

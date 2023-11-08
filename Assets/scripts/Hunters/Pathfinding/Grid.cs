@@ -30,6 +30,8 @@ public class Grid : MonoBehaviour
     private int _gridSizeX;
     private int _gridSizeY;
     private Vector2Int _mapLowerLeftCorner;
+    public Vector3 WalkableLowerLeftCorner { get; private set; }
+    public Vector3 WalkableUpperRightCorner { get; private set; }
 
     // Testing
     public int NodePerTile { get; set; } = 5;
@@ -60,6 +62,12 @@ public class Grid : MonoBehaviour
         _gridSizeY *= NodePerTile;
         CreateGrid();        
         CreatePenalties();
+        var walkableTiles = _nodes
+            .Where(n => n.Walkable)
+            .OrderBy(node => node.GridX + node.GridY)
+            .ToList();
+        WalkableLowerLeftCorner = walkableTiles.First().Position;
+        WalkableUpperRightCorner = walkableTiles.Last().Position + Vector3.up * 6;
     }
 
 
