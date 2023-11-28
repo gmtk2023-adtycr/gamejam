@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ebd1d02f3aba214890d97a800330e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOn: 0.2
-  timeOff: 2.2
+  timeOn: 4
+  timeOff: 4
   audioOn: {fileID: 4604199855866181332}
 --- !u!82 &4604199855866181332
 AudioSource:

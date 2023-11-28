@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float volume = 1.0f;
     private bool deathSoundPlayed = false;
     public GameObject DeathGameObject;
-    
+
 
     // Start is called before the first frame update
     void Start(){
@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
         float diagonal = 1f;
 
     if (Input.GetKeyDown(KeyCode.Space) && Stamina >0)
-    {   
+    {
         running=true;
         if(recharge!= null) StopCoroutine(recharge); //Arrête la recharge quand on court
     }
@@ -103,7 +103,7 @@ public class Movement : MonoBehaviour
 
 
     public void Slow(){
-        Speed = originSpeed * .4f;
+        Speed = originSpeed * .5f;
     }
 
     public void ResetSpeed(){
